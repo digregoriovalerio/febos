@@ -1,13 +1,15 @@
-""" Example application """
+"""Example application"""
 
-import sys
 import logging
+import sys
+
 from src.febos.api import FebosApi
 
 LOGGER = logging.getLogger(__name__)
 FORMAT = "[%(filename)s:%(lineno)s] [%(funcName)s()] %(message)s"
 logging.basicConfig(format=FORMAT)
 LOGGER.setLevel(logging.DEBUG)
+
 
 def main(username, password):
     api = FebosApi(username, password)
@@ -24,7 +26,15 @@ def main(username, password):
             get_febos_slave = api.get_febos_slave(installation_id, device.id)
             for slave in get_febos_slave:
                 for k in slave.__dict__:
-                    if k in ["temp", "setTemp", "callTemp", "humid", "callHumid", "confort", "stagione"]:
+                    if k in [
+                        "temp",
+                        "setTemp",
+                        "callTemp",
+                        "humid",
+                        "callHumid",
+                        "confort",
+                        "stagione",
+                    ]:
                         key = f"{installation_id}_{device.id}_{slave.indirizzoSlave}_{k.lower()}"
                         resources[key] = getattr(slave, k)
             for page in page_config.pageMap.values():
@@ -48,7 +58,15 @@ def main(username, password):
             get_febos_slave = api.get_febos_slave(installation_id, device_id)
             for slave in get_febos_slave:
                 for k in slave.__dict__:
-                    if k in ["temp", "setTemp", "callTemp", "humid", "callHumid", "confort", "stagione"]:
+                    if k in [
+                        "temp",
+                        "setTemp",
+                        "callTemp",
+                        "humid",
+                        "callHumid",
+                        "confort",
+                        "stagione",
+                    ]:
                         key = f"{installation_id}_{device_id}_{slave.indirizzoSlave}_{k.lower()}"
                         if key in resources:
                             resources[key] = getattr(slave, k)
@@ -58,6 +76,7 @@ def main(username, password):
     LOGGER.info(f"{len(resources)} resources loaded")
     for key, value in resources.items():
         LOGGER.debug(f"[RESOURCE] KEY = {key}, VALUE = {value}")
+
 
 if __name__ == "__main__":
     main(*sys.argv[1:])

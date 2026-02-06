@@ -1,8 +1,8 @@
 from unittest import TestCase, mock
 
 from requests import Response
-from src.febos.api import FebosApi
 
+from src.febos.api import FebosApi
 
 LOGIN_RESPONSE = {
     "id": 2283,
@@ -15,12 +15,8 @@ LOGIN_RESPONSE = {
     "tenantName": "EmmeTI",
     "enabled": True,
     "creationDate": "2022-02-09T14:49:19",
-    "authList": [
-        "USER"
-    ],
-    "installationIdList": [
-        2218
-    ]
+    "authList": ["USER"],
+    "installationIdList": [2218],
 }
 INSTALLATION_RESPONSE = [
     {
@@ -36,13 +32,9 @@ INSTALLATION_RESPONSE = [
         "numController": 1,
         "numAlarm": 0,
         "numDisconnected": 0,
-        "finalUserId": [
-            2283
-        ],
-        "finalUserName": [
-            "emt-220209004020"
-        ],
-        "label": "emt-220209004020: emt-220209004020"
+        "finalUserId": [2283],
+        "finalUserName": ["emt-220209004020"],
+        "label": "emt-220209004020: emt-220209004020",
     }
 ]
 PAGE_CONFIG_RESPONSE = {
@@ -54,7 +46,7 @@ PAGE_CONFIG_RESPONSE = {
         "tenantId": 3,
         "tenantName": "EmmeTI",
         "tagSet": [],
-        "label": "emt-220209004020: emt-220209004020"
+        "label": "emt-220209004020: emt-220209004020",
     },
     "deviceMap": {
         "3085": {
@@ -79,7 +71,7 @@ PAGE_CONFIG_RESPONSE = {
             "installationCode": "emt-220209004020",
             "installationName": "emt-220209004020",
             "enabled": True,
-            "label": "EMT-FB-3085: EmmeTI Febos"
+            "label": "EMT-FB-3085: EmmeTI Febos",
         }
     },
     "thingMap": {
@@ -98,7 +90,7 @@ PAGE_CONFIG_RESPONSE = {
             "address": "250",
             "deviceId": 3085,
             "thingTypeCode": "FB",
-            "label": "T-AMB-9076: FB Ambient"
+            "label": "T-AMB-9076: FB Ambient",
         },
         "9077": {
             "id": 9077,
@@ -115,7 +107,7 @@ PAGE_CONFIG_RESPONSE = {
             "address": "1",
             "deviceId": 3085,
             "thingTypeCode": "FB",
-            "label": "T-HW-9077: FB Hot Water"
+            "label": "T-HW-9077: FB Hot Water",
         },
         "9078": {
             "id": 9078,
@@ -132,7 +124,7 @@ PAGE_CONFIG_RESPONSE = {
             "address": "2",
             "deviceId": 3085,
             "thingTypeCode": "FB",
-            "label": "T-EP-9078: FB Electric Power"
+            "label": "T-EP-9078: FB Electric Power",
         },
         "9079": {
             "id": 9079,
@@ -149,8 +141,8 @@ PAGE_CONFIG_RESPONSE = {
             "address": "1",
             "deviceId": 3085,
             "thingTypeCode": "FB",
-            "label": "T-HP-9079: FB Heat Pump"
-        }
+            "label": "T-HP-9079: FB Heat Pump",
+        },
     },
     "pageMap": {
         "FBAMB_D3085_T9076": {
@@ -204,7 +196,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8684: Set temperatura comfort (Estate)"
+                                            "label": "R8684: Set temperatura comfort (Estate)",
                                         },
                                         {
                                             "id": 970,
@@ -226,7 +218,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8688: Set temperatura comfort (Inverno)"
+                                            "label": "R8688: Set temperatura comfort (Inverno)",
                                         },
                                         {
                                             "id": 971,
@@ -248,7 +240,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8685: Orario di Inizio comfort (Estate)"
+                                            "label": "R8685: Orario di Inizio comfort (Estate)",
                                         },
                                         {
                                             "id": 972,
@@ -270,7 +262,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8689: Orario di Inizio comfort (Inverno)"
+                                            "label": "R8689: Orario di Inizio comfort (Inverno)",
                                         },
                                         {
                                             "id": 973,
@@ -292,7 +284,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8686: Set Attenuazione (Estate)"
+                                            "label": "R8686: Set Attenuazione (Estate)",
                                         },
                                         {
                                             "id": 974,
@@ -314,7 +306,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8690: Set Attenuazione (Inverno)"
+                                            "label": "R8690: Set Attenuazione (Inverno)",
                                         },
                                         {
                                             "id": 975,
@@ -336,7 +328,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8687: Orario Attenuazione (Estate)"
+                                            "label": "R8687: Orario Attenuazione (Estate)",
                                         },
                                         {
                                             "id": 976,
@@ -358,7 +350,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8691: Orario Attenuazione (Inverno)"
+                                            "label": "R8691: Orario Attenuazione (Inverno)",
                                         },
                                         {
                                             "id": 978,
@@ -379,7 +371,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8660: Set umidità estate (SetRh_E)"
+                                            "label": "R8660: Set umidità estate (SetRh_E)",
                                         },
                                         {
                                             "id": 979,
@@ -400,7 +392,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8661: Set umidità inverno (SetRh_I)"
+                                            "label": "R8661: Set umidità inverno (SetRh_I)",
                                         },
                                         {
                                             "id": 902,
@@ -421,7 +413,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 903,
@@ -442,10 +434,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8692: Boost"
-                                        }
+                                            "label": "R8692: Boost",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-AMB-DT@D3085@T9076"
+                                    "inputGroupGetCode": "FB-AMB-DT@D3085@T9076",
                                 },
                                 {
                                     "inputGroupCode": "FB-HP-SUMM",
@@ -474,7 +466,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 433,
@@ -496,7 +488,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 438,
@@ -518,7 +510,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8105: Potenza attiva TAE1"
+                                            "label": "R8105: Potenza attiva TAE1",
                                         },
                                         {
                                             "id": 443,
@@ -540,7 +532,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8110: Potenza attiva TAE2"
+                                            "label": "R8110: Potenza attiva TAE2",
                                         },
                                         {
                                             "id": 815,
@@ -562,7 +554,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8002: Potenza Media DIE1"
+                                            "label": "R8002: Potenza Media DIE1",
                                         },
                                         {
                                             "id": 818,
@@ -584,7 +576,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8005: Potenza Media DIE2"
+                                            "label": "R8005: Potenza Media DIE2",
                                         },
                                         {
                                             "id": 837,
@@ -607,7 +599,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16385: PcD Stagione"
+                                            "label": "R16385: PcD Stagione",
                                         },
                                         {
                                             "id": 821,
@@ -629,7 +621,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8008: Potenza Media DIE3"
+                                            "label": "R8008: Potenza Media DIE3",
                                         },
                                         {
                                             "id": 823,
@@ -651,7 +643,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8011: Potenza Media DIE4"
+                                            "label": "R8011: Potenza Media DIE4",
                                         },
                                         {
                                             "id": 838,
@@ -672,7 +664,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9096: Allarme temperatura ingresso acqua"
+                                            "label": "R9096: Allarme temperatura ingresso acqua",
                                         },
                                         {
                                             "id": 839,
@@ -693,7 +685,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9097: Allarme temperatura uscita acqua"
+                                            "label": "R9097: Allarme temperatura uscita acqua",
                                         },
                                         {
                                             "id": 840,
@@ -714,7 +706,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9095: Allarme temperatura esterna"
+                                            "label": "R9095: Allarme temperatura esterna",
                                         },
                                         {
                                             "id": 841,
@@ -735,7 +727,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9098: Allarme temperatura sanitaria"
+                                            "label": "R9098: Allarme temperatura sanitaria",
                                         },
                                         {
                                             "id": 842,
@@ -756,7 +748,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9099: Allarme PdC"
+                                            "label": "R9099: Allarme PdC",
                                         },
                                         {
                                             "id": 843,
@@ -777,7 +769,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9089: Allarme temperatura ritorno impianto radiante"
+                                            "label": "R9089: Allarme temperatura ritorno impianto radiante",
                                         },
                                         {
                                             "id": 848,
@@ -798,7 +790,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9090: Allarme accumolo inerziale"
+                                            "label": "R9090: Allarme accumolo inerziale",
                                         },
                                         {
                                             "id": 844,
@@ -819,7 +811,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9104: Allarme basso flusso"
+                                            "label": "R9104: Allarme basso flusso",
                                         },
                                         {
                                             "id": 845,
@@ -840,7 +832,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9102: Allarme bassa temperatura acqua"
+                                            "label": "R9102: Allarme bassa temperatura acqua",
                                         },
                                         {
                                             "id": 846,
@@ -861,7 +853,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9103: Allarme alta temperatura acqua"
+                                            "label": "R9103: Allarme alta temperatura acqua",
                                         },
                                         {
                                             "id": 935,
@@ -882,7 +874,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8638: Configurazione potenze 1"
+                                            "label": "R8638: Configurazione potenze 1",
                                         },
                                         {
                                             "id": 936,
@@ -903,7 +895,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8639: Configurazione potenze 2"
+                                            "label": "R8639: Configurazione potenze 2",
                                         },
                                         {
                                             "id": 902,
@@ -924,7 +916,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 937,
@@ -945,7 +937,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8640: Configurazione potenze 3"
+                                            "label": "R8640: Configurazione potenze 3",
                                         },
                                         {
                                             "id": 938,
@@ -966,7 +958,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8641: Configurazione potenze 4"
+                                            "label": "R8641: Configurazione potenze 4",
                                         },
                                         {
                                             "id": 939,
@@ -987,7 +979,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8642: Configurazione potenze 5"
+                                            "label": "R8642: Configurazione potenze 5",
                                         },
                                         {
                                             "id": 940,
@@ -1008,7 +1000,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8648: Stagione"
+                                            "label": "R8648: Stagione",
                                         },
                                         {
                                             "id": 941,
@@ -1029,7 +1021,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8664: Nome Febos Crono"
+                                            "label": "R8664: Nome Febos Crono",
                                         },
                                         {
                                             "id": 942,
@@ -1050,7 +1042,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8665: Massima potenza fornita"
+                                            "label": "R8665: Massima potenza fornita",
                                         },
                                         {
                                             "id": 909,
@@ -1072,7 +1064,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9120: Portata acqua PdC"
+                                            "label": "R9120: Portata acqua PdC",
                                         },
                                         {
                                             "id": 910,
@@ -1094,7 +1086,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -1116,7 +1108,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -1138,10 +1130,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
-                                        }
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HP-SUMM@D3085@T9079"
+                                    "inputGroupGetCode": "FB-HP-SUMM@D3085@T9079",
                                 },
                                 {
                                     "inputGroupCode": "FB-AMB-SUMM",
@@ -1170,7 +1162,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8678: Temperatura Sensore FC"
+                                            "label": "R8678: Temperatura Sensore FC",
                                         },
                                         {
                                             "id": 897,
@@ -1192,7 +1184,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8670: Offset Temperatura Sensore FC"
+                                            "label": "R8670: Offset Temperatura Sensore FC",
                                         },
                                         {
                                             "id": 898,
@@ -1214,7 +1206,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8679: Umidita Sensore FC"
+                                            "label": "R8679: Umidita Sensore FC",
                                         },
                                         {
                                             "id": 899,
@@ -1236,7 +1228,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8671: Offset Umidita Sensore FC"
+                                            "label": "R8671: Offset Umidita Sensore FC",
                                         },
                                         {
                                             "id": 836,
@@ -1256,7 +1248,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8600: Data produzione (parte alta)"
+                                            "label": "R8600: Data produzione (parte alta)",
                                         },
                                         {
                                             "id": 931,
@@ -1278,7 +1270,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8702: Set Temperatura FC Visualizzato"
+                                            "label": "R8702: Set Temperatura FC Visualizzato",
                                         },
                                         {
                                             "id": 932,
@@ -1300,7 +1292,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8703: Temperatura Sensore FC Visualizzata"
+                                            "label": "R8703: Temperatura Sensore FC Visualizzata",
                                         },
                                         {
                                             "id": 933,
@@ -1322,7 +1314,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8704: Umidita Sensore FC Visualizzata"
+                                            "label": "R8704: Umidita Sensore FC Visualizzata",
                                         },
                                         {
                                             "id": 900,
@@ -1343,7 +1335,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8681: Chiamata Temperatura"
+                                            "label": "R8681: Chiamata Temperatura",
                                         },
                                         {
                                             "id": 901,
@@ -1364,7 +1356,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8682: Chiamata Umidita "
+                                            "label": "R8682: Chiamata Umidita ",
                                         },
                                         {
                                             "id": 902,
@@ -1385,7 +1377,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 904,
@@ -1407,7 +1399,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8672: Stato contatto finestra"
+                                            "label": "R8672: Stato contatto finestra",
                                         },
                                         {
                                             "id": 905,
@@ -1429,7 +1421,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8673: Stato contatto presenza AUTOMATICO"
+                                            "label": "R8673: Stato contatto presenza AUTOMATICO",
                                         },
                                         {
                                             "id": 906,
@@ -1451,7 +1443,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8676: Stato contatto presenza MANUALE"
+                                            "label": "R8676: Stato contatto presenza MANUALE",
                                         },
                                         {
                                             "id": 907,
@@ -1473,7 +1465,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8680: DWP"
+                                            "label": "R8680: DWP",
                                         },
                                         {
                                             "id": 908,
@@ -1495,10 +1487,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8986: Temperatura Esterna PdC"
-                                        }
+                                            "label": "R8986: Temperatura Esterna PdC",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-AMB-SUMM@D3085@T9076"
+                                    "inputGroupGetCode": "FB-AMB-SUMM@D3085@T9076",
                                 },
                                 {
                                     "inputGroupCode": "FB-HP-SUMM",
@@ -1527,7 +1519,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 433,
@@ -1549,7 +1541,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 438,
@@ -1571,7 +1563,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8105: Potenza attiva TAE1"
+                                            "label": "R8105: Potenza attiva TAE1",
                                         },
                                         {
                                             "id": 443,
@@ -1593,7 +1585,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8110: Potenza attiva TAE2"
+                                            "label": "R8110: Potenza attiva TAE2",
                                         },
                                         {
                                             "id": 815,
@@ -1615,7 +1607,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8002: Potenza Media DIE1"
+                                            "label": "R8002: Potenza Media DIE1",
                                         },
                                         {
                                             "id": 818,
@@ -1637,7 +1629,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8005: Potenza Media DIE2"
+                                            "label": "R8005: Potenza Media DIE2",
                                         },
                                         {
                                             "id": 837,
@@ -1660,7 +1652,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16385: PcD Stagione"
+                                            "label": "R16385: PcD Stagione",
                                         },
                                         {
                                             "id": 821,
@@ -1682,7 +1674,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8008: Potenza Media DIE3"
+                                            "label": "R8008: Potenza Media DIE3",
                                         },
                                         {
                                             "id": 823,
@@ -1704,7 +1696,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8011: Potenza Media DIE4"
+                                            "label": "R8011: Potenza Media DIE4",
                                         },
                                         {
                                             "id": 838,
@@ -1725,7 +1717,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9096: Allarme temperatura ingresso acqua"
+                                            "label": "R9096: Allarme temperatura ingresso acqua",
                                         },
                                         {
                                             "id": 839,
@@ -1746,7 +1738,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9097: Allarme temperatura uscita acqua"
+                                            "label": "R9097: Allarme temperatura uscita acqua",
                                         },
                                         {
                                             "id": 840,
@@ -1767,7 +1759,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9095: Allarme temperatura esterna"
+                                            "label": "R9095: Allarme temperatura esterna",
                                         },
                                         {
                                             "id": 841,
@@ -1788,7 +1780,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9098: Allarme temperatura sanitaria"
+                                            "label": "R9098: Allarme temperatura sanitaria",
                                         },
                                         {
                                             "id": 842,
@@ -1809,7 +1801,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9099: Allarme PdC"
+                                            "label": "R9099: Allarme PdC",
                                         },
                                         {
                                             "id": 843,
@@ -1830,7 +1822,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9089: Allarme temperatura ritorno impianto radiante"
+                                            "label": "R9089: Allarme temperatura ritorno impianto radiante",
                                         },
                                         {
                                             "id": 848,
@@ -1851,7 +1843,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9090: Allarme accumolo inerziale"
+                                            "label": "R9090: Allarme accumolo inerziale",
                                         },
                                         {
                                             "id": 844,
@@ -1872,7 +1864,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9104: Allarme basso flusso"
+                                            "label": "R9104: Allarme basso flusso",
                                         },
                                         {
                                             "id": 845,
@@ -1893,7 +1885,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9102: Allarme bassa temperatura acqua"
+                                            "label": "R9102: Allarme bassa temperatura acqua",
                                         },
                                         {
                                             "id": 846,
@@ -1914,7 +1906,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9103: Allarme alta temperatura acqua"
+                                            "label": "R9103: Allarme alta temperatura acqua",
                                         },
                                         {
                                             "id": 935,
@@ -1935,7 +1927,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8638: Configurazione potenze 1"
+                                            "label": "R8638: Configurazione potenze 1",
                                         },
                                         {
                                             "id": 936,
@@ -1956,7 +1948,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8639: Configurazione potenze 2"
+                                            "label": "R8639: Configurazione potenze 2",
                                         },
                                         {
                                             "id": 902,
@@ -1977,7 +1969,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 937,
@@ -1998,7 +1990,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8640: Configurazione potenze 3"
+                                            "label": "R8640: Configurazione potenze 3",
                                         },
                                         {
                                             "id": 938,
@@ -2019,7 +2011,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8641: Configurazione potenze 4"
+                                            "label": "R8641: Configurazione potenze 4",
                                         },
                                         {
                                             "id": 939,
@@ -2040,7 +2032,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8642: Configurazione potenze 5"
+                                            "label": "R8642: Configurazione potenze 5",
                                         },
                                         {
                                             "id": 940,
@@ -2061,7 +2053,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8648: Stagione"
+                                            "label": "R8648: Stagione",
                                         },
                                         {
                                             "id": 941,
@@ -2082,7 +2074,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8664: Nome Febos Crono"
+                                            "label": "R8664: Nome Febos Crono",
                                         },
                                         {
                                             "id": 942,
@@ -2103,7 +2095,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8665: Massima potenza fornita"
+                                            "label": "R8665: Massima potenza fornita",
                                         },
                                         {
                                             "id": 909,
@@ -2125,7 +2117,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9120: Portata acqua PdC"
+                                            "label": "R9120: Portata acqua PdC",
                                         },
                                         {
                                             "id": 910,
@@ -2147,7 +2139,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -2169,7 +2161,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -2191,10 +2183,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
-                                        }
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HP-SUMM@D3085@T9079"
+                                    "inputGroupGetCode": "FB-HP-SUMM@D3085@T9079",
                                 },
                                 {
                                     "inputGroupCode": "FB-HP-SUPP",
@@ -2223,7 +2215,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9120: Portata acqua PdC"
+                                            "label": "R9120: Portata acqua PdC",
                                         },
                                         {
                                             "id": 920,
@@ -2245,7 +2237,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 927,
@@ -2268,7 +2260,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16384: PcD On/ Off"
+                                            "label": "R16384: PcD On/ Off",
                                         },
                                         {
                                             "id": 944,
@@ -2289,7 +2281,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9008: Step frequenza PdC"
+                                            "label": "R9008: Step frequenza PdC",
                                         },
                                         {
                                             "id": 980,
@@ -2311,7 +2303,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16515: Set di Rugiada/Umidita"
+                                            "label": "R16515: Set di Rugiada/Umidita",
                                         },
                                         {
                                             "id": 910,
@@ -2333,7 +2325,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -2355,7 +2347,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -2377,7 +2369,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
                                         },
                                         {
                                             "id": 918,
@@ -2399,7 +2391,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8698: Massima Potenza Installata"
+                                            "label": "R8698: Massima Potenza Installata",
                                         },
                                         {
                                             "id": 908,
@@ -2421,7 +2413,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8986: Temperatura Esterna PdC"
+                                            "label": "R8986: Temperatura Esterna PdC",
                                         },
                                         {
                                             "id": 925,
@@ -2443,7 +2435,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 914,
@@ -2465,7 +2457,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8987: Temperatura uscita acqua PdC"
+                                            "label": "R8987: Temperatura uscita acqua PdC",
                                         },
                                         {
                                             "id": 837,
@@ -2488,7 +2480,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16385: PcD Stagione"
+                                            "label": "R16385: PcD Stagione",
                                         },
                                         {
                                             "id": 902,
@@ -2509,7 +2501,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 913,
@@ -2531,7 +2523,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8988: Temperatura Ingresso acqua PdC"
+                                            "label": "R8988: Temperatura Ingresso acqua PdC",
                                         },
                                         {
                                             "id": 926,
@@ -2553,7 +2545,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
+                                            "label": "R9129: Potenza ",
                                         },
                                         {
                                             "id": 838,
@@ -2574,7 +2566,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9096: Allarme temperatura ingresso acqua"
+                                            "label": "R9096: Allarme temperatura ingresso acqua",
                                         },
                                         {
                                             "id": 924,
@@ -2596,7 +2588,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9127: "
+                                            "label": "R9127: ",
                                         },
                                         {
                                             "id": 839,
@@ -2617,7 +2609,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9097: Allarme temperatura uscita acqua"
+                                            "label": "R9097: Allarme temperatura uscita acqua",
                                         },
                                         {
                                             "id": 840,
@@ -2638,7 +2630,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9095: Allarme temperatura esterna"
+                                            "label": "R9095: Allarme temperatura esterna",
                                         },
                                         {
                                             "id": 841,
@@ -2659,7 +2651,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9098: Allarme temperatura sanitaria"
+                                            "label": "R9098: Allarme temperatura sanitaria",
                                         },
                                         {
                                             "id": 842,
@@ -2680,7 +2672,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9099: Allarme PdC"
+                                            "label": "R9099: Allarme PdC",
                                         },
                                         {
                                             "id": 848,
@@ -2701,7 +2693,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9090: Allarme accumolo inerziale"
+                                            "label": "R9090: Allarme accumolo inerziale",
                                         },
                                         {
                                             "id": 843,
@@ -2722,7 +2714,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9089: Allarme temperatura ritorno impianto radiante"
+                                            "label": "R9089: Allarme temperatura ritorno impianto radiante",
                                         },
                                         {
                                             "id": 844,
@@ -2743,7 +2735,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9104: Allarme basso flusso"
+                                            "label": "R9104: Allarme basso flusso",
                                         },
                                         {
                                             "id": 845,
@@ -2764,7 +2756,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9102: Allarme bassa temperatura acqua"
+                                            "label": "R9102: Allarme bassa temperatura acqua",
                                         },
                                         {
                                             "id": 846,
@@ -2785,19 +2777,19 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9103: Allarme alta temperatura acqua"
-                                        }
+                                            "label": "R9103: Allarme alta temperatura acqua",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079"
-                                }
+                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079",
+                                },
                             ],
                             "inputGroupGetCodeList": [
                                 "FB-HP-SUMM@D3085@T9079",
                                 "FB-AMB-DT@D3085@T9076",
                                 "FB-HP-SUPP@D3085@T9079",
-                                "FB-AMB-SUMM@D3085@T9076"
+                                "FB-AMB-SUMM@D3085@T9076",
                             ],
-                            "label": "FBW-AMB-DT: Febos Ambiente Detail"
+                            "label": "FBW-AMB-DT: Febos Ambiente Detail",
                         }
                     ],
                     "inputGroupGetCodeMap": {
@@ -2805,19 +2797,19 @@ PAGE_CONFIG_RESPONSE = {
                             "FB-HP-SUMM@D3085@T9079",
                             "FB-AMB-DT@D3085@T9076",
                             "FB-HP-SUPP@D3085@T9079",
-                            "FB-AMB-SUMM@D3085@T9076"
+                            "FB-AMB-SUMM@D3085@T9076",
                         ]
                     },
-                    "label": "TAB-AMB: Febos Ambient"
+                    "label": "TAB-AMB: Febos Ambient",
                 }
             ],
             "inputGroupGetCodeList": [
                 "FB-AMB-DT@D3085@T9076",
                 "FB-AMB-SUMM@D3085@T9076",
                 "FB-HP-SUMM@D3085@T9079",
-                "FB-HP-SUPP@D3085@T9079"
+                "FB-HP-SUPP@D3085@T9079",
             ],
-            "label": "FBAMB_D3085_T9076: Febos Ambient"
+            "label": "FBAMB_D3085_T9076: Febos Ambient",
         },
         "FBDEVLIST": {
             "id": 240613,
@@ -2870,7 +2862,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8678: Temperatura Sensore FC"
+                                            "label": "R8678: Temperatura Sensore FC",
                                         },
                                         {
                                             "id": 897,
@@ -2892,7 +2884,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8670: Offset Temperatura Sensore FC"
+                                            "label": "R8670: Offset Temperatura Sensore FC",
                                         },
                                         {
                                             "id": 898,
@@ -2914,7 +2906,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8679: Umidita Sensore FC"
+                                            "label": "R8679: Umidita Sensore FC",
                                         },
                                         {
                                             "id": 899,
@@ -2936,7 +2928,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8671: Offset Umidita Sensore FC"
+                                            "label": "R8671: Offset Umidita Sensore FC",
                                         },
                                         {
                                             "id": 836,
@@ -2956,7 +2948,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8600: Data produzione (parte alta)"
+                                            "label": "R8600: Data produzione (parte alta)",
                                         },
                                         {
                                             "id": 931,
@@ -2978,7 +2970,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8702: Set Temperatura FC Visualizzato"
+                                            "label": "R8702: Set Temperatura FC Visualizzato",
                                         },
                                         {
                                             "id": 932,
@@ -3000,7 +2992,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8703: Temperatura Sensore FC Visualizzata"
+                                            "label": "R8703: Temperatura Sensore FC Visualizzata",
                                         },
                                         {
                                             "id": 933,
@@ -3022,7 +3014,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8704: Umidita Sensore FC Visualizzata"
+                                            "label": "R8704: Umidita Sensore FC Visualizzata",
                                         },
                                         {
                                             "id": 900,
@@ -3043,7 +3035,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8681: Chiamata Temperatura"
+                                            "label": "R8681: Chiamata Temperatura",
                                         },
                                         {
                                             "id": 901,
@@ -3064,7 +3056,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8682: Chiamata Umidita "
+                                            "label": "R8682: Chiamata Umidita ",
                                         },
                                         {
                                             "id": 902,
@@ -3085,7 +3077,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 904,
@@ -3107,7 +3099,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8672: Stato contatto finestra"
+                                            "label": "R8672: Stato contatto finestra",
                                         },
                                         {
                                             "id": 905,
@@ -3129,7 +3121,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8673: Stato contatto presenza AUTOMATICO"
+                                            "label": "R8673: Stato contatto presenza AUTOMATICO",
                                         },
                                         {
                                             "id": 906,
@@ -3151,7 +3143,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8676: Stato contatto presenza MANUALE"
+                                            "label": "R8676: Stato contatto presenza MANUALE",
                                         },
                                         {
                                             "id": 907,
@@ -3173,7 +3165,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8680: DWP"
+                                            "label": "R8680: DWP",
                                         },
                                         {
                                             "id": 908,
@@ -3195,10 +3187,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8986: Temperatura Esterna PdC"
-                                        }
+                                            "label": "R8986: Temperatura Esterna PdC",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-AMB-SUMM@D3085@T9076"
+                                    "inputGroupGetCode": "FB-AMB-SUMM@D3085@T9076",
                                 },
                                 {
                                     "inputGroupCode": "FB-HP-SUPP",
@@ -3227,7 +3219,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9120: Portata acqua PdC"
+                                            "label": "R9120: Portata acqua PdC",
                                         },
                                         {
                                             "id": 920,
@@ -3249,7 +3241,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 927,
@@ -3272,7 +3264,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16384: PcD On/ Off"
+                                            "label": "R16384: PcD On/ Off",
                                         },
                                         {
                                             "id": 944,
@@ -3293,7 +3285,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9008: Step frequenza PdC"
+                                            "label": "R9008: Step frequenza PdC",
                                         },
                                         {
                                             "id": 980,
@@ -3315,7 +3307,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16515: Set di Rugiada/Umidita"
+                                            "label": "R16515: Set di Rugiada/Umidita",
                                         },
                                         {
                                             "id": 910,
@@ -3337,7 +3329,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -3359,7 +3351,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -3381,7 +3373,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
                                         },
                                         {
                                             "id": 918,
@@ -3403,7 +3395,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8698: Massima Potenza Installata"
+                                            "label": "R8698: Massima Potenza Installata",
                                         },
                                         {
                                             "id": 908,
@@ -3425,7 +3417,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8986: Temperatura Esterna PdC"
+                                            "label": "R8986: Temperatura Esterna PdC",
                                         },
                                         {
                                             "id": 925,
@@ -3447,7 +3439,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 914,
@@ -3469,7 +3461,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8987: Temperatura uscita acqua PdC"
+                                            "label": "R8987: Temperatura uscita acqua PdC",
                                         },
                                         {
                                             "id": 837,
@@ -3492,7 +3484,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16385: PcD Stagione"
+                                            "label": "R16385: PcD Stagione",
                                         },
                                         {
                                             "id": 902,
@@ -3513,7 +3505,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 913,
@@ -3535,7 +3527,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8988: Temperatura Ingresso acqua PdC"
+                                            "label": "R8988: Temperatura Ingresso acqua PdC",
                                         },
                                         {
                                             "id": 926,
@@ -3557,7 +3549,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
+                                            "label": "R9129: Potenza ",
                                         },
                                         {
                                             "id": 838,
@@ -3578,7 +3570,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9096: Allarme temperatura ingresso acqua"
+                                            "label": "R9096: Allarme temperatura ingresso acqua",
                                         },
                                         {
                                             "id": 924,
@@ -3600,7 +3592,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9127: "
+                                            "label": "R9127: ",
                                         },
                                         {
                                             "id": 839,
@@ -3621,7 +3613,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9097: Allarme temperatura uscita acqua"
+                                            "label": "R9097: Allarme temperatura uscita acqua",
                                         },
                                         {
                                             "id": 840,
@@ -3642,7 +3634,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9095: Allarme temperatura esterna"
+                                            "label": "R9095: Allarme temperatura esterna",
                                         },
                                         {
                                             "id": 841,
@@ -3663,7 +3655,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9098: Allarme temperatura sanitaria"
+                                            "label": "R9098: Allarme temperatura sanitaria",
                                         },
                                         {
                                             "id": 842,
@@ -3684,7 +3676,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9099: Allarme PdC"
+                                            "label": "R9099: Allarme PdC",
                                         },
                                         {
                                             "id": 848,
@@ -3705,7 +3697,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9090: Allarme accumolo inerziale"
+                                            "label": "R9090: Allarme accumolo inerziale",
                                         },
                                         {
                                             "id": 843,
@@ -3726,7 +3718,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9089: Allarme temperatura ritorno impianto radiante"
+                                            "label": "R9089: Allarme temperatura ritorno impianto radiante",
                                         },
                                         {
                                             "id": 844,
@@ -3747,7 +3739,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9104: Allarme basso flusso"
+                                            "label": "R9104: Allarme basso flusso",
                                         },
                                         {
                                             "id": 845,
@@ -3768,7 +3760,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9102: Allarme bassa temperatura acqua"
+                                            "label": "R9102: Allarme bassa temperatura acqua",
                                         },
                                         {
                                             "id": 846,
@@ -3789,10 +3781,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9103: Allarme alta temperatura acqua"
-                                        }
+                                            "label": "R9103: Allarme alta temperatura acqua",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079"
+                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079",
                                 },
                                 {
                                     "inputGroupCode": "FB-AMB-DT",
@@ -3821,7 +3813,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8684: Set temperatura comfort (Estate)"
+                                            "label": "R8684: Set temperatura comfort (Estate)",
                                         },
                                         {
                                             "id": 970,
@@ -3843,7 +3835,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8688: Set temperatura comfort (Inverno)"
+                                            "label": "R8688: Set temperatura comfort (Inverno)",
                                         },
                                         {
                                             "id": 971,
@@ -3865,7 +3857,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8685: Orario di Inizio comfort (Estate)"
+                                            "label": "R8685: Orario di Inizio comfort (Estate)",
                                         },
                                         {
                                             "id": 972,
@@ -3887,7 +3879,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8689: Orario di Inizio comfort (Inverno)"
+                                            "label": "R8689: Orario di Inizio comfort (Inverno)",
                                         },
                                         {
                                             "id": 973,
@@ -3909,7 +3901,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8686: Set Attenuazione (Estate)"
+                                            "label": "R8686: Set Attenuazione (Estate)",
                                         },
                                         {
                                             "id": 974,
@@ -3931,7 +3923,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8690: Set Attenuazione (Inverno)"
+                                            "label": "R8690: Set Attenuazione (Inverno)",
                                         },
                                         {
                                             "id": 975,
@@ -3953,7 +3945,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8687: Orario Attenuazione (Estate)"
+                                            "label": "R8687: Orario Attenuazione (Estate)",
                                         },
                                         {
                                             "id": 976,
@@ -3975,7 +3967,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8691: Orario Attenuazione (Inverno)"
+                                            "label": "R8691: Orario Attenuazione (Inverno)",
                                         },
                                         {
                                             "id": 978,
@@ -3996,7 +3988,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8660: Set umidità estate (SetRh_E)"
+                                            "label": "R8660: Set umidità estate (SetRh_E)",
                                         },
                                         {
                                             "id": 979,
@@ -4017,7 +4009,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8661: Set umidità inverno (SetRh_I)"
+                                            "label": "R8661: Set umidità inverno (SetRh_I)",
                                         },
                                         {
                                             "id": 902,
@@ -4038,7 +4030,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 903,
@@ -4059,36 +4051,36 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8692: Boost"
-                                        }
+                                            "label": "R8692: Boost",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-AMB-DT@D3085@T9076"
-                                }
+                                    "inputGroupGetCode": "FB-AMB-DT@D3085@T9076",
+                                },
                             ],
                             "inputGroupGetCodeList": [
                                 "FB-AMB-DT@D3085@T9076",
                                 "FB-HP-SUPP@D3085@T9079",
-                                "FB-AMB-SUMM@D3085@T9076"
+                                "FB-AMB-SUMM@D3085@T9076",
                             ],
-                            "label": "FBW-DEV-HOME: Febos Device"
+                            "label": "FBW-DEV-HOME: Febos Device",
                         }
                     ],
                     "inputGroupGetCodeMap": {
                         "3085": [
                             "FB-AMB-DT@D3085@T9076",
                             "FB-HP-SUPP@D3085@T9079",
-                            "FB-AMB-SUMM@D3085@T9076"
+                            "FB-AMB-SUMM@D3085@T9076",
                         ]
                     },
-                    "label": "TAB-DEV-LIST: Febos Lista device"
+                    "label": "TAB-DEV-LIST: Febos Lista device",
                 }
             ],
             "inputGroupGetCodeList": [
                 "FB-AMB-DT@D3085@T9076",
                 "FB-AMB-SUMM@D3085@T9076",
-                "FB-HP-SUPP@D3085@T9079"
+                "FB-HP-SUPP@D3085@T9079",
             ],
-            "label": "FBDEVLIST: Febos Device List"
+            "label": "FBDEVLIST: Febos Device List",
         },
         "FBEPRELWK_D3085_T9078": {
             "id": 240619,
@@ -4099,7 +4091,7 @@ PAGE_CONFIG_RESPONSE = {
             "pageType": "PT_THING",
             "tabList": [],
             "inputGroupGetCodeList": [],
-            "label": "FBEPRELWK_D3085_T9078: Febos Relay Week"
+            "label": "FBEPRELWK_D3085_T9078: Febos Relay Week",
         },
         "FBEP_D3085_T9078": {
             "id": 240618,
@@ -4152,7 +4144,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 927,
@@ -4175,7 +4167,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R16384: PcD On/ Off"
+                                            "label": "R16384: PcD On/ Off",
                                         },
                                         {
                                             "id": 434,
@@ -4197,7 +4189,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8101: Energia attiva positiva TAE1 (Word più significativa)"
+                                            "label": "R8101: Energia attiva positiva TAE1 (Word più significativa)",
                                         },
                                         {
                                             "id": 435,
@@ -4219,7 +4211,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8102: Energia attiva positiva TAE1 (Word meno significativa)"
+                                            "label": "R8102: Energia attiva positiva TAE1 (Word meno significativa)",
                                         },
                                         {
                                             "id": 436,
@@ -4241,7 +4233,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8103: Energia attiva negativa TAE1 (Word più significativa)"
+                                            "label": "R8103: Energia attiva negativa TAE1 (Word più significativa)",
                                         },
                                         {
                                             "id": 437,
@@ -4263,7 +4255,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8104: Energia attiva negativa TAE1 (Word meno significativa)"
+                                            "label": "R8104: Energia attiva negativa TAE1 (Word meno significativa)",
                                         },
                                         {
                                             "id": 438,
@@ -4285,7 +4277,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8105: Potenza attiva TAE1"
+                                            "label": "R8105: Potenza attiva TAE1",
                                         },
                                         {
                                             "id": 439,
@@ -4307,7 +4299,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8106: Energia attiva positiva TAE2 (Word più significativa)"
+                                            "label": "R8106: Energia attiva positiva TAE2 (Word più significativa)",
                                         },
                                         {
                                             "id": 440,
@@ -4329,7 +4321,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8107: Energia attiva positiva TAE2 (Word meno significativa)"
+                                            "label": "R8107: Energia attiva positiva TAE2 (Word meno significativa)",
                                         },
                                         {
                                             "id": 441,
@@ -4351,7 +4343,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8108: Energia attiva negativa TAE2 (Word più significativa)"
+                                            "label": "R8108: Energia attiva negativa TAE2 (Word più significativa)",
                                         },
                                         {
                                             "id": 442,
@@ -4373,7 +4365,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8109: Energia attiva negativa TAE2 (Word meno significativa)"
+                                            "label": "R8109: Energia attiva negativa TAE2 (Word meno significativa)",
                                         },
                                         {
                                             "id": 443,
@@ -4395,7 +4387,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8110: Potenza attiva TAE2"
+                                            "label": "R8110: Potenza attiva TAE2",
                                         },
                                         {
                                             "id": 444,
@@ -4417,7 +4409,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8111: Corrente TAE1"
+                                            "label": "R8111: Corrente TAE1",
                                         },
                                         {
                                             "id": 445,
@@ -4439,7 +4431,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8112: Corrente TAE2"
+                                            "label": "R8112: Corrente TAE2",
                                         },
                                         {
                                             "id": 446,
@@ -4461,7 +4453,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8113: Sfasamento TAE1"
+                                            "label": "R8113: Sfasamento TAE1",
                                         },
                                         {
                                             "id": 447,
@@ -4483,7 +4475,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8114: Sfasamento TAE2"
+                                            "label": "R8114: Sfasamento TAE2",
                                         },
                                         {
                                             "id": 783,
@@ -4507,7 +4499,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "CT_VPN_IP: OpenVPN IP Address"
+                                            "label": "CT_VPN_IP: OpenVPN IP Address",
                                         },
                                         {
                                             "id": 782,
@@ -4531,7 +4523,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "CT_UPTIME: Uptime"
+                                            "label": "CT_UPTIME: Uptime",
                                         },
                                         {
                                             "id": 925,
@@ -4553,7 +4545,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 926,
@@ -4575,7 +4567,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
+                                            "label": "R9129: Potenza ",
                                         },
                                         {
                                             "id": 533,
@@ -4597,7 +4589,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8200: Superparametro 1"
+                                            "label": "R8200: Superparametro 1",
                                         },
                                         {
                                             "id": 534,
@@ -4619,7 +4611,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8201: Superparametro 2"
+                                            "label": "R8201: Superparametro 2",
                                         },
                                         {
                                             "id": 535,
@@ -4641,7 +4633,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8202: Superparametro 3"
+                                            "label": "R8202: Superparametro 3",
                                         },
                                         {
                                             "id": 536,
@@ -4663,7 +4655,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8203: Offset sonda NTC1"
+                                            "label": "R8203: Offset sonda NTC1",
                                         },
                                         {
                                             "id": 537,
@@ -4685,7 +4677,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8204: Offset sonda NTC2"
+                                            "label": "R8204: Offset sonda NTC2",
                                         },
                                         {
                                             "id": 538,
@@ -4707,7 +4699,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8205: not used"
+                                            "label": "R8205: not used",
                                         },
                                         {
                                             "id": 539,
@@ -4729,7 +4721,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8206: not used"
+                                            "label": "R8206: not used",
                                         },
                                         {
                                             "id": 540,
@@ -4751,7 +4743,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8207: not used"
+                                            "label": "R8207: not used",
                                         },
                                         {
                                             "id": 541,
@@ -4773,7 +4765,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8208: Minima durata impulso contatore HP"
+                                            "label": "R8208: Minima durata impulso contatore HP",
                                         },
                                         {
                                             "id": 542,
@@ -4795,7 +4787,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8209: Massima durata impulso contatore HP"
+                                            "label": "R8209: Massima durata impulso contatore HP",
                                         },
                                         {
                                             "id": 543,
@@ -4817,7 +4809,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8210: Valore corrispondente ad 1 impulso"
+                                            "label": "R8210: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 544,
@@ -4839,7 +4831,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8211: Minima durata impulso contatore Presa"
+                                            "label": "R8211: Minima durata impulso contatore Presa",
                                         },
                                         {
                                             "id": 545,
@@ -4861,7 +4853,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8212: Massima durata impulso contatore Presa"
+                                            "label": "R8212: Massima durata impulso contatore Presa",
                                         },
                                         {
                                             "id": 546,
@@ -4883,7 +4875,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8213: Valore corrispondente ad 1 impulso"
+                                            "label": "R8213: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 547,
@@ -4905,7 +4897,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8214: Minima durata impulso contatore FV"
+                                            "label": "R8214: Minima durata impulso contatore FV",
                                         },
                                         {
                                             "id": 548,
@@ -4927,7 +4919,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8215: Massima durata impulso contatore FV"
+                                            "label": "R8215: Massima durata impulso contatore FV",
                                         },
                                         {
                                             "id": 549,
@@ -4949,7 +4941,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8216: Valore corrispondente ad 1 impulso"
+                                            "label": "R8216: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 550,
@@ -4971,7 +4963,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8217: Minima durata impulso contatore Casa"
+                                            "label": "R8217: Minima durata impulso contatore Casa",
                                         },
                                         {
                                             "id": 551,
@@ -4993,7 +4985,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8218: Massima durata impulso contatore Casa"
+                                            "label": "R8218: Massima durata impulso contatore Casa",
                                         },
                                         {
                                             "id": 552,
@@ -5015,7 +5007,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8219: Valore corrispondente ad 1 impulso"
+                                            "label": "R8219: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 553,
@@ -5038,7 +5030,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8220: Potenza di riferimento HP (in KW)"
+                                            "label": "R8220: Potenza di riferimento HP (in KW)",
                                         },
                                         {
                                             "id": 554,
@@ -5061,7 +5053,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8221: Potenza di riferimento Presa (in KW)"
+                                            "label": "R8221: Potenza di riferimento Presa (in KW)",
                                         },
                                         {
                                             "id": 555,
@@ -5084,7 +5076,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8222: Potenza di riferimento FV (in KW)"
+                                            "label": "R8222: Potenza di riferimento FV (in KW)",
                                         },
                                         {
                                             "id": 556,
@@ -5107,7 +5099,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8223: Potenza di riferimento Casa (in KW)"
+                                            "label": "R8223: Potenza di riferimento Casa (in KW)",
                                         },
                                         {
                                             "id": 633,
@@ -5128,7 +5120,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8300: N. impulsi scartati perchè corti FV"
+                                            "label": "R8300: N. impulsi scartati perchè corti FV",
                                         },
                                         {
                                             "id": 634,
@@ -5149,7 +5141,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8301: N. impulsi scartati perchè lunghi FV"
+                                            "label": "R8301: N. impulsi scartati perchè lunghi FV",
                                         },
                                         {
                                             "id": 635,
@@ -5170,7 +5162,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8302: N. impulsi scartati perchè troppo vicini FV"
+                                            "label": "R8302: N. impulsi scartati perchè troppo vicini FV",
                                         },
                                         {
                                             "id": 636,
@@ -5191,7 +5183,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8303: N. impulsi scartati perchè corti CASA"
+                                            "label": "R8303: N. impulsi scartati perchè corti CASA",
                                         },
                                         {
                                             "id": 637,
@@ -5212,7 +5204,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8304: N. impulsi scartati perchè lunghi CASA"
+                                            "label": "R8304: N. impulsi scartati perchè lunghi CASA",
                                         },
                                         {
                                             "id": 638,
@@ -5233,7 +5225,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8305: N. impulsi scartati perchè troppo vicini CASA"
+                                            "label": "R8305: N. impulsi scartati perchè troppo vicini CASA",
                                         },
                                         {
                                             "id": 639,
@@ -5254,7 +5246,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8306: N. impulsi scartati perchè corti HP"
+                                            "label": "R8306: N. impulsi scartati perchè corti HP",
                                         },
                                         {
                                             "id": 640,
@@ -5275,7 +5267,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8307: N. impulsi scartati perchè lunghi HP"
+                                            "label": "R8307: N. impulsi scartati perchè lunghi HP",
                                         },
                                         {
                                             "id": 641,
@@ -5296,7 +5288,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8308: N. impulsi scartati perchè troppo vicini HP"
+                                            "label": "R8308: N. impulsi scartati perchè troppo vicini HP",
                                         },
                                         {
                                             "id": 642,
@@ -5317,7 +5309,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8309: N. impulsi scartati perchè corti PRESA"
+                                            "label": "R8309: N. impulsi scartati perchè corti PRESA",
                                         },
                                         {
                                             "id": 643,
@@ -5338,7 +5330,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8310: N. impulsi scartati perchè lunghi PRESA"
+                                            "label": "R8310: N. impulsi scartati perchè lunghi PRESA",
                                         },
                                         {
                                             "id": 644,
@@ -5359,7 +5351,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8311: N. impulsi scartati perchè troppo vicini PRESA"
+                                            "label": "R8311: N. impulsi scartati perchè troppo vicini PRESA",
                                         },
                                         {
                                             "id": 733,
@@ -5380,7 +5372,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8400: Calibrazione tensione CH1"
+                                            "label": "R8400: Calibrazione tensione CH1",
                                         },
                                         {
                                             "id": 734,
@@ -5401,7 +5393,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8401: Calibrazione corrente CH1"
+                                            "label": "R8401: Calibrazione corrente CH1",
                                         },
                                         {
                                             "id": 735,
@@ -5422,7 +5414,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8402: Calibrazione corrente CH2"
+                                            "label": "R8402: Calibrazione corrente CH2",
                                         },
                                         {
                                             "id": 736,
@@ -5443,7 +5435,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8403: Offset potenza attiva CH1"
+                                            "label": "R8403: Offset potenza attiva CH1",
                                         },
                                         {
                                             "id": 737,
@@ -5464,7 +5456,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8404: Offset potenza attiva CH2"
+                                            "label": "R8404: Offset potenza attiva CH2",
                                         },
                                         {
                                             "id": 738,
@@ -5485,7 +5477,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8405: Compensazione fase tensione CH1"
+                                            "label": "R8405: Compensazione fase tensione CH1",
                                         },
                                         {
                                             "id": 739,
@@ -5506,7 +5498,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8406: Compensazione fase corrente CH1"
+                                            "label": "R8406: Compensazione fase corrente CH1",
                                         },
                                         {
                                             "id": 740,
@@ -5527,7 +5519,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8407: Compensazione fase corrente CH2"
+                                            "label": "R8407: Compensazione fase corrente CH2",
                                         },
                                         {
                                             "id": 741,
@@ -5548,7 +5540,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8408: Contenuto del registro di taratura della tensione CH1"
+                                            "label": "R8408: Contenuto del registro di taratura della tensione CH1",
                                         },
                                         {
                                             "id": 742,
@@ -5569,7 +5561,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8409: Contenuto del registro di taratura della corrente CH1 (Word più significativa)"
+                                            "label": "R8409: Contenuto del registro di taratura della corrente CH1 (Word più significativa)",
                                         },
                                         {
                                             "id": 743,
@@ -5590,7 +5582,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8410: Contenuto del registro di taratura della corrente CH1 (Word meno significativa)"
+                                            "label": "R8410: Contenuto del registro di taratura della corrente CH1 (Word meno significativa)",
                                         },
                                         {
                                             "id": 744,
@@ -5611,7 +5603,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8411: Contenuto del registro di taratura della corrente CH2 (Word più significativa)"
+                                            "label": "R8411: Contenuto del registro di taratura della corrente CH2 (Word più significativa)",
                                         },
                                         {
                                             "id": 745,
@@ -5632,7 +5624,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8412: Contenuto del registro di taratura della corrente CH2 (Word meno significativa)"
+                                            "label": "R8412: Contenuto del registro di taratura della corrente CH2 (Word meno significativa)",
                                         },
                                         {
                                             "id": 746,
@@ -5653,7 +5645,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8413: Contenuto del registro di taratura dello sfasamento relativo a CH1"
+                                            "label": "R8413: Contenuto del registro di taratura dello sfasamento relativo a CH1",
                                         },
                                         {
                                             "id": 747,
@@ -5674,10 +5666,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8414: Contenuto del registro di taratura dello sfasamento relativo a CH2"
-                                        }
+                                            "label": "R8414: Contenuto del registro di taratura dello sfasamento relativo a CH2",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-EP-SUMM@D3085@T9078"
+                                    "inputGroupGetCode": "FB-EP-SUMM@D3085@T9078",
                                 },
                                 {
                                     "inputGroupCode": "FB-EP-SUPP",
@@ -5706,7 +5698,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 438,
@@ -5728,7 +5720,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8105: Potenza attiva TAE1"
+                                            "label": "R8105: Potenza attiva TAE1",
                                         },
                                         {
                                             "id": 443,
@@ -5750,7 +5742,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8110: Potenza attiva TAE2"
+                                            "label": "R8110: Potenza attiva TAE2",
                                         },
                                         {
                                             "id": 815,
@@ -5772,7 +5764,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8002: Potenza Media DIE1"
+                                            "label": "R8002: Potenza Media DIE1",
                                         },
                                         {
                                             "id": 818,
@@ -5794,7 +5786,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8005: Potenza Media DIE2"
+                                            "label": "R8005: Potenza Media DIE2",
                                         },
                                         {
                                             "id": 821,
@@ -5816,7 +5808,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8008: Potenza Media DIE3"
+                                            "label": "R8008: Potenza Media DIE3",
                                         },
                                         {
                                             "id": 823,
@@ -5838,7 +5830,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8011: Potenza Media DIE4"
+                                            "label": "R8011: Potenza Media DIE4",
                                         },
                                         {
                                             "id": 910,
@@ -5860,7 +5852,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -5882,7 +5874,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -5904,7 +5896,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
                                         },
                                         {
                                             "id": 913,
@@ -5926,7 +5918,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8988: Temperatura Ingresso acqua PdC"
+                                            "label": "R8988: Temperatura Ingresso acqua PdC",
                                         },
                                         {
                                             "id": 914,
@@ -5948,7 +5940,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8987: Temperatura uscita acqua PdC"
+                                            "label": "R8987: Temperatura uscita acqua PdC",
                                         },
                                         {
                                             "id": 918,
@@ -5970,7 +5962,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8698: Massima Potenza Installata"
+                                            "label": "R8698: Massima Potenza Installata",
                                         },
                                         {
                                             "id": 920,
@@ -5992,7 +5984,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 924,
@@ -6014,7 +6006,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9127: "
+                                            "label": "R9127: ",
                                         },
                                         {
                                             "id": 925,
@@ -6036,7 +6028,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 926,
@@ -6058,10 +6050,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
-                                        }
+                                            "label": "R9129: Potenza ",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-EP-SUPP@D3085@T9078"
+                                    "inputGroupGetCode": "FB-EP-SUPP@D3085@T9078",
                                 },
                                 {
                                     "inputGroupCode": "FB-AMB-SUPP",
@@ -6089,7 +6081,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8638: Configurazione potenze 1"
+                                            "label": "R8638: Configurazione potenze 1",
                                         },
                                         {
                                             "id": 936,
@@ -6110,7 +6102,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8639: Configurazione potenze 2"
+                                            "label": "R8639: Configurazione potenze 2",
                                         },
                                         {
                                             "id": 937,
@@ -6131,7 +6123,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8640: Configurazione potenze 3"
+                                            "label": "R8640: Configurazione potenze 3",
                                         },
                                         {
                                             "id": 938,
@@ -6152,7 +6144,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8641: Configurazione potenze 4"
+                                            "label": "R8641: Configurazione potenze 4",
                                         },
                                         {
                                             "id": 939,
@@ -6173,7 +6165,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8642: Configurazione potenze 5"
+                                            "label": "R8642: Configurazione potenze 5",
                                         },
                                         {
                                             "id": 940,
@@ -6194,7 +6186,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8648: Stagione"
+                                            "label": "R8648: Stagione",
                                         },
                                         {
                                             "id": 941,
@@ -6215,7 +6207,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8664: Nome Febos Crono"
+                                            "label": "R8664: Nome Febos Crono",
                                         },
                                         {
                                             "id": 942,
@@ -6236,7 +6228,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8665: Massima potenza fornita"
+                                            "label": "R8665: Massima potenza fornita",
                                         },
                                         {
                                             "id": 943,
@@ -6257,7 +6249,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8666: Potenza FV installata"
+                                            "label": "R8666: Potenza FV installata",
                                         },
                                         {
                                             "id": 902,
@@ -6278,36 +6270,36 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
-                                        }
+                                            "label": "R8683: Stagione",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-AMB-SUPP@D3085@T9076"
-                                }
+                                    "inputGroupGetCode": "FB-AMB-SUPP@D3085@T9076",
+                                },
                             ],
                             "inputGroupGetCodeList": [
                                 "FB-EP-SUPP@D3085@T9078",
                                 "FB-AMB-SUPP@D3085@T9076",
-                                "FB-EP-SUMM@D3085@T9078"
+                                "FB-EP-SUMM@D3085@T9078",
                             ],
-                            "label": "FBW-EP-DT-PWR: Febos Electric Power Detail Power"
+                            "label": "FBW-EP-DT-PWR: Febos Electric Power Detail Power",
                         }
                     ],
                     "inputGroupGetCodeMap": {
                         "3085": [
                             "FB-EP-SUPP@D3085@T9078",
                             "FB-AMB-SUPP@D3085@T9076",
-                            "FB-EP-SUMM@D3085@T9078"
+                            "FB-EP-SUMM@D3085@T9078",
                         ]
                     },
-                    "label": "TAB-EP-PWR: Febos EP"
+                    "label": "TAB-EP-PWR: Febos EP",
                 }
             ],
             "inputGroupGetCodeList": [
                 "FB-AMB-SUPP@D3085@T9076",
                 "FB-EP-SUMM@D3085@T9078",
-                "FB-EP-SUPP@D3085@T9078"
+                "FB-EP-SUPP@D3085@T9078",
             ],
-            "label": "FBEP_D3085_T9078: Febos Electric Power"
+            "label": "FBEP_D3085_T9078: Febos Electric Power",
         },
         "FBGRAPH_D3085": {
             "id": 240620,
@@ -6359,7 +6351,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8750: Temperatura Sensore FC_T"
+                                            "label": "R8750: Temperatura Sensore FC_T",
                                         },
                                         {
                                             "id": 1001,
@@ -6380,7 +6372,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8751: Umidità Sensore FC_Rh"
+                                            "label": "R8751: Umidità Sensore FC_Rh",
                                         },
                                         {
                                             "id": 1002,
@@ -6401,7 +6393,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8752: Dew Point FC_DWP"
+                                            "label": "R8752: Dew Point FC_DWP",
                                         },
                                         {
                                             "id": 1003,
@@ -6422,7 +6414,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8753: Temperatura esterna"
+                                            "label": "R8753: Temperatura esterna",
                                         },
                                         {
                                             "id": 1004,
@@ -6443,7 +6435,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8754: Temperatura ingresso acqua"
+                                            "label": "R8754: Temperatura ingresso acqua",
                                         },
                                         {
                                             "id": 1005,
@@ -6464,7 +6456,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8755: Temperatura Acs"
+                                            "label": "R8755: Temperatura Acs",
                                         },
                                         {
                                             "id": 1006,
@@ -6484,7 +6476,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8756: Potenza prelevata dalla rete"
+                                            "label": "R8756: Potenza prelevata dalla rete",
                                         },
                                         {
                                             "id": 1007,
@@ -6504,7 +6496,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8757: Potenza immessa in rete"
+                                            "label": "R8757: Potenza immessa in rete",
                                         },
                                         {
                                             "id": 1008,
@@ -6524,7 +6516,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8758: Potenza_Home"
+                                            "label": "R8758: Potenza_Home",
                                         },
                                         {
                                             "id": 1009,
@@ -6544,7 +6536,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8759: Potenza_FV"
+                                            "label": "R8759: Potenza_FV",
                                         },
                                         {
                                             "id": 1010,
@@ -6564,7 +6556,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8760: Potenza_PDC"
+                                            "label": "R8760: Potenza_PDC",
                                         },
                                         {
                                             "id": 1011,
@@ -6584,7 +6576,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8761: Potenza_Acs"
+                                            "label": "R8761: Potenza_Acs",
                                         },
                                         {
                                             "id": 1012,
@@ -6604,7 +6596,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8762: Potenza_Presa1"
+                                            "label": "R8762: Potenza_Presa1",
                                         },
                                         {
                                             "id": 1013,
@@ -6624,7 +6616,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8763: Potenza_Risc_Pdc"
+                                            "label": "R8763: Potenza_Risc_Pdc",
                                         },
                                         {
                                             "id": 1014,
@@ -6644,7 +6636,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8764: Potenza_Raff_Pdc"
+                                            "label": "R8764: Potenza_Raff_Pdc",
                                         },
                                         {
                                             "id": 1015,
@@ -6664,7 +6656,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8765: Energia prelevata dalla rete"
+                                            "label": "R8765: Energia prelevata dalla rete",
                                         },
                                         {
                                             "id": 1016,
@@ -6684,7 +6676,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8766: Energia immessa in rete"
+                                            "label": "R8766: Energia immessa in rete",
                                         },
                                         {
                                             "id": 1017,
@@ -6704,7 +6696,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8767: Energia_Home"
+                                            "label": "R8767: Energia_Home",
                                         },
                                         {
                                             "id": 1018,
@@ -6724,7 +6716,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8768: Energia_FV"
+                                            "label": "R8768: Energia_FV",
                                         },
                                         {
                                             "id": 1019,
@@ -6744,7 +6736,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8769: Energia_PdC"
+                                            "label": "R8769: Energia_PdC",
                                         },
                                         {
                                             "id": 1020,
@@ -6764,7 +6756,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8770: Energia_ACS"
+                                            "label": "R8770: Energia_ACS",
                                         },
                                         {
                                             "id": 1021,
@@ -6784,7 +6776,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8771: Energia_Presa"
+                                            "label": "R8771: Energia_Presa",
                                         },
                                         {
                                             "id": 1022,
@@ -6804,7 +6796,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8772: Energia_Risc_Pdc"
+                                            "label": "R8772: Energia_Risc_Pdc",
                                         },
                                         {
                                             "id": 1023,
@@ -6824,7 +6816,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8773: Energia_Raff_Pdc"
+                                            "label": "R8773: Energia_Raff_Pdc",
                                         },
                                         {
                                             "id": 1024,
@@ -6844,30 +6836,22 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8774: EER/COP"
-                                        }
+                                            "label": "R8774: EER/COP",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-GRAPH-DATA@D3085@T9076"
+                                    "inputGroupGetCode": "FB-GRAPH-DATA@D3085@T9076",
                                 }
                             ],
-                            "inputGroupGetCodeList": [
-                                "FB-GRAPH-DATA@D3085@T9076"
-                            ],
-                            "label": "FBW-GRAPH: Febos Grafico"
+                            "inputGroupGetCodeList": ["FB-GRAPH-DATA@D3085@T9076"],
+                            "label": "FBW-GRAPH: Febos Grafico",
                         }
                     ],
-                    "inputGroupGetCodeMap": {
-                        "3085": [
-                            "FB-GRAPH-DATA@D3085@T9076"
-                        ]
-                    },
-                    "label": "TAB-GRAPH: Febos Grafici"
+                    "inputGroupGetCodeMap": {"3085": ["FB-GRAPH-DATA@D3085@T9076"]},
+                    "label": "TAB-GRAPH: Febos Grafici",
                 }
             ],
-            "inputGroupGetCodeList": [
-                "FB-GRAPH-DATA@D3085@T9076"
-            ],
-            "label": "FBGRAPH_D3085: Febos GRAPH"
+            "inputGroupGetCodeList": ["FB-GRAPH-DATA@D3085@T9076"],
+            "label": "FBGRAPH_D3085: Febos GRAPH",
         },
         "FBHOME_D3085": {
             "id": 240614,
@@ -6920,7 +6904,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8678: Temperatura Sensore FC"
+                                            "label": "R8678: Temperatura Sensore FC",
                                         },
                                         {
                                             "id": 897,
@@ -6942,7 +6926,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8670: Offset Temperatura Sensore FC"
+                                            "label": "R8670: Offset Temperatura Sensore FC",
                                         },
                                         {
                                             "id": 898,
@@ -6964,7 +6948,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8679: Umidita Sensore FC"
+                                            "label": "R8679: Umidita Sensore FC",
                                         },
                                         {
                                             "id": 899,
@@ -6986,7 +6970,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8671: Offset Umidita Sensore FC"
+                                            "label": "R8671: Offset Umidita Sensore FC",
                                         },
                                         {
                                             "id": 836,
@@ -7006,7 +6990,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8600: Data produzione (parte alta)"
+                                            "label": "R8600: Data produzione (parte alta)",
                                         },
                                         {
                                             "id": 931,
@@ -7028,7 +7012,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8702: Set Temperatura FC Visualizzato"
+                                            "label": "R8702: Set Temperatura FC Visualizzato",
                                         },
                                         {
                                             "id": 932,
@@ -7050,7 +7034,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8703: Temperatura Sensore FC Visualizzata"
+                                            "label": "R8703: Temperatura Sensore FC Visualizzata",
                                         },
                                         {
                                             "id": 933,
@@ -7072,7 +7056,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8704: Umidita Sensore FC Visualizzata"
+                                            "label": "R8704: Umidita Sensore FC Visualizzata",
                                         },
                                         {
                                             "id": 900,
@@ -7093,7 +7077,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8681: Chiamata Temperatura"
+                                            "label": "R8681: Chiamata Temperatura",
                                         },
                                         {
                                             "id": 901,
@@ -7114,7 +7098,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8682: Chiamata Umidita "
+                                            "label": "R8682: Chiamata Umidita ",
                                         },
                                         {
                                             "id": 902,
@@ -7135,7 +7119,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 904,
@@ -7157,7 +7141,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8672: Stato contatto finestra"
+                                            "label": "R8672: Stato contatto finestra",
                                         },
                                         {
                                             "id": 905,
@@ -7179,7 +7163,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8673: Stato contatto presenza AUTOMATICO"
+                                            "label": "R8673: Stato contatto presenza AUTOMATICO",
                                         },
                                         {
                                             "id": 906,
@@ -7201,7 +7185,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8676: Stato contatto presenza MANUALE"
+                                            "label": "R8676: Stato contatto presenza MANUALE",
                                         },
                                         {
                                             "id": 907,
@@ -7223,7 +7207,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8680: DWP"
+                                            "label": "R8680: DWP",
                                         },
                                         {
                                             "id": 908,
@@ -7245,10 +7229,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8986: Temperatura Esterna PdC"
-                                        }
+                                            "label": "R8986: Temperatura Esterna PdC",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-AMB-SUMM@D3085@T9076"
+                                    "inputGroupGetCode": "FB-AMB-SUMM@D3085@T9076",
                                 },
                                 {
                                     "inputGroupCode": "FB-HP-SUMM",
@@ -7277,7 +7261,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 433,
@@ -7299,7 +7283,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 438,
@@ -7321,7 +7305,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8105: Potenza attiva TAE1"
+                                            "label": "R8105: Potenza attiva TAE1",
                                         },
                                         {
                                             "id": 443,
@@ -7343,7 +7327,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8110: Potenza attiva TAE2"
+                                            "label": "R8110: Potenza attiva TAE2",
                                         },
                                         {
                                             "id": 815,
@@ -7365,7 +7349,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8002: Potenza Media DIE1"
+                                            "label": "R8002: Potenza Media DIE1",
                                         },
                                         {
                                             "id": 818,
@@ -7387,7 +7371,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8005: Potenza Media DIE2"
+                                            "label": "R8005: Potenza Media DIE2",
                                         },
                                         {
                                             "id": 837,
@@ -7410,7 +7394,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16385: PcD Stagione"
+                                            "label": "R16385: PcD Stagione",
                                         },
                                         {
                                             "id": 821,
@@ -7432,7 +7416,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8008: Potenza Media DIE3"
+                                            "label": "R8008: Potenza Media DIE3",
                                         },
                                         {
                                             "id": 823,
@@ -7454,7 +7438,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8011: Potenza Media DIE4"
+                                            "label": "R8011: Potenza Media DIE4",
                                         },
                                         {
                                             "id": 838,
@@ -7475,7 +7459,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9096: Allarme temperatura ingresso acqua"
+                                            "label": "R9096: Allarme temperatura ingresso acqua",
                                         },
                                         {
                                             "id": 839,
@@ -7496,7 +7480,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9097: Allarme temperatura uscita acqua"
+                                            "label": "R9097: Allarme temperatura uscita acqua",
                                         },
                                         {
                                             "id": 840,
@@ -7517,7 +7501,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9095: Allarme temperatura esterna"
+                                            "label": "R9095: Allarme temperatura esterna",
                                         },
                                         {
                                             "id": 841,
@@ -7538,7 +7522,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9098: Allarme temperatura sanitaria"
+                                            "label": "R9098: Allarme temperatura sanitaria",
                                         },
                                         {
                                             "id": 842,
@@ -7559,7 +7543,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9099: Allarme PdC"
+                                            "label": "R9099: Allarme PdC",
                                         },
                                         {
                                             "id": 843,
@@ -7580,7 +7564,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9089: Allarme temperatura ritorno impianto radiante"
+                                            "label": "R9089: Allarme temperatura ritorno impianto radiante",
                                         },
                                         {
                                             "id": 848,
@@ -7601,7 +7585,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9090: Allarme accumolo inerziale"
+                                            "label": "R9090: Allarme accumolo inerziale",
                                         },
                                         {
                                             "id": 844,
@@ -7622,7 +7606,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9104: Allarme basso flusso"
+                                            "label": "R9104: Allarme basso flusso",
                                         },
                                         {
                                             "id": 845,
@@ -7643,7 +7627,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9102: Allarme bassa temperatura acqua"
+                                            "label": "R9102: Allarme bassa temperatura acqua",
                                         },
                                         {
                                             "id": 846,
@@ -7664,7 +7648,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9103: Allarme alta temperatura acqua"
+                                            "label": "R9103: Allarme alta temperatura acqua",
                                         },
                                         {
                                             "id": 935,
@@ -7685,7 +7669,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8638: Configurazione potenze 1"
+                                            "label": "R8638: Configurazione potenze 1",
                                         },
                                         {
                                             "id": 936,
@@ -7706,7 +7690,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8639: Configurazione potenze 2"
+                                            "label": "R8639: Configurazione potenze 2",
                                         },
                                         {
                                             "id": 902,
@@ -7727,7 +7711,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 937,
@@ -7748,7 +7732,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8640: Configurazione potenze 3"
+                                            "label": "R8640: Configurazione potenze 3",
                                         },
                                         {
                                             "id": 938,
@@ -7769,7 +7753,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8641: Configurazione potenze 4"
+                                            "label": "R8641: Configurazione potenze 4",
                                         },
                                         {
                                             "id": 939,
@@ -7790,7 +7774,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8642: Configurazione potenze 5"
+                                            "label": "R8642: Configurazione potenze 5",
                                         },
                                         {
                                             "id": 940,
@@ -7811,7 +7795,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8648: Stagione"
+                                            "label": "R8648: Stagione",
                                         },
                                         {
                                             "id": 941,
@@ -7832,7 +7816,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8664: Nome Febos Crono"
+                                            "label": "R8664: Nome Febos Crono",
                                         },
                                         {
                                             "id": 942,
@@ -7853,7 +7837,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8665: Massima potenza fornita"
+                                            "label": "R8665: Massima potenza fornita",
                                         },
                                         {
                                             "id": 909,
@@ -7875,7 +7859,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9120: Portata acqua PdC"
+                                            "label": "R9120: Portata acqua PdC",
                                         },
                                         {
                                             "id": 910,
@@ -7897,7 +7881,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -7919,7 +7903,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -7941,10 +7925,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
-                                        }
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HP-SUMM@D3085@T9079"
+                                    "inputGroupGetCode": "FB-HP-SUMM@D3085@T9079",
                                 },
                                 {
                                     "inputGroupCode": "FB-AMB-DT",
@@ -7973,7 +7957,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8684: Set temperatura comfort (Estate)"
+                                            "label": "R8684: Set temperatura comfort (Estate)",
                                         },
                                         {
                                             "id": 970,
@@ -7995,7 +7979,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8688: Set temperatura comfort (Inverno)"
+                                            "label": "R8688: Set temperatura comfort (Inverno)",
                                         },
                                         {
                                             "id": 971,
@@ -8017,7 +8001,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8685: Orario di Inizio comfort (Estate)"
+                                            "label": "R8685: Orario di Inizio comfort (Estate)",
                                         },
                                         {
                                             "id": 972,
@@ -8039,7 +8023,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8689: Orario di Inizio comfort (Inverno)"
+                                            "label": "R8689: Orario di Inizio comfort (Inverno)",
                                         },
                                         {
                                             "id": 973,
@@ -8061,7 +8045,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8686: Set Attenuazione (Estate)"
+                                            "label": "R8686: Set Attenuazione (Estate)",
                                         },
                                         {
                                             "id": 974,
@@ -8083,7 +8067,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8690: Set Attenuazione (Inverno)"
+                                            "label": "R8690: Set Attenuazione (Inverno)",
                                         },
                                         {
                                             "id": 975,
@@ -8105,7 +8089,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8687: Orario Attenuazione (Estate)"
+                                            "label": "R8687: Orario Attenuazione (Estate)",
                                         },
                                         {
                                             "id": 976,
@@ -8127,7 +8111,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8691: Orario Attenuazione (Inverno)"
+                                            "label": "R8691: Orario Attenuazione (Inverno)",
                                         },
                                         {
                                             "id": 978,
@@ -8148,7 +8132,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8660: Set umidità estate (SetRh_E)"
+                                            "label": "R8660: Set umidità estate (SetRh_E)",
                                         },
                                         {
                                             "id": 979,
@@ -8169,7 +8153,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8661: Set umidità inverno (SetRh_I)"
+                                            "label": "R8661: Set umidità inverno (SetRh_I)",
                                         },
                                         {
                                             "id": 902,
@@ -8190,7 +8174,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 903,
@@ -8211,18 +8195,18 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8692: Boost"
-                                        }
+                                            "label": "R8692: Boost",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-AMB-DT@D3085@T9076"
-                                }
+                                    "inputGroupGetCode": "FB-AMB-DT@D3085@T9076",
+                                },
                             ],
                             "inputGroupGetCodeList": [
                                 "FB-HP-SUMM@D3085@T9079",
                                 "FB-AMB-DT@D3085@T9076",
-                                "FB-AMB-SUMM@D3085@T9076"
+                                "FB-AMB-SUMM@D3085@T9076",
                             ],
-                            "label": "FBW-AMB-HOME: Febos Ambiente"
+                            "label": "FBW-AMB-HOME: Febos Ambiente",
                         },
                         {
                             "id": 455480,
@@ -8260,7 +8244,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 433,
@@ -8282,7 +8266,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 438,
@@ -8304,7 +8288,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8105: Potenza attiva TAE1"
+                                            "label": "R8105: Potenza attiva TAE1",
                                         },
                                         {
                                             "id": 443,
@@ -8326,7 +8310,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8110: Potenza attiva TAE2"
+                                            "label": "R8110: Potenza attiva TAE2",
                                         },
                                         {
                                             "id": 815,
@@ -8348,7 +8332,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8002: Potenza Media DIE1"
+                                            "label": "R8002: Potenza Media DIE1",
                                         },
                                         {
                                             "id": 818,
@@ -8370,7 +8354,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8005: Potenza Media DIE2"
+                                            "label": "R8005: Potenza Media DIE2",
                                         },
                                         {
                                             "id": 837,
@@ -8393,7 +8377,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16385: PcD Stagione"
+                                            "label": "R16385: PcD Stagione",
                                         },
                                         {
                                             "id": 821,
@@ -8415,7 +8399,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8008: Potenza Media DIE3"
+                                            "label": "R8008: Potenza Media DIE3",
                                         },
                                         {
                                             "id": 823,
@@ -8437,7 +8421,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8011: Potenza Media DIE4"
+                                            "label": "R8011: Potenza Media DIE4",
                                         },
                                         {
                                             "id": 838,
@@ -8458,7 +8442,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9096: Allarme temperatura ingresso acqua"
+                                            "label": "R9096: Allarme temperatura ingresso acqua",
                                         },
                                         {
                                             "id": 839,
@@ -8479,7 +8463,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9097: Allarme temperatura uscita acqua"
+                                            "label": "R9097: Allarme temperatura uscita acqua",
                                         },
                                         {
                                             "id": 840,
@@ -8500,7 +8484,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9095: Allarme temperatura esterna"
+                                            "label": "R9095: Allarme temperatura esterna",
                                         },
                                         {
                                             "id": 841,
@@ -8521,7 +8505,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9098: Allarme temperatura sanitaria"
+                                            "label": "R9098: Allarme temperatura sanitaria",
                                         },
                                         {
                                             "id": 842,
@@ -8542,7 +8526,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9099: Allarme PdC"
+                                            "label": "R9099: Allarme PdC",
                                         },
                                         {
                                             "id": 843,
@@ -8563,7 +8547,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9089: Allarme temperatura ritorno impianto radiante"
+                                            "label": "R9089: Allarme temperatura ritorno impianto radiante",
                                         },
                                         {
                                             "id": 848,
@@ -8584,7 +8568,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9090: Allarme accumolo inerziale"
+                                            "label": "R9090: Allarme accumolo inerziale",
                                         },
                                         {
                                             "id": 844,
@@ -8605,7 +8589,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9104: Allarme basso flusso"
+                                            "label": "R9104: Allarme basso flusso",
                                         },
                                         {
                                             "id": 845,
@@ -8626,7 +8610,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9102: Allarme bassa temperatura acqua"
+                                            "label": "R9102: Allarme bassa temperatura acqua",
                                         },
                                         {
                                             "id": 846,
@@ -8647,7 +8631,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9103: Allarme alta temperatura acqua"
+                                            "label": "R9103: Allarme alta temperatura acqua",
                                         },
                                         {
                                             "id": 935,
@@ -8668,7 +8652,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8638: Configurazione potenze 1"
+                                            "label": "R8638: Configurazione potenze 1",
                                         },
                                         {
                                             "id": 936,
@@ -8689,7 +8673,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8639: Configurazione potenze 2"
+                                            "label": "R8639: Configurazione potenze 2",
                                         },
                                         {
                                             "id": 902,
@@ -8710,7 +8694,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 937,
@@ -8731,7 +8715,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8640: Configurazione potenze 3"
+                                            "label": "R8640: Configurazione potenze 3",
                                         },
                                         {
                                             "id": 938,
@@ -8752,7 +8736,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8641: Configurazione potenze 4"
+                                            "label": "R8641: Configurazione potenze 4",
                                         },
                                         {
                                             "id": 939,
@@ -8773,7 +8757,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8642: Configurazione potenze 5"
+                                            "label": "R8642: Configurazione potenze 5",
                                         },
                                         {
                                             "id": 940,
@@ -8794,7 +8778,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8648: Stagione"
+                                            "label": "R8648: Stagione",
                                         },
                                         {
                                             "id": 941,
@@ -8815,7 +8799,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8664: Nome Febos Crono"
+                                            "label": "R8664: Nome Febos Crono",
                                         },
                                         {
                                             "id": 942,
@@ -8836,7 +8820,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8665: Massima potenza fornita"
+                                            "label": "R8665: Massima potenza fornita",
                                         },
                                         {
                                             "id": 909,
@@ -8858,7 +8842,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9120: Portata acqua PdC"
+                                            "label": "R9120: Portata acqua PdC",
                                         },
                                         {
                                             "id": 910,
@@ -8880,7 +8864,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -8902,7 +8886,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -8924,10 +8908,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
-                                        }
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HP-SUMM@D3085@T9079"
+                                    "inputGroupGetCode": "FB-HP-SUMM@D3085@T9079",
                                 },
                                 {
                                     "inputGroupCode": "FB-EP-SUPP",
@@ -8956,7 +8940,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 438,
@@ -8978,7 +8962,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8105: Potenza attiva TAE1"
+                                            "label": "R8105: Potenza attiva TAE1",
                                         },
                                         {
                                             "id": 443,
@@ -9000,7 +8984,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8110: Potenza attiva TAE2"
+                                            "label": "R8110: Potenza attiva TAE2",
                                         },
                                         {
                                             "id": 815,
@@ -9022,7 +9006,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8002: Potenza Media DIE1"
+                                            "label": "R8002: Potenza Media DIE1",
                                         },
                                         {
                                             "id": 818,
@@ -9044,7 +9028,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8005: Potenza Media DIE2"
+                                            "label": "R8005: Potenza Media DIE2",
                                         },
                                         {
                                             "id": 821,
@@ -9066,7 +9050,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8008: Potenza Media DIE3"
+                                            "label": "R8008: Potenza Media DIE3",
                                         },
                                         {
                                             "id": 823,
@@ -9088,7 +9072,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8011: Potenza Media DIE4"
+                                            "label": "R8011: Potenza Media DIE4",
                                         },
                                         {
                                             "id": 910,
@@ -9110,7 +9094,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -9132,7 +9116,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -9154,7 +9138,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
                                         },
                                         {
                                             "id": 913,
@@ -9176,7 +9160,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8988: Temperatura Ingresso acqua PdC"
+                                            "label": "R8988: Temperatura Ingresso acqua PdC",
                                         },
                                         {
                                             "id": 914,
@@ -9198,7 +9182,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8987: Temperatura uscita acqua PdC"
+                                            "label": "R8987: Temperatura uscita acqua PdC",
                                         },
                                         {
                                             "id": 918,
@@ -9220,7 +9204,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8698: Massima Potenza Installata"
+                                            "label": "R8698: Massima Potenza Installata",
                                         },
                                         {
                                             "id": 920,
@@ -9242,7 +9226,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 924,
@@ -9264,7 +9248,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9127: "
+                                            "label": "R9127: ",
                                         },
                                         {
                                             "id": 925,
@@ -9286,7 +9270,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 926,
@@ -9308,10 +9292,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
-                                        }
+                                            "label": "R9129: Potenza ",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-EP-SUPP@D3085@T9078"
+                                    "inputGroupGetCode": "FB-EP-SUPP@D3085@T9078",
                                 },
                                 {
                                     "inputGroupCode": "FB-HP-SUPP",
@@ -9340,7 +9324,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9120: Portata acqua PdC"
+                                            "label": "R9120: Portata acqua PdC",
                                         },
                                         {
                                             "id": 920,
@@ -9362,7 +9346,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 927,
@@ -9385,7 +9369,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16384: PcD On/ Off"
+                                            "label": "R16384: PcD On/ Off",
                                         },
                                         {
                                             "id": 944,
@@ -9406,7 +9390,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9008: Step frequenza PdC"
+                                            "label": "R9008: Step frequenza PdC",
                                         },
                                         {
                                             "id": 980,
@@ -9428,7 +9412,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16515: Set di Rugiada/Umidita"
+                                            "label": "R16515: Set di Rugiada/Umidita",
                                         },
                                         {
                                             "id": 910,
@@ -9450,7 +9434,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -9472,7 +9456,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -9494,7 +9478,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
                                         },
                                         {
                                             "id": 918,
@@ -9516,7 +9500,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8698: Massima Potenza Installata"
+                                            "label": "R8698: Massima Potenza Installata",
                                         },
                                         {
                                             "id": 908,
@@ -9538,7 +9522,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8986: Temperatura Esterna PdC"
+                                            "label": "R8986: Temperatura Esterna PdC",
                                         },
                                         {
                                             "id": 925,
@@ -9560,7 +9544,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 914,
@@ -9582,7 +9566,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8987: Temperatura uscita acqua PdC"
+                                            "label": "R8987: Temperatura uscita acqua PdC",
                                         },
                                         {
                                             "id": 837,
@@ -9605,7 +9589,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16385: PcD Stagione"
+                                            "label": "R16385: PcD Stagione",
                                         },
                                         {
                                             "id": 902,
@@ -9626,7 +9610,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 913,
@@ -9648,7 +9632,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8988: Temperatura Ingresso acqua PdC"
+                                            "label": "R8988: Temperatura Ingresso acqua PdC",
                                         },
                                         {
                                             "id": 926,
@@ -9670,7 +9654,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
+                                            "label": "R9129: Potenza ",
                                         },
                                         {
                                             "id": 838,
@@ -9691,7 +9675,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9096: Allarme temperatura ingresso acqua"
+                                            "label": "R9096: Allarme temperatura ingresso acqua",
                                         },
                                         {
                                             "id": 924,
@@ -9713,7 +9697,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9127: "
+                                            "label": "R9127: ",
                                         },
                                         {
                                             "id": 839,
@@ -9734,7 +9718,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9097: Allarme temperatura uscita acqua"
+                                            "label": "R9097: Allarme temperatura uscita acqua",
                                         },
                                         {
                                             "id": 840,
@@ -9755,7 +9739,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9095: Allarme temperatura esterna"
+                                            "label": "R9095: Allarme temperatura esterna",
                                         },
                                         {
                                             "id": 841,
@@ -9776,7 +9760,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9098: Allarme temperatura sanitaria"
+                                            "label": "R9098: Allarme temperatura sanitaria",
                                         },
                                         {
                                             "id": 842,
@@ -9797,7 +9781,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9099: Allarme PdC"
+                                            "label": "R9099: Allarme PdC",
                                         },
                                         {
                                             "id": 848,
@@ -9818,7 +9802,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9090: Allarme accumolo inerziale"
+                                            "label": "R9090: Allarme accumolo inerziale",
                                         },
                                         {
                                             "id": 843,
@@ -9839,7 +9823,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9089: Allarme temperatura ritorno impianto radiante"
+                                            "label": "R9089: Allarme temperatura ritorno impianto radiante",
                                         },
                                         {
                                             "id": 844,
@@ -9860,7 +9844,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9104: Allarme basso flusso"
+                                            "label": "R9104: Allarme basso flusso",
                                         },
                                         {
                                             "id": 845,
@@ -9881,7 +9865,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9102: Allarme bassa temperatura acqua"
+                                            "label": "R9102: Allarme bassa temperatura acqua",
                                         },
                                         {
                                             "id": 846,
@@ -9902,10 +9886,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9103: Allarme alta temperatura acqua"
-                                        }
+                                            "label": "R9103: Allarme alta temperatura acqua",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079"
+                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079",
                                 },
                                 {
                                     "inputGroupCode": "FB-AMB-SUPP",
@@ -9933,7 +9917,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8638: Configurazione potenze 1"
+                                            "label": "R8638: Configurazione potenze 1",
                                         },
                                         {
                                             "id": 936,
@@ -9954,7 +9938,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8639: Configurazione potenze 2"
+                                            "label": "R8639: Configurazione potenze 2",
                                         },
                                         {
                                             "id": 937,
@@ -9975,7 +9959,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8640: Configurazione potenze 3"
+                                            "label": "R8640: Configurazione potenze 3",
                                         },
                                         {
                                             "id": 938,
@@ -9996,7 +9980,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8641: Configurazione potenze 4"
+                                            "label": "R8641: Configurazione potenze 4",
                                         },
                                         {
                                             "id": 939,
@@ -10017,7 +10001,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8642: Configurazione potenze 5"
+                                            "label": "R8642: Configurazione potenze 5",
                                         },
                                         {
                                             "id": 940,
@@ -10038,7 +10022,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8648: Stagione"
+                                            "label": "R8648: Stagione",
                                         },
                                         {
                                             "id": 941,
@@ -10059,7 +10043,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8664: Nome Febos Crono"
+                                            "label": "R8664: Nome Febos Crono",
                                         },
                                         {
                                             "id": 942,
@@ -10080,7 +10064,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8665: Massima potenza fornita"
+                                            "label": "R8665: Massima potenza fornita",
                                         },
                                         {
                                             "id": 943,
@@ -10101,7 +10085,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8666: Potenza FV installata"
+                                            "label": "R8666: Potenza FV installata",
                                         },
                                         {
                                             "id": 902,
@@ -10122,19 +10106,19 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
-                                        }
+                                            "label": "R8683: Stagione",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-AMB-SUPP@D3085@T9076"
-                                }
+                                    "inputGroupGetCode": "FB-AMB-SUPP@D3085@T9076",
+                                },
                             ],
                             "inputGroupGetCodeList": [
                                 "FB-HP-SUMM@D3085@T9079",
                                 "FB-HP-SUPP@D3085@T9079",
                                 "FB-EP-SUPP@D3085@T9078",
-                                "FB-AMB-SUPP@D3085@T9076"
+                                "FB-AMB-SUPP@D3085@T9076",
                             ],
-                            "label": "FBW-HP-HOME: Febos Heat Pump"
+                            "label": "FBW-HP-HOME: Febos Heat Pump",
                         },
                         {
                             "id": 455481,
@@ -10172,7 +10156,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R8989: Temperatura ACS"
+                                            "label": "R8989: Temperatura ACS",
                                         },
                                         {
                                             "id": 920,
@@ -10194,7 +10178,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 921,
@@ -10216,7 +10200,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R9073: ECO HOT Water"
+                                            "label": "R9073: ECO HOT Water",
                                         },
                                         {
                                             "id": 922,
@@ -10238,7 +10222,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R9072: 3-vie ACS"
+                                            "label": "R9072: 3-vie ACS",
                                         },
                                         {
                                             "id": 923,
@@ -10260,10 +10244,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R9074: Resistenza Elettrica"
-                                        }
+                                            "label": "R9074: Resistenza Elettrica",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HW-SUMM@D3085@T9077"
+                                    "inputGroupGetCode": "FB-HW-SUMM@D3085@T9077",
                                 },
                                 {
                                     "inputGroupCode": "FB-EP-SUMM",
@@ -10292,7 +10276,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 927,
@@ -10315,7 +10299,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R16384: PcD On/ Off"
+                                            "label": "R16384: PcD On/ Off",
                                         },
                                         {
                                             "id": 434,
@@ -10337,7 +10321,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8101: Energia attiva positiva TAE1 (Word più significativa)"
+                                            "label": "R8101: Energia attiva positiva TAE1 (Word più significativa)",
                                         },
                                         {
                                             "id": 435,
@@ -10359,7 +10343,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8102: Energia attiva positiva TAE1 (Word meno significativa)"
+                                            "label": "R8102: Energia attiva positiva TAE1 (Word meno significativa)",
                                         },
                                         {
                                             "id": 436,
@@ -10381,7 +10365,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8103: Energia attiva negativa TAE1 (Word più significativa)"
+                                            "label": "R8103: Energia attiva negativa TAE1 (Word più significativa)",
                                         },
                                         {
                                             "id": 437,
@@ -10403,7 +10387,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8104: Energia attiva negativa TAE1 (Word meno significativa)"
+                                            "label": "R8104: Energia attiva negativa TAE1 (Word meno significativa)",
                                         },
                                         {
                                             "id": 438,
@@ -10425,7 +10409,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8105: Potenza attiva TAE1"
+                                            "label": "R8105: Potenza attiva TAE1",
                                         },
                                         {
                                             "id": 439,
@@ -10447,7 +10431,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8106: Energia attiva positiva TAE2 (Word più significativa)"
+                                            "label": "R8106: Energia attiva positiva TAE2 (Word più significativa)",
                                         },
                                         {
                                             "id": 440,
@@ -10469,7 +10453,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8107: Energia attiva positiva TAE2 (Word meno significativa)"
+                                            "label": "R8107: Energia attiva positiva TAE2 (Word meno significativa)",
                                         },
                                         {
                                             "id": 441,
@@ -10491,7 +10475,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8108: Energia attiva negativa TAE2 (Word più significativa)"
+                                            "label": "R8108: Energia attiva negativa TAE2 (Word più significativa)",
                                         },
                                         {
                                             "id": 442,
@@ -10513,7 +10497,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8109: Energia attiva negativa TAE2 (Word meno significativa)"
+                                            "label": "R8109: Energia attiva negativa TAE2 (Word meno significativa)",
                                         },
                                         {
                                             "id": 443,
@@ -10535,7 +10519,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8110: Potenza attiva TAE2"
+                                            "label": "R8110: Potenza attiva TAE2",
                                         },
                                         {
                                             "id": 444,
@@ -10557,7 +10541,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8111: Corrente TAE1"
+                                            "label": "R8111: Corrente TAE1",
                                         },
                                         {
                                             "id": 445,
@@ -10579,7 +10563,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8112: Corrente TAE2"
+                                            "label": "R8112: Corrente TAE2",
                                         },
                                         {
                                             "id": 446,
@@ -10601,7 +10585,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8113: Sfasamento TAE1"
+                                            "label": "R8113: Sfasamento TAE1",
                                         },
                                         {
                                             "id": 447,
@@ -10623,7 +10607,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8114: Sfasamento TAE2"
+                                            "label": "R8114: Sfasamento TAE2",
                                         },
                                         {
                                             "id": 783,
@@ -10647,7 +10631,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "CT_VPN_IP: OpenVPN IP Address"
+                                            "label": "CT_VPN_IP: OpenVPN IP Address",
                                         },
                                         {
                                             "id": 782,
@@ -10671,7 +10655,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "CT_UPTIME: Uptime"
+                                            "label": "CT_UPTIME: Uptime",
                                         },
                                         {
                                             "id": 925,
@@ -10693,7 +10677,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 926,
@@ -10715,7 +10699,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
+                                            "label": "R9129: Potenza ",
                                         },
                                         {
                                             "id": 533,
@@ -10737,7 +10721,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8200: Superparametro 1"
+                                            "label": "R8200: Superparametro 1",
                                         },
                                         {
                                             "id": 534,
@@ -10759,7 +10743,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8201: Superparametro 2"
+                                            "label": "R8201: Superparametro 2",
                                         },
                                         {
                                             "id": 535,
@@ -10781,7 +10765,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8202: Superparametro 3"
+                                            "label": "R8202: Superparametro 3",
                                         },
                                         {
                                             "id": 536,
@@ -10803,7 +10787,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8203: Offset sonda NTC1"
+                                            "label": "R8203: Offset sonda NTC1",
                                         },
                                         {
                                             "id": 537,
@@ -10825,7 +10809,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8204: Offset sonda NTC2"
+                                            "label": "R8204: Offset sonda NTC2",
                                         },
                                         {
                                             "id": 538,
@@ -10847,7 +10831,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8205: not used"
+                                            "label": "R8205: not used",
                                         },
                                         {
                                             "id": 539,
@@ -10869,7 +10853,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8206: not used"
+                                            "label": "R8206: not used",
                                         },
                                         {
                                             "id": 540,
@@ -10891,7 +10875,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8207: not used"
+                                            "label": "R8207: not used",
                                         },
                                         {
                                             "id": 541,
@@ -10913,7 +10897,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8208: Minima durata impulso contatore HP"
+                                            "label": "R8208: Minima durata impulso contatore HP",
                                         },
                                         {
                                             "id": 542,
@@ -10935,7 +10919,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8209: Massima durata impulso contatore HP"
+                                            "label": "R8209: Massima durata impulso contatore HP",
                                         },
                                         {
                                             "id": 543,
@@ -10957,7 +10941,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8210: Valore corrispondente ad 1 impulso"
+                                            "label": "R8210: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 544,
@@ -10979,7 +10963,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8211: Minima durata impulso contatore Presa"
+                                            "label": "R8211: Minima durata impulso contatore Presa",
                                         },
                                         {
                                             "id": 545,
@@ -11001,7 +10985,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8212: Massima durata impulso contatore Presa"
+                                            "label": "R8212: Massima durata impulso contatore Presa",
                                         },
                                         {
                                             "id": 546,
@@ -11023,7 +11007,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8213: Valore corrispondente ad 1 impulso"
+                                            "label": "R8213: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 547,
@@ -11045,7 +11029,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8214: Minima durata impulso contatore FV"
+                                            "label": "R8214: Minima durata impulso contatore FV",
                                         },
                                         {
                                             "id": 548,
@@ -11067,7 +11051,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8215: Massima durata impulso contatore FV"
+                                            "label": "R8215: Massima durata impulso contatore FV",
                                         },
                                         {
                                             "id": 549,
@@ -11089,7 +11073,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8216: Valore corrispondente ad 1 impulso"
+                                            "label": "R8216: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 550,
@@ -11111,7 +11095,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8217: Minima durata impulso contatore Casa"
+                                            "label": "R8217: Minima durata impulso contatore Casa",
                                         },
                                         {
                                             "id": 551,
@@ -11133,7 +11117,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8218: Massima durata impulso contatore Casa"
+                                            "label": "R8218: Massima durata impulso contatore Casa",
                                         },
                                         {
                                             "id": 552,
@@ -11155,7 +11139,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8219: Valore corrispondente ad 1 impulso"
+                                            "label": "R8219: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 553,
@@ -11178,7 +11162,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8220: Potenza di riferimento HP (in KW)"
+                                            "label": "R8220: Potenza di riferimento HP (in KW)",
                                         },
                                         {
                                             "id": 554,
@@ -11201,7 +11185,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8221: Potenza di riferimento Presa (in KW)"
+                                            "label": "R8221: Potenza di riferimento Presa (in KW)",
                                         },
                                         {
                                             "id": 555,
@@ -11224,7 +11208,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8222: Potenza di riferimento FV (in KW)"
+                                            "label": "R8222: Potenza di riferimento FV (in KW)",
                                         },
                                         {
                                             "id": 556,
@@ -11247,7 +11231,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8223: Potenza di riferimento Casa (in KW)"
+                                            "label": "R8223: Potenza di riferimento Casa (in KW)",
                                         },
                                         {
                                             "id": 633,
@@ -11268,7 +11252,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8300: N. impulsi scartati perchè corti FV"
+                                            "label": "R8300: N. impulsi scartati perchè corti FV",
                                         },
                                         {
                                             "id": 634,
@@ -11289,7 +11273,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8301: N. impulsi scartati perchè lunghi FV"
+                                            "label": "R8301: N. impulsi scartati perchè lunghi FV",
                                         },
                                         {
                                             "id": 635,
@@ -11310,7 +11294,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8302: N. impulsi scartati perchè troppo vicini FV"
+                                            "label": "R8302: N. impulsi scartati perchè troppo vicini FV",
                                         },
                                         {
                                             "id": 636,
@@ -11331,7 +11315,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8303: N. impulsi scartati perchè corti CASA"
+                                            "label": "R8303: N. impulsi scartati perchè corti CASA",
                                         },
                                         {
                                             "id": 637,
@@ -11352,7 +11336,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8304: N. impulsi scartati perchè lunghi CASA"
+                                            "label": "R8304: N. impulsi scartati perchè lunghi CASA",
                                         },
                                         {
                                             "id": 638,
@@ -11373,7 +11357,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8305: N. impulsi scartati perchè troppo vicini CASA"
+                                            "label": "R8305: N. impulsi scartati perchè troppo vicini CASA",
                                         },
                                         {
                                             "id": 639,
@@ -11394,7 +11378,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8306: N. impulsi scartati perchè corti HP"
+                                            "label": "R8306: N. impulsi scartati perchè corti HP",
                                         },
                                         {
                                             "id": 640,
@@ -11415,7 +11399,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8307: N. impulsi scartati perchè lunghi HP"
+                                            "label": "R8307: N. impulsi scartati perchè lunghi HP",
                                         },
                                         {
                                             "id": 641,
@@ -11436,7 +11420,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8308: N. impulsi scartati perchè troppo vicini HP"
+                                            "label": "R8308: N. impulsi scartati perchè troppo vicini HP",
                                         },
                                         {
                                             "id": 642,
@@ -11457,7 +11441,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8309: N. impulsi scartati perchè corti PRESA"
+                                            "label": "R8309: N. impulsi scartati perchè corti PRESA",
                                         },
                                         {
                                             "id": 643,
@@ -11478,7 +11462,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8310: N. impulsi scartati perchè lunghi PRESA"
+                                            "label": "R8310: N. impulsi scartati perchè lunghi PRESA",
                                         },
                                         {
                                             "id": 644,
@@ -11499,7 +11483,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8311: N. impulsi scartati perchè troppo vicini PRESA"
+                                            "label": "R8311: N. impulsi scartati perchè troppo vicini PRESA",
                                         },
                                         {
                                             "id": 733,
@@ -11520,7 +11504,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8400: Calibrazione tensione CH1"
+                                            "label": "R8400: Calibrazione tensione CH1",
                                         },
                                         {
                                             "id": 734,
@@ -11541,7 +11525,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8401: Calibrazione corrente CH1"
+                                            "label": "R8401: Calibrazione corrente CH1",
                                         },
                                         {
                                             "id": 735,
@@ -11562,7 +11546,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8402: Calibrazione corrente CH2"
+                                            "label": "R8402: Calibrazione corrente CH2",
                                         },
                                         {
                                             "id": 736,
@@ -11583,7 +11567,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8403: Offset potenza attiva CH1"
+                                            "label": "R8403: Offset potenza attiva CH1",
                                         },
                                         {
                                             "id": 737,
@@ -11604,7 +11588,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8404: Offset potenza attiva CH2"
+                                            "label": "R8404: Offset potenza attiva CH2",
                                         },
                                         {
                                             "id": 738,
@@ -11625,7 +11609,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8405: Compensazione fase tensione CH1"
+                                            "label": "R8405: Compensazione fase tensione CH1",
                                         },
                                         {
                                             "id": 739,
@@ -11646,7 +11630,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8406: Compensazione fase corrente CH1"
+                                            "label": "R8406: Compensazione fase corrente CH1",
                                         },
                                         {
                                             "id": 740,
@@ -11667,7 +11651,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8407: Compensazione fase corrente CH2"
+                                            "label": "R8407: Compensazione fase corrente CH2",
                                         },
                                         {
                                             "id": 741,
@@ -11688,7 +11672,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8408: Contenuto del registro di taratura della tensione CH1"
+                                            "label": "R8408: Contenuto del registro di taratura della tensione CH1",
                                         },
                                         {
                                             "id": 742,
@@ -11709,7 +11693,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8409: Contenuto del registro di taratura della corrente CH1 (Word più significativa)"
+                                            "label": "R8409: Contenuto del registro di taratura della corrente CH1 (Word più significativa)",
                                         },
                                         {
                                             "id": 743,
@@ -11730,7 +11714,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8410: Contenuto del registro di taratura della corrente CH1 (Word meno significativa)"
+                                            "label": "R8410: Contenuto del registro di taratura della corrente CH1 (Word meno significativa)",
                                         },
                                         {
                                             "id": 744,
@@ -11751,7 +11735,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8411: Contenuto del registro di taratura della corrente CH2 (Word più significativa)"
+                                            "label": "R8411: Contenuto del registro di taratura della corrente CH2 (Word più significativa)",
                                         },
                                         {
                                             "id": 745,
@@ -11772,7 +11756,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8412: Contenuto del registro di taratura della corrente CH2 (Word meno significativa)"
+                                            "label": "R8412: Contenuto del registro di taratura della corrente CH2 (Word meno significativa)",
                                         },
                                         {
                                             "id": 746,
@@ -11793,7 +11777,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8413: Contenuto del registro di taratura dello sfasamento relativo a CH1"
+                                            "label": "R8413: Contenuto del registro di taratura dello sfasamento relativo a CH1",
                                         },
                                         {
                                             "id": 747,
@@ -11814,10 +11798,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8414: Contenuto del registro di taratura dello sfasamento relativo a CH2"
-                                        }
+                                            "label": "R8414: Contenuto del registro di taratura dello sfasamento relativo a CH2",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-EP-SUMM@D3085@T9078"
+                                    "inputGroupGetCode": "FB-EP-SUMM@D3085@T9078",
                                 },
                                 {
                                     "inputGroupCode": "FB-EP-SUPP",
@@ -11846,7 +11830,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 438,
@@ -11868,7 +11852,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8105: Potenza attiva TAE1"
+                                            "label": "R8105: Potenza attiva TAE1",
                                         },
                                         {
                                             "id": 443,
@@ -11890,7 +11874,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8110: Potenza attiva TAE2"
+                                            "label": "R8110: Potenza attiva TAE2",
                                         },
                                         {
                                             "id": 815,
@@ -11912,7 +11896,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8002: Potenza Media DIE1"
+                                            "label": "R8002: Potenza Media DIE1",
                                         },
                                         {
                                             "id": 818,
@@ -11934,7 +11918,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8005: Potenza Media DIE2"
+                                            "label": "R8005: Potenza Media DIE2",
                                         },
                                         {
                                             "id": 821,
@@ -11956,7 +11940,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8008: Potenza Media DIE3"
+                                            "label": "R8008: Potenza Media DIE3",
                                         },
                                         {
                                             "id": 823,
@@ -11978,7 +11962,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8011: Potenza Media DIE4"
+                                            "label": "R8011: Potenza Media DIE4",
                                         },
                                         {
                                             "id": 910,
@@ -12000,7 +11984,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -12022,7 +12006,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -12044,7 +12028,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
                                         },
                                         {
                                             "id": 913,
@@ -12066,7 +12050,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8988: Temperatura Ingresso acqua PdC"
+                                            "label": "R8988: Temperatura Ingresso acqua PdC",
                                         },
                                         {
                                             "id": 914,
@@ -12088,7 +12072,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8987: Temperatura uscita acqua PdC"
+                                            "label": "R8987: Temperatura uscita acqua PdC",
                                         },
                                         {
                                             "id": 918,
@@ -12110,7 +12094,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8698: Massima Potenza Installata"
+                                            "label": "R8698: Massima Potenza Installata",
                                         },
                                         {
                                             "id": 920,
@@ -12132,7 +12116,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 924,
@@ -12154,7 +12138,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9127: "
+                                            "label": "R9127: ",
                                         },
                                         {
                                             "id": 925,
@@ -12176,7 +12160,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 926,
@@ -12198,10 +12182,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
-                                        }
+                                            "label": "R9129: Potenza ",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-EP-SUPP@D3085@T9078"
+                                    "inputGroupGetCode": "FB-EP-SUPP@D3085@T9078",
                                 },
                                 {
                                     "inputGroupCode": "FB-AMB-SUPP",
@@ -12229,7 +12213,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8638: Configurazione potenze 1"
+                                            "label": "R8638: Configurazione potenze 1",
                                         },
                                         {
                                             "id": 936,
@@ -12250,7 +12234,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8639: Configurazione potenze 2"
+                                            "label": "R8639: Configurazione potenze 2",
                                         },
                                         {
                                             "id": 937,
@@ -12271,7 +12255,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8640: Configurazione potenze 3"
+                                            "label": "R8640: Configurazione potenze 3",
                                         },
                                         {
                                             "id": 938,
@@ -12292,7 +12276,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8641: Configurazione potenze 4"
+                                            "label": "R8641: Configurazione potenze 4",
                                         },
                                         {
                                             "id": 939,
@@ -12313,7 +12297,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8642: Configurazione potenze 5"
+                                            "label": "R8642: Configurazione potenze 5",
                                         },
                                         {
                                             "id": 940,
@@ -12334,7 +12318,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8648: Stagione"
+                                            "label": "R8648: Stagione",
                                         },
                                         {
                                             "id": 941,
@@ -12355,7 +12339,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8664: Nome Febos Crono"
+                                            "label": "R8664: Nome Febos Crono",
                                         },
                                         {
                                             "id": 942,
@@ -12376,7 +12360,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8665: Massima potenza fornita"
+                                            "label": "R8665: Massima potenza fornita",
                                         },
                                         {
                                             "id": 943,
@@ -12397,7 +12381,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8666: Potenza FV installata"
+                                            "label": "R8666: Potenza FV installata",
                                         },
                                         {
                                             "id": 902,
@@ -12418,19 +12402,19 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
-                                        }
+                                            "label": "R8683: Stagione",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-AMB-SUPP@D3085@T9076"
-                                }
+                                    "inputGroupGetCode": "FB-AMB-SUPP@D3085@T9076",
+                                },
                             ],
                             "inputGroupGetCodeList": [
                                 "FB-HW-SUMM@D3085@T9077",
                                 "FB-EP-SUPP@D3085@T9078",
                                 "FB-AMB-SUPP@D3085@T9076",
-                                "FB-EP-SUMM@D3085@T9078"
+                                "FB-EP-SUMM@D3085@T9078",
                             ],
-                            "label": "FBW-HW-HOME: Febos Hot Water"
+                            "label": "FBW-HW-HOME: Febos Hot Water",
                         },
                         {
                             "id": 455482,
@@ -12468,7 +12452,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 927,
@@ -12491,7 +12475,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R16384: PcD On/ Off"
+                                            "label": "R16384: PcD On/ Off",
                                         },
                                         {
                                             "id": 434,
@@ -12513,7 +12497,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8101: Energia attiva positiva TAE1 (Word più significativa)"
+                                            "label": "R8101: Energia attiva positiva TAE1 (Word più significativa)",
                                         },
                                         {
                                             "id": 435,
@@ -12535,7 +12519,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8102: Energia attiva positiva TAE1 (Word meno significativa)"
+                                            "label": "R8102: Energia attiva positiva TAE1 (Word meno significativa)",
                                         },
                                         {
                                             "id": 436,
@@ -12557,7 +12541,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8103: Energia attiva negativa TAE1 (Word più significativa)"
+                                            "label": "R8103: Energia attiva negativa TAE1 (Word più significativa)",
                                         },
                                         {
                                             "id": 437,
@@ -12579,7 +12563,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8104: Energia attiva negativa TAE1 (Word meno significativa)"
+                                            "label": "R8104: Energia attiva negativa TAE1 (Word meno significativa)",
                                         },
                                         {
                                             "id": 438,
@@ -12601,7 +12585,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8105: Potenza attiva TAE1"
+                                            "label": "R8105: Potenza attiva TAE1",
                                         },
                                         {
                                             "id": 439,
@@ -12623,7 +12607,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8106: Energia attiva positiva TAE2 (Word più significativa)"
+                                            "label": "R8106: Energia attiva positiva TAE2 (Word più significativa)",
                                         },
                                         {
                                             "id": 440,
@@ -12645,7 +12629,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8107: Energia attiva positiva TAE2 (Word meno significativa)"
+                                            "label": "R8107: Energia attiva positiva TAE2 (Word meno significativa)",
                                         },
                                         {
                                             "id": 441,
@@ -12667,7 +12651,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8108: Energia attiva negativa TAE2 (Word più significativa)"
+                                            "label": "R8108: Energia attiva negativa TAE2 (Word più significativa)",
                                         },
                                         {
                                             "id": 442,
@@ -12689,7 +12673,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8109: Energia attiva negativa TAE2 (Word meno significativa)"
+                                            "label": "R8109: Energia attiva negativa TAE2 (Word meno significativa)",
                                         },
                                         {
                                             "id": 443,
@@ -12711,7 +12695,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8110: Potenza attiva TAE2"
+                                            "label": "R8110: Potenza attiva TAE2",
                                         },
                                         {
                                             "id": 444,
@@ -12733,7 +12717,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8111: Corrente TAE1"
+                                            "label": "R8111: Corrente TAE1",
                                         },
                                         {
                                             "id": 445,
@@ -12755,7 +12739,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8112: Corrente TAE2"
+                                            "label": "R8112: Corrente TAE2",
                                         },
                                         {
                                             "id": 446,
@@ -12777,7 +12761,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8113: Sfasamento TAE1"
+                                            "label": "R8113: Sfasamento TAE1",
                                         },
                                         {
                                             "id": 447,
@@ -12799,7 +12783,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8114: Sfasamento TAE2"
+                                            "label": "R8114: Sfasamento TAE2",
                                         },
                                         {
                                             "id": 783,
@@ -12823,7 +12807,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "CT_VPN_IP: OpenVPN IP Address"
+                                            "label": "CT_VPN_IP: OpenVPN IP Address",
                                         },
                                         {
                                             "id": 782,
@@ -12847,7 +12831,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "CT_UPTIME: Uptime"
+                                            "label": "CT_UPTIME: Uptime",
                                         },
                                         {
                                             "id": 925,
@@ -12869,7 +12853,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 926,
@@ -12891,7 +12875,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
+                                            "label": "R9129: Potenza ",
                                         },
                                         {
                                             "id": 533,
@@ -12913,7 +12897,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8200: Superparametro 1"
+                                            "label": "R8200: Superparametro 1",
                                         },
                                         {
                                             "id": 534,
@@ -12935,7 +12919,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8201: Superparametro 2"
+                                            "label": "R8201: Superparametro 2",
                                         },
                                         {
                                             "id": 535,
@@ -12957,7 +12941,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8202: Superparametro 3"
+                                            "label": "R8202: Superparametro 3",
                                         },
                                         {
                                             "id": 536,
@@ -12979,7 +12963,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8203: Offset sonda NTC1"
+                                            "label": "R8203: Offset sonda NTC1",
                                         },
                                         {
                                             "id": 537,
@@ -13001,7 +12985,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8204: Offset sonda NTC2"
+                                            "label": "R8204: Offset sonda NTC2",
                                         },
                                         {
                                             "id": 538,
@@ -13023,7 +13007,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8205: not used"
+                                            "label": "R8205: not used",
                                         },
                                         {
                                             "id": 539,
@@ -13045,7 +13029,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8206: not used"
+                                            "label": "R8206: not used",
                                         },
                                         {
                                             "id": 540,
@@ -13067,7 +13051,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8207: not used"
+                                            "label": "R8207: not used",
                                         },
                                         {
                                             "id": 541,
@@ -13089,7 +13073,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8208: Minima durata impulso contatore HP"
+                                            "label": "R8208: Minima durata impulso contatore HP",
                                         },
                                         {
                                             "id": 542,
@@ -13111,7 +13095,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8209: Massima durata impulso contatore HP"
+                                            "label": "R8209: Massima durata impulso contatore HP",
                                         },
                                         {
                                             "id": 543,
@@ -13133,7 +13117,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8210: Valore corrispondente ad 1 impulso"
+                                            "label": "R8210: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 544,
@@ -13155,7 +13139,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8211: Minima durata impulso contatore Presa"
+                                            "label": "R8211: Minima durata impulso contatore Presa",
                                         },
                                         {
                                             "id": 545,
@@ -13177,7 +13161,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8212: Massima durata impulso contatore Presa"
+                                            "label": "R8212: Massima durata impulso contatore Presa",
                                         },
                                         {
                                             "id": 546,
@@ -13199,7 +13183,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8213: Valore corrispondente ad 1 impulso"
+                                            "label": "R8213: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 547,
@@ -13221,7 +13205,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8214: Minima durata impulso contatore FV"
+                                            "label": "R8214: Minima durata impulso contatore FV",
                                         },
                                         {
                                             "id": 548,
@@ -13243,7 +13227,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8215: Massima durata impulso contatore FV"
+                                            "label": "R8215: Massima durata impulso contatore FV",
                                         },
                                         {
                                             "id": 549,
@@ -13265,7 +13249,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8216: Valore corrispondente ad 1 impulso"
+                                            "label": "R8216: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 550,
@@ -13287,7 +13271,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8217: Minima durata impulso contatore Casa"
+                                            "label": "R8217: Minima durata impulso contatore Casa",
                                         },
                                         {
                                             "id": 551,
@@ -13309,7 +13293,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8218: Massima durata impulso contatore Casa"
+                                            "label": "R8218: Massima durata impulso contatore Casa",
                                         },
                                         {
                                             "id": 552,
@@ -13331,7 +13315,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8219: Valore corrispondente ad 1 impulso"
+                                            "label": "R8219: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 553,
@@ -13354,7 +13338,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8220: Potenza di riferimento HP (in KW)"
+                                            "label": "R8220: Potenza di riferimento HP (in KW)",
                                         },
                                         {
                                             "id": 554,
@@ -13377,7 +13361,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8221: Potenza di riferimento Presa (in KW)"
+                                            "label": "R8221: Potenza di riferimento Presa (in KW)",
                                         },
                                         {
                                             "id": 555,
@@ -13400,7 +13384,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8222: Potenza di riferimento FV (in KW)"
+                                            "label": "R8222: Potenza di riferimento FV (in KW)",
                                         },
                                         {
                                             "id": 556,
@@ -13423,7 +13407,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8223: Potenza di riferimento Casa (in KW)"
+                                            "label": "R8223: Potenza di riferimento Casa (in KW)",
                                         },
                                         {
                                             "id": 633,
@@ -13444,7 +13428,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8300: N. impulsi scartati perchè corti FV"
+                                            "label": "R8300: N. impulsi scartati perchè corti FV",
                                         },
                                         {
                                             "id": 634,
@@ -13465,7 +13449,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8301: N. impulsi scartati perchè lunghi FV"
+                                            "label": "R8301: N. impulsi scartati perchè lunghi FV",
                                         },
                                         {
                                             "id": 635,
@@ -13486,7 +13470,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8302: N. impulsi scartati perchè troppo vicini FV"
+                                            "label": "R8302: N. impulsi scartati perchè troppo vicini FV",
                                         },
                                         {
                                             "id": 636,
@@ -13507,7 +13491,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8303: N. impulsi scartati perchè corti CASA"
+                                            "label": "R8303: N. impulsi scartati perchè corti CASA",
                                         },
                                         {
                                             "id": 637,
@@ -13528,7 +13512,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8304: N. impulsi scartati perchè lunghi CASA"
+                                            "label": "R8304: N. impulsi scartati perchè lunghi CASA",
                                         },
                                         {
                                             "id": 638,
@@ -13549,7 +13533,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8305: N. impulsi scartati perchè troppo vicini CASA"
+                                            "label": "R8305: N. impulsi scartati perchè troppo vicini CASA",
                                         },
                                         {
                                             "id": 639,
@@ -13570,7 +13554,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8306: N. impulsi scartati perchè corti HP"
+                                            "label": "R8306: N. impulsi scartati perchè corti HP",
                                         },
                                         {
                                             "id": 640,
@@ -13591,7 +13575,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8307: N. impulsi scartati perchè lunghi HP"
+                                            "label": "R8307: N. impulsi scartati perchè lunghi HP",
                                         },
                                         {
                                             "id": 641,
@@ -13612,7 +13596,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8308: N. impulsi scartati perchè troppo vicini HP"
+                                            "label": "R8308: N. impulsi scartati perchè troppo vicini HP",
                                         },
                                         {
                                             "id": 642,
@@ -13633,7 +13617,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8309: N. impulsi scartati perchè corti PRESA"
+                                            "label": "R8309: N. impulsi scartati perchè corti PRESA",
                                         },
                                         {
                                             "id": 643,
@@ -13654,7 +13638,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8310: N. impulsi scartati perchè lunghi PRESA"
+                                            "label": "R8310: N. impulsi scartati perchè lunghi PRESA",
                                         },
                                         {
                                             "id": 644,
@@ -13675,7 +13659,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8311: N. impulsi scartati perchè troppo vicini PRESA"
+                                            "label": "R8311: N. impulsi scartati perchè troppo vicini PRESA",
                                         },
                                         {
                                             "id": 733,
@@ -13696,7 +13680,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8400: Calibrazione tensione CH1"
+                                            "label": "R8400: Calibrazione tensione CH1",
                                         },
                                         {
                                             "id": 734,
@@ -13717,7 +13701,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8401: Calibrazione corrente CH1"
+                                            "label": "R8401: Calibrazione corrente CH1",
                                         },
                                         {
                                             "id": 735,
@@ -13738,7 +13722,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8402: Calibrazione corrente CH2"
+                                            "label": "R8402: Calibrazione corrente CH2",
                                         },
                                         {
                                             "id": 736,
@@ -13759,7 +13743,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8403: Offset potenza attiva CH1"
+                                            "label": "R8403: Offset potenza attiva CH1",
                                         },
                                         {
                                             "id": 737,
@@ -13780,7 +13764,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8404: Offset potenza attiva CH2"
+                                            "label": "R8404: Offset potenza attiva CH2",
                                         },
                                         {
                                             "id": 738,
@@ -13801,7 +13785,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8405: Compensazione fase tensione CH1"
+                                            "label": "R8405: Compensazione fase tensione CH1",
                                         },
                                         {
                                             "id": 739,
@@ -13822,7 +13806,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8406: Compensazione fase corrente CH1"
+                                            "label": "R8406: Compensazione fase corrente CH1",
                                         },
                                         {
                                             "id": 740,
@@ -13843,7 +13827,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8407: Compensazione fase corrente CH2"
+                                            "label": "R8407: Compensazione fase corrente CH2",
                                         },
                                         {
                                             "id": 741,
@@ -13864,7 +13848,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8408: Contenuto del registro di taratura della tensione CH1"
+                                            "label": "R8408: Contenuto del registro di taratura della tensione CH1",
                                         },
                                         {
                                             "id": 742,
@@ -13885,7 +13869,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8409: Contenuto del registro di taratura della corrente CH1 (Word più significativa)"
+                                            "label": "R8409: Contenuto del registro di taratura della corrente CH1 (Word più significativa)",
                                         },
                                         {
                                             "id": 743,
@@ -13906,7 +13890,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8410: Contenuto del registro di taratura della corrente CH1 (Word meno significativa)"
+                                            "label": "R8410: Contenuto del registro di taratura della corrente CH1 (Word meno significativa)",
                                         },
                                         {
                                             "id": 744,
@@ -13927,7 +13911,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8411: Contenuto del registro di taratura della corrente CH2 (Word più significativa)"
+                                            "label": "R8411: Contenuto del registro di taratura della corrente CH2 (Word più significativa)",
                                         },
                                         {
                                             "id": 745,
@@ -13948,7 +13932,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8412: Contenuto del registro di taratura della corrente CH2 (Word meno significativa)"
+                                            "label": "R8412: Contenuto del registro di taratura della corrente CH2 (Word meno significativa)",
                                         },
                                         {
                                             "id": 746,
@@ -13969,7 +13953,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8413: Contenuto del registro di taratura dello sfasamento relativo a CH1"
+                                            "label": "R8413: Contenuto del registro di taratura dello sfasamento relativo a CH1",
                                         },
                                         {
                                             "id": 747,
@@ -13990,10 +13974,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8414: Contenuto del registro di taratura dello sfasamento relativo a CH2"
-                                        }
+                                            "label": "R8414: Contenuto del registro di taratura dello sfasamento relativo a CH2",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-EP-SUMM@D3085@T9078"
+                                    "inputGroupGetCode": "FB-EP-SUMM@D3085@T9078",
                                 },
                                 {
                                     "inputGroupCode": "FB-HP-SUPP",
@@ -14022,7 +14006,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9120: Portata acqua PdC"
+                                            "label": "R9120: Portata acqua PdC",
                                         },
                                         {
                                             "id": 920,
@@ -14044,7 +14028,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 927,
@@ -14067,7 +14051,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16384: PcD On/ Off"
+                                            "label": "R16384: PcD On/ Off",
                                         },
                                         {
                                             "id": 944,
@@ -14088,7 +14072,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9008: Step frequenza PdC"
+                                            "label": "R9008: Step frequenza PdC",
                                         },
                                         {
                                             "id": 980,
@@ -14110,7 +14094,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16515: Set di Rugiada/Umidita"
+                                            "label": "R16515: Set di Rugiada/Umidita",
                                         },
                                         {
                                             "id": 910,
@@ -14132,7 +14116,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -14154,7 +14138,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -14176,7 +14160,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
                                         },
                                         {
                                             "id": 918,
@@ -14198,7 +14182,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8698: Massima Potenza Installata"
+                                            "label": "R8698: Massima Potenza Installata",
                                         },
                                         {
                                             "id": 908,
@@ -14220,7 +14204,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8986: Temperatura Esterna PdC"
+                                            "label": "R8986: Temperatura Esterna PdC",
                                         },
                                         {
                                             "id": 925,
@@ -14242,7 +14226,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 914,
@@ -14264,7 +14248,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8987: Temperatura uscita acqua PdC"
+                                            "label": "R8987: Temperatura uscita acqua PdC",
                                         },
                                         {
                                             "id": 837,
@@ -14287,7 +14271,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16385: PcD Stagione"
+                                            "label": "R16385: PcD Stagione",
                                         },
                                         {
                                             "id": 902,
@@ -14308,7 +14292,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 913,
@@ -14330,7 +14314,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8988: Temperatura Ingresso acqua PdC"
+                                            "label": "R8988: Temperatura Ingresso acqua PdC",
                                         },
                                         {
                                             "id": 926,
@@ -14352,7 +14336,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
+                                            "label": "R9129: Potenza ",
                                         },
                                         {
                                             "id": 838,
@@ -14373,7 +14357,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9096: Allarme temperatura ingresso acqua"
+                                            "label": "R9096: Allarme temperatura ingresso acqua",
                                         },
                                         {
                                             "id": 924,
@@ -14395,7 +14379,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9127: "
+                                            "label": "R9127: ",
                                         },
                                         {
                                             "id": 839,
@@ -14416,7 +14400,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9097: Allarme temperatura uscita acqua"
+                                            "label": "R9097: Allarme temperatura uscita acqua",
                                         },
                                         {
                                             "id": 840,
@@ -14437,7 +14421,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9095: Allarme temperatura esterna"
+                                            "label": "R9095: Allarme temperatura esterna",
                                         },
                                         {
                                             "id": 841,
@@ -14458,7 +14442,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9098: Allarme temperatura sanitaria"
+                                            "label": "R9098: Allarme temperatura sanitaria",
                                         },
                                         {
                                             "id": 842,
@@ -14479,7 +14463,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9099: Allarme PdC"
+                                            "label": "R9099: Allarme PdC",
                                         },
                                         {
                                             "id": 848,
@@ -14500,7 +14484,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9090: Allarme accumolo inerziale"
+                                            "label": "R9090: Allarme accumolo inerziale",
                                         },
                                         {
                                             "id": 843,
@@ -14521,7 +14505,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9089: Allarme temperatura ritorno impianto radiante"
+                                            "label": "R9089: Allarme temperatura ritorno impianto radiante",
                                         },
                                         {
                                             "id": 844,
@@ -14542,7 +14526,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9104: Allarme basso flusso"
+                                            "label": "R9104: Allarme basso flusso",
                                         },
                                         {
                                             "id": 845,
@@ -14563,7 +14547,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9102: Allarme bassa temperatura acqua"
+                                            "label": "R9102: Allarme bassa temperatura acqua",
                                         },
                                         {
                                             "id": 846,
@@ -14584,10 +14568,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9103: Allarme alta temperatura acqua"
-                                        }
+                                            "label": "R9103: Allarme alta temperatura acqua",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079"
+                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079",
                                 },
                                 {
                                     "inputGroupCode": "FB-HW-SUMM",
@@ -14616,7 +14600,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R8989: Temperatura ACS"
+                                            "label": "R8989: Temperatura ACS",
                                         },
                                         {
                                             "id": 920,
@@ -14638,7 +14622,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 921,
@@ -14660,7 +14644,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R9073: ECO HOT Water"
+                                            "label": "R9073: ECO HOT Water",
                                         },
                                         {
                                             "id": 922,
@@ -14682,7 +14666,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R9072: 3-vie ACS"
+                                            "label": "R9072: 3-vie ACS",
                                         },
                                         {
                                             "id": 923,
@@ -14704,10 +14688,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R9074: Resistenza Elettrica"
-                                        }
+                                            "label": "R9074: Resistenza Elettrica",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HW-SUMM@D3085@T9077"
+                                    "inputGroupGetCode": "FB-HW-SUMM@D3085@T9077",
                                 },
                                 {
                                     "inputGroupCode": "FB-AMB-SUPP",
@@ -14735,7 +14719,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8638: Configurazione potenze 1"
+                                            "label": "R8638: Configurazione potenze 1",
                                         },
                                         {
                                             "id": 936,
@@ -14756,7 +14740,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8639: Configurazione potenze 2"
+                                            "label": "R8639: Configurazione potenze 2",
                                         },
                                         {
                                             "id": 937,
@@ -14777,7 +14761,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8640: Configurazione potenze 3"
+                                            "label": "R8640: Configurazione potenze 3",
                                         },
                                         {
                                             "id": 938,
@@ -14798,7 +14782,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8641: Configurazione potenze 4"
+                                            "label": "R8641: Configurazione potenze 4",
                                         },
                                         {
                                             "id": 939,
@@ -14819,7 +14803,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8642: Configurazione potenze 5"
+                                            "label": "R8642: Configurazione potenze 5",
                                         },
                                         {
                                             "id": 940,
@@ -14840,7 +14824,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8648: Stagione"
+                                            "label": "R8648: Stagione",
                                         },
                                         {
                                             "id": 941,
@@ -14861,7 +14845,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8664: Nome Febos Crono"
+                                            "label": "R8664: Nome Febos Crono",
                                         },
                                         {
                                             "id": 942,
@@ -14882,7 +14866,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8665: Massima potenza fornita"
+                                            "label": "R8665: Massima potenza fornita",
                                         },
                                         {
                                             "id": 943,
@@ -14903,7 +14887,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8666: Potenza FV installata"
+                                            "label": "R8666: Potenza FV installata",
                                         },
                                         {
                                             "id": 902,
@@ -14924,10 +14908,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
-                                        }
+                                            "label": "R8683: Stagione",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-AMB-SUPP@D3085@T9076"
+                                    "inputGroupGetCode": "FB-AMB-SUPP@D3085@T9076",
                                 },
                                 {
                                     "inputGroupCode": "FB-EP-SUPP",
@@ -14956,7 +14940,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 438,
@@ -14978,7 +14962,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8105: Potenza attiva TAE1"
+                                            "label": "R8105: Potenza attiva TAE1",
                                         },
                                         {
                                             "id": 443,
@@ -15000,7 +14984,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8110: Potenza attiva TAE2"
+                                            "label": "R8110: Potenza attiva TAE2",
                                         },
                                         {
                                             "id": 815,
@@ -15022,7 +15006,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8002: Potenza Media DIE1"
+                                            "label": "R8002: Potenza Media DIE1",
                                         },
                                         {
                                             "id": 818,
@@ -15044,7 +15028,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8005: Potenza Media DIE2"
+                                            "label": "R8005: Potenza Media DIE2",
                                         },
                                         {
                                             "id": 821,
@@ -15066,7 +15050,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8008: Potenza Media DIE3"
+                                            "label": "R8008: Potenza Media DIE3",
                                         },
                                         {
                                             "id": 823,
@@ -15088,7 +15072,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8011: Potenza Media DIE4"
+                                            "label": "R8011: Potenza Media DIE4",
                                         },
                                         {
                                             "id": 910,
@@ -15110,7 +15094,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -15132,7 +15116,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -15154,7 +15138,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
                                         },
                                         {
                                             "id": 913,
@@ -15176,7 +15160,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8988: Temperatura Ingresso acqua PdC"
+                                            "label": "R8988: Temperatura Ingresso acqua PdC",
                                         },
                                         {
                                             "id": 914,
@@ -15198,7 +15182,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8987: Temperatura uscita acqua PdC"
+                                            "label": "R8987: Temperatura uscita acqua PdC",
                                         },
                                         {
                                             "id": 918,
@@ -15220,7 +15204,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8698: Massima Potenza Installata"
+                                            "label": "R8698: Massima Potenza Installata",
                                         },
                                         {
                                             "id": 920,
@@ -15242,7 +15226,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 924,
@@ -15264,7 +15248,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9127: "
+                                            "label": "R9127: ",
                                         },
                                         {
                                             "id": 925,
@@ -15286,7 +15270,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 926,
@@ -15308,21 +15292,21 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
-                                        }
+                                            "label": "R9129: Potenza ",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-EP-SUPP@D3085@T9078"
-                                }
+                                    "inputGroupGetCode": "FB-EP-SUPP@D3085@T9078",
+                                },
                             ],
                             "inputGroupGetCodeList": [
                                 "FB-HP-SUPP@D3085@T9079",
                                 "FB-HW-SUMM@D3085@T9077",
                                 "FB-EP-SUPP@D3085@T9078",
                                 "FB-AMB-SUPP@D3085@T9076",
-                                "FB-EP-SUMM@D3085@T9078"
+                                "FB-EP-SUMM@D3085@T9078",
                             ],
-                            "label": "FBW-EP-HOME: Febos Electric Power"
-                        }
+                            "label": "FBW-EP-HOME: Febos Electric Power",
+                        },
                     ],
                     "inputGroupGetCodeMap": {
                         "3085": [
@@ -15333,10 +15317,10 @@ PAGE_CONFIG_RESPONSE = {
                             "FB-AMB-SUMM@D3085@T9076",
                             "FB-EP-SUPP@D3085@T9078",
                             "FB-AMB-SUPP@D3085@T9076",
-                            "FB-EP-SUMM@D3085@T9078"
+                            "FB-EP-SUMM@D3085@T9078",
                         ]
                     },
-                    "label": "TAB-HOME: Febos Crono"
+                    "label": "TAB-HOME: Febos Crono",
                 }
             ],
             "inputGroupGetCodeList": [
@@ -15347,9 +15331,9 @@ PAGE_CONFIG_RESPONSE = {
                 "FB-EP-SUPP@D3085@T9078",
                 "FB-HP-SUMM@D3085@T9079",
                 "FB-HP-SUPP@D3085@T9079",
-                "FB-HW-SUMM@D3085@T9077"
+                "FB-HW-SUMM@D3085@T9077",
             ],
-            "label": "FBHOME_D3085: Febos Device Home"
+            "label": "FBHOME_D3085: Febos Device Home",
         },
         "FBHP_D3085_T9079": {
             "id": 240616,
@@ -15401,7 +15385,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9008: Step frequenza PdC"
+                                            "label": "R9008: Step frequenza PdC",
                                         },
                                         {
                                             "id": 945,
@@ -15422,7 +15406,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9042: Temperatura minima acqua Radiante"
+                                            "label": "R9042: Temperatura minima acqua Radiante",
                                         },
                                         {
                                             "id": 946,
@@ -15443,7 +15427,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8967: Sbrinamento"
+                                            "label": "R8967: Sbrinamento",
                                         },
                                         {
                                             "id": 947,
@@ -15464,7 +15448,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9076: Fotovoltaico"
+                                            "label": "R9076: Fotovoltaico",
                                         },
                                         {
                                             "id": 948,
@@ -15485,7 +15469,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9072: Valvola 3 Vie"
+                                            "label": "R9072: Valvola 3 Vie",
                                         },
                                         {
                                             "id": 949,
@@ -15506,7 +15490,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9071: Riscaldamento Add."
+                                            "label": "R9071: Riscaldamento Add.",
                                         },
                                         {
                                             "id": 950,
@@ -15527,7 +15511,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9078: Antigelo"
+                                            "label": "R9078: Antigelo",
                                         },
                                         {
                                             "id": 951,
@@ -15548,7 +15532,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9079: Antigelo_2"
+                                            "label": "R9079: Antigelo_2",
                                         },
                                         {
                                             "id": 952,
@@ -15569,7 +15553,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9051: Temperatura attuale Acqua PdC"
+                                            "label": "R9051: Temperatura attuale Acqua PdC",
                                         },
                                         {
                                             "id": 953,
@@ -15590,10 +15574,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9052: Set temperatura Acqua PdC"
-                                        }
+                                            "label": "R9052: Set temperatura Acqua PdC",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HP-DT1@D3085@T9079"
+                                    "inputGroupGetCode": "FB-HP-DT1@D3085@T9079",
                                 },
                                 {
                                     "inputGroupCode": "FB-HP-SUPP",
@@ -15622,7 +15606,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9120: Portata acqua PdC"
+                                            "label": "R9120: Portata acqua PdC",
                                         },
                                         {
                                             "id": 920,
@@ -15644,7 +15628,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 927,
@@ -15667,7 +15651,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16384: PcD On/ Off"
+                                            "label": "R16384: PcD On/ Off",
                                         },
                                         {
                                             "id": 944,
@@ -15688,7 +15672,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9008: Step frequenza PdC"
+                                            "label": "R9008: Step frequenza PdC",
                                         },
                                         {
                                             "id": 980,
@@ -15710,7 +15694,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16515: Set di Rugiada/Umidita"
+                                            "label": "R16515: Set di Rugiada/Umidita",
                                         },
                                         {
                                             "id": 910,
@@ -15732,7 +15716,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -15754,7 +15738,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -15776,7 +15760,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
                                         },
                                         {
                                             "id": 918,
@@ -15798,7 +15782,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8698: Massima Potenza Installata"
+                                            "label": "R8698: Massima Potenza Installata",
                                         },
                                         {
                                             "id": 908,
@@ -15820,7 +15804,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8986: Temperatura Esterna PdC"
+                                            "label": "R8986: Temperatura Esterna PdC",
                                         },
                                         {
                                             "id": 925,
@@ -15842,7 +15826,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 914,
@@ -15864,7 +15848,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8987: Temperatura uscita acqua PdC"
+                                            "label": "R8987: Temperatura uscita acqua PdC",
                                         },
                                         {
                                             "id": 837,
@@ -15887,7 +15871,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16385: PcD Stagione"
+                                            "label": "R16385: PcD Stagione",
                                         },
                                         {
                                             "id": 902,
@@ -15908,7 +15892,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 913,
@@ -15930,7 +15914,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8988: Temperatura Ingresso acqua PdC"
+                                            "label": "R8988: Temperatura Ingresso acqua PdC",
                                         },
                                         {
                                             "id": 926,
@@ -15952,7 +15936,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
+                                            "label": "R9129: Potenza ",
                                         },
                                         {
                                             "id": 838,
@@ -15973,7 +15957,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9096: Allarme temperatura ingresso acqua"
+                                            "label": "R9096: Allarme temperatura ingresso acqua",
                                         },
                                         {
                                             "id": 924,
@@ -15995,7 +15979,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9127: "
+                                            "label": "R9127: ",
                                         },
                                         {
                                             "id": 839,
@@ -16016,7 +16000,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9097: Allarme temperatura uscita acqua"
+                                            "label": "R9097: Allarme temperatura uscita acqua",
                                         },
                                         {
                                             "id": 840,
@@ -16037,7 +16021,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9095: Allarme temperatura esterna"
+                                            "label": "R9095: Allarme temperatura esterna",
                                         },
                                         {
                                             "id": 841,
@@ -16058,7 +16042,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9098: Allarme temperatura sanitaria"
+                                            "label": "R9098: Allarme temperatura sanitaria",
                                         },
                                         {
                                             "id": 842,
@@ -16079,7 +16063,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9099: Allarme PdC"
+                                            "label": "R9099: Allarme PdC",
                                         },
                                         {
                                             "id": 848,
@@ -16100,7 +16084,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9090: Allarme accumolo inerziale"
+                                            "label": "R9090: Allarme accumolo inerziale",
                                         },
                                         {
                                             "id": 843,
@@ -16121,7 +16105,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9089: Allarme temperatura ritorno impianto radiante"
+                                            "label": "R9089: Allarme temperatura ritorno impianto radiante",
                                         },
                                         {
                                             "id": 844,
@@ -16142,7 +16126,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9104: Allarme basso flusso"
+                                            "label": "R9104: Allarme basso flusso",
                                         },
                                         {
                                             "id": 845,
@@ -16163,7 +16147,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9102: Allarme bassa temperatura acqua"
+                                            "label": "R9102: Allarme bassa temperatura acqua",
                                         },
                                         {
                                             "id": 846,
@@ -16184,10 +16168,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9103: Allarme alta temperatura acqua"
-                                        }
+                                            "label": "R9103: Allarme alta temperatura acqua",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079"
+                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079",
                                 },
                                 {
                                     "inputGroupCode": "FB-EP-SUPP",
@@ -16216,7 +16200,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 438,
@@ -16238,7 +16222,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8105: Potenza attiva TAE1"
+                                            "label": "R8105: Potenza attiva TAE1",
                                         },
                                         {
                                             "id": 443,
@@ -16260,7 +16244,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8110: Potenza attiva TAE2"
+                                            "label": "R8110: Potenza attiva TAE2",
                                         },
                                         {
                                             "id": 815,
@@ -16282,7 +16266,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8002: Potenza Media DIE1"
+                                            "label": "R8002: Potenza Media DIE1",
                                         },
                                         {
                                             "id": 818,
@@ -16304,7 +16288,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8005: Potenza Media DIE2"
+                                            "label": "R8005: Potenza Media DIE2",
                                         },
                                         {
                                             "id": 821,
@@ -16326,7 +16310,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8008: Potenza Media DIE3"
+                                            "label": "R8008: Potenza Media DIE3",
                                         },
                                         {
                                             "id": 823,
@@ -16348,7 +16332,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8011: Potenza Media DIE4"
+                                            "label": "R8011: Potenza Media DIE4",
                                         },
                                         {
                                             "id": 910,
@@ -16370,7 +16354,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -16392,7 +16376,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -16414,7 +16398,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
                                         },
                                         {
                                             "id": 913,
@@ -16436,7 +16420,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8988: Temperatura Ingresso acqua PdC"
+                                            "label": "R8988: Temperatura Ingresso acqua PdC",
                                         },
                                         {
                                             "id": 914,
@@ -16458,7 +16442,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8987: Temperatura uscita acqua PdC"
+                                            "label": "R8987: Temperatura uscita acqua PdC",
                                         },
                                         {
                                             "id": 918,
@@ -16480,7 +16464,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8698: Massima Potenza Installata"
+                                            "label": "R8698: Massima Potenza Installata",
                                         },
                                         {
                                             "id": 920,
@@ -16502,7 +16486,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 924,
@@ -16524,7 +16508,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9127: "
+                                            "label": "R9127: ",
                                         },
                                         {
                                             "id": 925,
@@ -16546,7 +16530,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 926,
@@ -16568,10 +16552,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
-                                        }
+                                            "label": "R9129: Potenza ",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-EP-SUPP@D3085@T9078"
+                                    "inputGroupGetCode": "FB-EP-SUPP@D3085@T9078",
                                 },
                                 {
                                     "inputGroupCode": "FB-HP-SUPP",
@@ -16600,7 +16584,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9120: Portata acqua PdC"
+                                            "label": "R9120: Portata acqua PdC",
                                         },
                                         {
                                             "id": 920,
@@ -16622,7 +16606,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 927,
@@ -16645,7 +16629,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16384: PcD On/ Off"
+                                            "label": "R16384: PcD On/ Off",
                                         },
                                         {
                                             "id": 944,
@@ -16666,7 +16650,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9008: Step frequenza PdC"
+                                            "label": "R9008: Step frequenza PdC",
                                         },
                                         {
                                             "id": 980,
@@ -16688,7 +16672,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16515: Set di Rugiada/Umidita"
+                                            "label": "R16515: Set di Rugiada/Umidita",
                                         },
                                         {
                                             "id": 910,
@@ -16710,7 +16694,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -16732,7 +16716,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -16754,7 +16738,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
                                         },
                                         {
                                             "id": 918,
@@ -16776,7 +16760,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8698: Massima Potenza Installata"
+                                            "label": "R8698: Massima Potenza Installata",
                                         },
                                         {
                                             "id": 908,
@@ -16798,7 +16782,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8986: Temperatura Esterna PdC"
+                                            "label": "R8986: Temperatura Esterna PdC",
                                         },
                                         {
                                             "id": 925,
@@ -16820,7 +16804,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 914,
@@ -16842,7 +16826,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8987: Temperatura uscita acqua PdC"
+                                            "label": "R8987: Temperatura uscita acqua PdC",
                                         },
                                         {
                                             "id": 837,
@@ -16865,7 +16849,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16385: PcD Stagione"
+                                            "label": "R16385: PcD Stagione",
                                         },
                                         {
                                             "id": 902,
@@ -16886,7 +16870,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 913,
@@ -16908,7 +16892,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8988: Temperatura Ingresso acqua PdC"
+                                            "label": "R8988: Temperatura Ingresso acqua PdC",
                                         },
                                         {
                                             "id": 926,
@@ -16930,7 +16914,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
+                                            "label": "R9129: Potenza ",
                                         },
                                         {
                                             "id": 838,
@@ -16951,7 +16935,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9096: Allarme temperatura ingresso acqua"
+                                            "label": "R9096: Allarme temperatura ingresso acqua",
                                         },
                                         {
                                             "id": 924,
@@ -16973,7 +16957,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9127: "
+                                            "label": "R9127: ",
                                         },
                                         {
                                             "id": 839,
@@ -16994,7 +16978,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9097: Allarme temperatura uscita acqua"
+                                            "label": "R9097: Allarme temperatura uscita acqua",
                                         },
                                         {
                                             "id": 840,
@@ -17015,7 +16999,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9095: Allarme temperatura esterna"
+                                            "label": "R9095: Allarme temperatura esterna",
                                         },
                                         {
                                             "id": 841,
@@ -17036,7 +17020,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9098: Allarme temperatura sanitaria"
+                                            "label": "R9098: Allarme temperatura sanitaria",
                                         },
                                         {
                                             "id": 842,
@@ -17057,7 +17041,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9099: Allarme PdC"
+                                            "label": "R9099: Allarme PdC",
                                         },
                                         {
                                             "id": 848,
@@ -17078,7 +17062,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9090: Allarme accumolo inerziale"
+                                            "label": "R9090: Allarme accumolo inerziale",
                                         },
                                         {
                                             "id": 843,
@@ -17099,7 +17083,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9089: Allarme temperatura ritorno impianto radiante"
+                                            "label": "R9089: Allarme temperatura ritorno impianto radiante",
                                         },
                                         {
                                             "id": 844,
@@ -17120,7 +17104,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9104: Allarme basso flusso"
+                                            "label": "R9104: Allarme basso flusso",
                                         },
                                         {
                                             "id": 845,
@@ -17141,7 +17125,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9102: Allarme bassa temperatura acqua"
+                                            "label": "R9102: Allarme bassa temperatura acqua",
                                         },
                                         {
                                             "id": 846,
@@ -17162,10 +17146,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9103: Allarme alta temperatura acqua"
-                                        }
+                                            "label": "R9103: Allarme alta temperatura acqua",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079"
+                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079",
                                 },
                                 {
                                     "inputGroupCode": "FB-EP-SUMM",
@@ -17194,7 +17178,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 927,
@@ -17217,7 +17201,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R16384: PcD On/ Off"
+                                            "label": "R16384: PcD On/ Off",
                                         },
                                         {
                                             "id": 434,
@@ -17239,7 +17223,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8101: Energia attiva positiva TAE1 (Word più significativa)"
+                                            "label": "R8101: Energia attiva positiva TAE1 (Word più significativa)",
                                         },
                                         {
                                             "id": 435,
@@ -17261,7 +17245,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8102: Energia attiva positiva TAE1 (Word meno significativa)"
+                                            "label": "R8102: Energia attiva positiva TAE1 (Word meno significativa)",
                                         },
                                         {
                                             "id": 436,
@@ -17283,7 +17267,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8103: Energia attiva negativa TAE1 (Word più significativa)"
+                                            "label": "R8103: Energia attiva negativa TAE1 (Word più significativa)",
                                         },
                                         {
                                             "id": 437,
@@ -17305,7 +17289,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8104: Energia attiva negativa TAE1 (Word meno significativa)"
+                                            "label": "R8104: Energia attiva negativa TAE1 (Word meno significativa)",
                                         },
                                         {
                                             "id": 438,
@@ -17327,7 +17311,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8105: Potenza attiva TAE1"
+                                            "label": "R8105: Potenza attiva TAE1",
                                         },
                                         {
                                             "id": 439,
@@ -17349,7 +17333,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8106: Energia attiva positiva TAE2 (Word più significativa)"
+                                            "label": "R8106: Energia attiva positiva TAE2 (Word più significativa)",
                                         },
                                         {
                                             "id": 440,
@@ -17371,7 +17355,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8107: Energia attiva positiva TAE2 (Word meno significativa)"
+                                            "label": "R8107: Energia attiva positiva TAE2 (Word meno significativa)",
                                         },
                                         {
                                             "id": 441,
@@ -17393,7 +17377,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8108: Energia attiva negativa TAE2 (Word più significativa)"
+                                            "label": "R8108: Energia attiva negativa TAE2 (Word più significativa)",
                                         },
                                         {
                                             "id": 442,
@@ -17415,7 +17399,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8109: Energia attiva negativa TAE2 (Word meno significativa)"
+                                            "label": "R8109: Energia attiva negativa TAE2 (Word meno significativa)",
                                         },
                                         {
                                             "id": 443,
@@ -17437,7 +17421,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8110: Potenza attiva TAE2"
+                                            "label": "R8110: Potenza attiva TAE2",
                                         },
                                         {
                                             "id": 444,
@@ -17459,7 +17443,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8111: Corrente TAE1"
+                                            "label": "R8111: Corrente TAE1",
                                         },
                                         {
                                             "id": 445,
@@ -17481,7 +17465,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8112: Corrente TAE2"
+                                            "label": "R8112: Corrente TAE2",
                                         },
                                         {
                                             "id": 446,
@@ -17503,7 +17487,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8113: Sfasamento TAE1"
+                                            "label": "R8113: Sfasamento TAE1",
                                         },
                                         {
                                             "id": 447,
@@ -17525,7 +17509,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8114: Sfasamento TAE2"
+                                            "label": "R8114: Sfasamento TAE2",
                                         },
                                         {
                                             "id": 783,
@@ -17549,7 +17533,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "CT_VPN_IP: OpenVPN IP Address"
+                                            "label": "CT_VPN_IP: OpenVPN IP Address",
                                         },
                                         {
                                             "id": 782,
@@ -17573,7 +17557,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "CT_UPTIME: Uptime"
+                                            "label": "CT_UPTIME: Uptime",
                                         },
                                         {
                                             "id": 925,
@@ -17595,7 +17579,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 926,
@@ -17617,7 +17601,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
+                                            "label": "R9129: Potenza ",
                                         },
                                         {
                                             "id": 533,
@@ -17639,7 +17623,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8200: Superparametro 1"
+                                            "label": "R8200: Superparametro 1",
                                         },
                                         {
                                             "id": 534,
@@ -17661,7 +17645,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8201: Superparametro 2"
+                                            "label": "R8201: Superparametro 2",
                                         },
                                         {
                                             "id": 535,
@@ -17683,7 +17667,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8202: Superparametro 3"
+                                            "label": "R8202: Superparametro 3",
                                         },
                                         {
                                             "id": 536,
@@ -17705,7 +17689,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8203: Offset sonda NTC1"
+                                            "label": "R8203: Offset sonda NTC1",
                                         },
                                         {
                                             "id": 537,
@@ -17727,7 +17711,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8204: Offset sonda NTC2"
+                                            "label": "R8204: Offset sonda NTC2",
                                         },
                                         {
                                             "id": 538,
@@ -17749,7 +17733,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8205: not used"
+                                            "label": "R8205: not used",
                                         },
                                         {
                                             "id": 539,
@@ -17771,7 +17755,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8206: not used"
+                                            "label": "R8206: not used",
                                         },
                                         {
                                             "id": 540,
@@ -17793,7 +17777,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8207: not used"
+                                            "label": "R8207: not used",
                                         },
                                         {
                                             "id": 541,
@@ -17815,7 +17799,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8208: Minima durata impulso contatore HP"
+                                            "label": "R8208: Minima durata impulso contatore HP",
                                         },
                                         {
                                             "id": 542,
@@ -17837,7 +17821,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8209: Massima durata impulso contatore HP"
+                                            "label": "R8209: Massima durata impulso contatore HP",
                                         },
                                         {
                                             "id": 543,
@@ -17859,7 +17843,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8210: Valore corrispondente ad 1 impulso"
+                                            "label": "R8210: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 544,
@@ -17881,7 +17865,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8211: Minima durata impulso contatore Presa"
+                                            "label": "R8211: Minima durata impulso contatore Presa",
                                         },
                                         {
                                             "id": 545,
@@ -17903,7 +17887,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8212: Massima durata impulso contatore Presa"
+                                            "label": "R8212: Massima durata impulso contatore Presa",
                                         },
                                         {
                                             "id": 546,
@@ -17925,7 +17909,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8213: Valore corrispondente ad 1 impulso"
+                                            "label": "R8213: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 547,
@@ -17947,7 +17931,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8214: Minima durata impulso contatore FV"
+                                            "label": "R8214: Minima durata impulso contatore FV",
                                         },
                                         {
                                             "id": 548,
@@ -17969,7 +17953,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8215: Massima durata impulso contatore FV"
+                                            "label": "R8215: Massima durata impulso contatore FV",
                                         },
                                         {
                                             "id": 549,
@@ -17991,7 +17975,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8216: Valore corrispondente ad 1 impulso"
+                                            "label": "R8216: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 550,
@@ -18013,7 +17997,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8217: Minima durata impulso contatore Casa"
+                                            "label": "R8217: Minima durata impulso contatore Casa",
                                         },
                                         {
                                             "id": 551,
@@ -18035,7 +18019,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8218: Massima durata impulso contatore Casa"
+                                            "label": "R8218: Massima durata impulso contatore Casa",
                                         },
                                         {
                                             "id": 552,
@@ -18057,7 +18041,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8219: Valore corrispondente ad 1 impulso"
+                                            "label": "R8219: Valore corrispondente ad 1 impulso",
                                         },
                                         {
                                             "id": 553,
@@ -18080,7 +18064,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8220: Potenza di riferimento HP (in KW)"
+                                            "label": "R8220: Potenza di riferimento HP (in KW)",
                                         },
                                         {
                                             "id": 554,
@@ -18103,7 +18087,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8221: Potenza di riferimento Presa (in KW)"
+                                            "label": "R8221: Potenza di riferimento Presa (in KW)",
                                         },
                                         {
                                             "id": 555,
@@ -18126,7 +18110,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8222: Potenza di riferimento FV (in KW)"
+                                            "label": "R8222: Potenza di riferimento FV (in KW)",
                                         },
                                         {
                                             "id": 556,
@@ -18149,7 +18133,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8223: Potenza di riferimento Casa (in KW)"
+                                            "label": "R8223: Potenza di riferimento Casa (in KW)",
                                         },
                                         {
                                             "id": 633,
@@ -18170,7 +18154,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8300: N. impulsi scartati perchè corti FV"
+                                            "label": "R8300: N. impulsi scartati perchè corti FV",
                                         },
                                         {
                                             "id": 634,
@@ -18191,7 +18175,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8301: N. impulsi scartati perchè lunghi FV"
+                                            "label": "R8301: N. impulsi scartati perchè lunghi FV",
                                         },
                                         {
                                             "id": 635,
@@ -18212,7 +18196,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8302: N. impulsi scartati perchè troppo vicini FV"
+                                            "label": "R8302: N. impulsi scartati perchè troppo vicini FV",
                                         },
                                         {
                                             "id": 636,
@@ -18233,7 +18217,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8303: N. impulsi scartati perchè corti CASA"
+                                            "label": "R8303: N. impulsi scartati perchè corti CASA",
                                         },
                                         {
                                             "id": 637,
@@ -18254,7 +18238,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8304: N. impulsi scartati perchè lunghi CASA"
+                                            "label": "R8304: N. impulsi scartati perchè lunghi CASA",
                                         },
                                         {
                                             "id": 638,
@@ -18275,7 +18259,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8305: N. impulsi scartati perchè troppo vicini CASA"
+                                            "label": "R8305: N. impulsi scartati perchè troppo vicini CASA",
                                         },
                                         {
                                             "id": 639,
@@ -18296,7 +18280,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8306: N. impulsi scartati perchè corti HP"
+                                            "label": "R8306: N. impulsi scartati perchè corti HP",
                                         },
                                         {
                                             "id": 640,
@@ -18317,7 +18301,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8307: N. impulsi scartati perchè lunghi HP"
+                                            "label": "R8307: N. impulsi scartati perchè lunghi HP",
                                         },
                                         {
                                             "id": 641,
@@ -18338,7 +18322,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8308: N. impulsi scartati perchè troppo vicini HP"
+                                            "label": "R8308: N. impulsi scartati perchè troppo vicini HP",
                                         },
                                         {
                                             "id": 642,
@@ -18359,7 +18343,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8309: N. impulsi scartati perchè corti PRESA"
+                                            "label": "R8309: N. impulsi scartati perchè corti PRESA",
                                         },
                                         {
                                             "id": 643,
@@ -18380,7 +18364,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8310: N. impulsi scartati perchè lunghi PRESA"
+                                            "label": "R8310: N. impulsi scartati perchè lunghi PRESA",
                                         },
                                         {
                                             "id": 644,
@@ -18401,7 +18385,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8311: N. impulsi scartati perchè troppo vicini PRESA"
+                                            "label": "R8311: N. impulsi scartati perchè troppo vicini PRESA",
                                         },
                                         {
                                             "id": 733,
@@ -18422,7 +18406,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8400: Calibrazione tensione CH1"
+                                            "label": "R8400: Calibrazione tensione CH1",
                                         },
                                         {
                                             "id": 734,
@@ -18443,7 +18427,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8401: Calibrazione corrente CH1"
+                                            "label": "R8401: Calibrazione corrente CH1",
                                         },
                                         {
                                             "id": 735,
@@ -18464,7 +18448,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8402: Calibrazione corrente CH2"
+                                            "label": "R8402: Calibrazione corrente CH2",
                                         },
                                         {
                                             "id": 736,
@@ -18485,7 +18469,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8403: Offset potenza attiva CH1"
+                                            "label": "R8403: Offset potenza attiva CH1",
                                         },
                                         {
                                             "id": 737,
@@ -18506,7 +18490,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8404: Offset potenza attiva CH2"
+                                            "label": "R8404: Offset potenza attiva CH2",
                                         },
                                         {
                                             "id": 738,
@@ -18527,7 +18511,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8405: Compensazione fase tensione CH1"
+                                            "label": "R8405: Compensazione fase tensione CH1",
                                         },
                                         {
                                             "id": 739,
@@ -18548,7 +18532,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8406: Compensazione fase corrente CH1"
+                                            "label": "R8406: Compensazione fase corrente CH1",
                                         },
                                         {
                                             "id": 740,
@@ -18569,7 +18553,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8407: Compensazione fase corrente CH2"
+                                            "label": "R8407: Compensazione fase corrente CH2",
                                         },
                                         {
                                             "id": 741,
@@ -18590,7 +18574,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8408: Contenuto del registro di taratura della tensione CH1"
+                                            "label": "R8408: Contenuto del registro di taratura della tensione CH1",
                                         },
                                         {
                                             "id": 742,
@@ -18611,7 +18595,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8409: Contenuto del registro di taratura della corrente CH1 (Word più significativa)"
+                                            "label": "R8409: Contenuto del registro di taratura della corrente CH1 (Word più significativa)",
                                         },
                                         {
                                             "id": 743,
@@ -18632,7 +18616,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8410: Contenuto del registro di taratura della corrente CH1 (Word meno significativa)"
+                                            "label": "R8410: Contenuto del registro di taratura della corrente CH1 (Word meno significativa)",
                                         },
                                         {
                                             "id": 744,
@@ -18653,7 +18637,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8411: Contenuto del registro di taratura della corrente CH2 (Word più significativa)"
+                                            "label": "R8411: Contenuto del registro di taratura della corrente CH2 (Word più significativa)",
                                         },
                                         {
                                             "id": 745,
@@ -18674,7 +18658,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8412: Contenuto del registro di taratura della corrente CH2 (Word meno significativa)"
+                                            "label": "R8412: Contenuto del registro di taratura della corrente CH2 (Word meno significativa)",
                                         },
                                         {
                                             "id": 746,
@@ -18695,7 +18679,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8413: Contenuto del registro di taratura dello sfasamento relativo a CH1"
+                                            "label": "R8413: Contenuto del registro di taratura dello sfasamento relativo a CH1",
                                         },
                                         {
                                             "id": 747,
@@ -18716,10 +18700,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9078,
                                             "deviceId": 3085,
-                                            "label": "R8414: Contenuto del registro di taratura dello sfasamento relativo a CH2"
-                                        }
+                                            "label": "R8414: Contenuto del registro di taratura dello sfasamento relativo a CH2",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-EP-SUMM@D3085@T9078"
+                                    "inputGroupGetCode": "FB-EP-SUMM@D3085@T9078",
                                 },
                                 {
                                     "inputGroupCode": "FB-AMB-DT",
@@ -18748,7 +18732,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8684: Set temperatura comfort (Estate)"
+                                            "label": "R8684: Set temperatura comfort (Estate)",
                                         },
                                         {
                                             "id": 970,
@@ -18770,7 +18754,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8688: Set temperatura comfort (Inverno)"
+                                            "label": "R8688: Set temperatura comfort (Inverno)",
                                         },
                                         {
                                             "id": 971,
@@ -18792,7 +18776,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8685: Orario di Inizio comfort (Estate)"
+                                            "label": "R8685: Orario di Inizio comfort (Estate)",
                                         },
                                         {
                                             "id": 972,
@@ -18814,7 +18798,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8689: Orario di Inizio comfort (Inverno)"
+                                            "label": "R8689: Orario di Inizio comfort (Inverno)",
                                         },
                                         {
                                             "id": 973,
@@ -18836,7 +18820,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8686: Set Attenuazione (Estate)"
+                                            "label": "R8686: Set Attenuazione (Estate)",
                                         },
                                         {
                                             "id": 974,
@@ -18858,7 +18842,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8690: Set Attenuazione (Inverno)"
+                                            "label": "R8690: Set Attenuazione (Inverno)",
                                         },
                                         {
                                             "id": 975,
@@ -18880,7 +18864,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8687: Orario Attenuazione (Estate)"
+                                            "label": "R8687: Orario Attenuazione (Estate)",
                                         },
                                         {
                                             "id": 976,
@@ -18902,7 +18886,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8691: Orario Attenuazione (Inverno)"
+                                            "label": "R8691: Orario Attenuazione (Inverno)",
                                         },
                                         {
                                             "id": 978,
@@ -18923,7 +18907,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8660: Set umidità estate (SetRh_E)"
+                                            "label": "R8660: Set umidità estate (SetRh_E)",
                                         },
                                         {
                                             "id": 979,
@@ -18944,7 +18928,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8661: Set umidità inverno (SetRh_I)"
+                                            "label": "R8661: Set umidità inverno (SetRh_I)",
                                         },
                                         {
                                             "id": 902,
@@ -18965,7 +18949,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 903,
@@ -18986,20 +18970,20 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8692: Boost"
-                                        }
+                                            "label": "R8692: Boost",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-AMB-DT@D3085@T9076"
-                                }
+                                    "inputGroupGetCode": "FB-AMB-DT@D3085@T9076",
+                                },
                             ],
                             "inputGroupGetCodeList": [
                                 "FB-AMB-DT@D3085@T9076",
                                 "FB-HP-SUPP@D3085@T9079",
                                 "FB-HP-DT1@D3085@T9079",
                                 "FB-EP-SUPP@D3085@T9078",
-                                "FB-EP-SUMM@D3085@T9078"
+                                "FB-EP-SUMM@D3085@T9078",
                             ],
-                            "label": "FBW-HP-DT1: Febos Heat Pump Detail 1"
+                            "label": "FBW-HP-DT1: Febos Heat Pump Detail 1",
                         }
                     ],
                     "inputGroupGetCodeMap": {
@@ -19008,10 +18992,10 @@ PAGE_CONFIG_RESPONSE = {
                             "FB-HP-SUPP@D3085@T9079",
                             "FB-HP-DT1@D3085@T9079",
                             "FB-EP-SUPP@D3085@T9078",
-                            "FB-EP-SUMM@D3085@T9078"
+                            "FB-EP-SUMM@D3085@T9078",
                         ]
                     },
-                    "label": "TAB-HP1: Febos HP dt1"
+                    "label": "TAB-HP1: Febos HP dt1",
                 }
             ],
             "inputGroupGetCodeList": [
@@ -19019,9 +19003,9 @@ PAGE_CONFIG_RESPONSE = {
                 "FB-EP-SUMM@D3085@T9078",
                 "FB-EP-SUPP@D3085@T9078",
                 "FB-HP-DT1@D3085@T9079",
-                "FB-HP-SUPP@D3085@T9079"
+                "FB-HP-SUPP@D3085@T9079",
             ],
-            "label": "FBHP_D3085_T9079: Febos Heat Pump"
+            "label": "FBHP_D3085_T9079: Febos Heat Pump",
         },
         "FBHW_D3085_T9077": {
             "id": 240617,
@@ -19074,7 +19058,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R8989: Temperatura ACS"
+                                            "label": "R8989: Temperatura ACS",
                                         },
                                         {
                                             "id": 920,
@@ -19096,7 +19080,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 921,
@@ -19118,7 +19102,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R9073: ECO HOT Water"
+                                            "label": "R9073: ECO HOT Water",
                                         },
                                         {
                                             "id": 922,
@@ -19140,7 +19124,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R9072: 3-vie ACS"
+                                            "label": "R9072: 3-vie ACS",
                                         },
                                         {
                                             "id": 923,
@@ -19162,10 +19146,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R9074: Resistenza Elettrica"
-                                        }
+                                            "label": "R9074: Resistenza Elettrica",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HW-SUMM@D3085@T9077"
+                                    "inputGroupGetCode": "FB-HW-SUMM@D3085@T9077",
                                 },
                                 {
                                     "inputGroupCode": "FB-HW-DT",
@@ -19195,7 +19179,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16444: Set temp. acqua fascia oraria P1 in riscaldamento"
+                                            "label": "R16444: Set temp. acqua fascia oraria P1 in riscaldamento",
                                         },
                                         {
                                             "id": 984,
@@ -19218,7 +19202,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16446: Set temp. acqua fascia oraria P2 in riscaldamento"
+                                            "label": "R16446: Set temp. acqua fascia oraria P2 in riscaldamento",
                                         },
                                         {
                                             "id": 985,
@@ -19241,7 +19225,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16448: Set temp. acqua fascia oraria P3 in riscaldamento"
+                                            "label": "R16448: Set temp. acqua fascia oraria P3 in riscaldamento",
                                         },
                                         {
                                             "id": 986,
@@ -19264,7 +19248,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16450: Set temp. acqua fascia oraria P4 in riscaldamento"
+                                            "label": "R16450: Set temp. acqua fascia oraria P4 in riscaldamento",
                                         },
                                         {
                                             "id": 987,
@@ -19287,7 +19271,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16451: Set temp. acqua fascia oraria P1 in raffreddamento"
+                                            "label": "R16451: Set temp. acqua fascia oraria P1 in raffreddamento",
                                         },
                                         {
                                             "id": 988,
@@ -19310,7 +19294,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16453: Set temp. acqua fascia oraria P2 in raffreddamento"
+                                            "label": "R16453: Set temp. acqua fascia oraria P2 in raffreddamento",
                                         },
                                         {
                                             "id": 989,
@@ -19333,7 +19317,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16455: Set temp. acqua fascia oraria P3 in raffreddamento"
+                                            "label": "R16455: Set temp. acqua fascia oraria P3 in raffreddamento",
                                         },
                                         {
                                             "id": 990,
@@ -19356,7 +19340,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16457: Set temp. acqua fascia oraria P4 in raffreddamento"
+                                            "label": "R16457: Set temp. acqua fascia oraria P4 in raffreddamento",
                                         },
                                         {
                                             "id": 991,
@@ -19379,7 +19363,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16445: Inizio fascia oraria P2 in riscaldamento"
+                                            "label": "R16445: Inizio fascia oraria P2 in riscaldamento",
                                         },
                                         {
                                             "id": 992,
@@ -19402,7 +19386,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16447: Inizio fascia oraria P3 in riscaldamento"
+                                            "label": "R16447: Inizio fascia oraria P3 in riscaldamento",
                                         },
                                         {
                                             "id": 993,
@@ -19425,7 +19409,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16449: Inizio fascia oraria P4 in riscaldamento"
+                                            "label": "R16449: Inizio fascia oraria P4 in riscaldamento",
                                         },
                                         {
                                             "id": 994,
@@ -19448,7 +19432,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16452: Inizio fascia oraria P2 in raffreddamento"
+                                            "label": "R16452: Inizio fascia oraria P2 in raffreddamento",
                                         },
                                         {
                                             "id": 995,
@@ -19471,7 +19455,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16454: Inizio fascia oraria P3 in raffreddamento"
+                                            "label": "R16454: Inizio fascia oraria P3 in raffreddamento",
                                         },
                                         {
                                             "id": 996,
@@ -19494,7 +19478,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16456: Inizio fascia oraria P4 in raffreddamento"
+                                            "label": "R16456: Inizio fascia oraria P4 in raffreddamento",
                                         },
                                         {
                                             "id": 1025,
@@ -19514,7 +19498,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16493: Orario della prima richiesta ACS"
+                                            "label": "R16493: Orario della prima richiesta ACS",
                                         },
                                         {
                                             "id": 1026,
@@ -19534,7 +19518,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16494: Set temp. della prima richiesta ACS"
+                                            "label": "R16494: Set temp. della prima richiesta ACS",
                                         },
                                         {
                                             "id": 1027,
@@ -19554,7 +19538,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16495: Set temp. della seconda richiesta ACS"
+                                            "label": "R16495: Set temp. della seconda richiesta ACS",
                                         },
                                         {
                                             "id": 1028,
@@ -19574,7 +19558,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16496: Set temp. della seconda richiesta ACS"
+                                            "label": "R16496: Set temp. della seconda richiesta ACS",
                                         },
                                         {
                                             "id": 1029,
@@ -19594,10 +19578,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9077,
                                             "deviceId": 3085,
-                                            "label": "R16497: Set temp. di mantenimento ACS"
-                                        }
+                                            "label": "R16497: Set temp. di mantenimento ACS",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HW-DT@D3085@T9077"
+                                    "inputGroupGetCode": "FB-HW-DT@D3085@T9077",
                                 },
                                 {
                                     "inputGroupCode": "FB-HP-SUPP",
@@ -19626,7 +19610,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9120: Portata acqua PdC"
+                                            "label": "R9120: Portata acqua PdC",
                                         },
                                         {
                                             "id": 920,
@@ -19648,7 +19632,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 927,
@@ -19671,7 +19655,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16384: PcD On/ Off"
+                                            "label": "R16384: PcD On/ Off",
                                         },
                                         {
                                             "id": 944,
@@ -19692,7 +19676,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9008: Step frequenza PdC"
+                                            "label": "R9008: Step frequenza PdC",
                                         },
                                         {
                                             "id": 980,
@@ -19714,7 +19698,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16515: Set di Rugiada/Umidita"
+                                            "label": "R16515: Set di Rugiada/Umidita",
                                         },
                                         {
                                             "id": 910,
@@ -19736,7 +19720,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -19758,7 +19742,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -19780,7 +19764,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
                                         },
                                         {
                                             "id": 918,
@@ -19802,7 +19786,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8698: Massima Potenza Installata"
+                                            "label": "R8698: Massima Potenza Installata",
                                         },
                                         {
                                             "id": 908,
@@ -19824,7 +19808,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8986: Temperatura Esterna PdC"
+                                            "label": "R8986: Temperatura Esterna PdC",
                                         },
                                         {
                                             "id": 925,
@@ -19846,7 +19830,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 914,
@@ -19868,7 +19852,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8987: Temperatura uscita acqua PdC"
+                                            "label": "R8987: Temperatura uscita acqua PdC",
                                         },
                                         {
                                             "id": 837,
@@ -19891,7 +19875,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16385: PcD Stagione"
+                                            "label": "R16385: PcD Stagione",
                                         },
                                         {
                                             "id": 902,
@@ -19912,7 +19896,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 913,
@@ -19934,7 +19918,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8988: Temperatura Ingresso acqua PdC"
+                                            "label": "R8988: Temperatura Ingresso acqua PdC",
                                         },
                                         {
                                             "id": 926,
@@ -19956,7 +19940,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
+                                            "label": "R9129: Potenza ",
                                         },
                                         {
                                             "id": 838,
@@ -19977,7 +19961,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9096: Allarme temperatura ingresso acqua"
+                                            "label": "R9096: Allarme temperatura ingresso acqua",
                                         },
                                         {
                                             "id": 924,
@@ -19999,7 +19983,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9127: "
+                                            "label": "R9127: ",
                                         },
                                         {
                                             "id": 839,
@@ -20020,7 +20004,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9097: Allarme temperatura uscita acqua"
+                                            "label": "R9097: Allarme temperatura uscita acqua",
                                         },
                                         {
                                             "id": 840,
@@ -20041,7 +20025,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9095: Allarme temperatura esterna"
+                                            "label": "R9095: Allarme temperatura esterna",
                                         },
                                         {
                                             "id": 841,
@@ -20062,7 +20046,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9098: Allarme temperatura sanitaria"
+                                            "label": "R9098: Allarme temperatura sanitaria",
                                         },
                                         {
                                             "id": 842,
@@ -20083,7 +20067,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9099: Allarme PdC"
+                                            "label": "R9099: Allarme PdC",
                                         },
                                         {
                                             "id": 848,
@@ -20104,7 +20088,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9090: Allarme accumolo inerziale"
+                                            "label": "R9090: Allarme accumolo inerziale",
                                         },
                                         {
                                             "id": 843,
@@ -20125,7 +20109,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9089: Allarme temperatura ritorno impianto radiante"
+                                            "label": "R9089: Allarme temperatura ritorno impianto radiante",
                                         },
                                         {
                                             "id": 844,
@@ -20146,7 +20130,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9104: Allarme basso flusso"
+                                            "label": "R9104: Allarme basso flusso",
                                         },
                                         {
                                             "id": 845,
@@ -20167,7 +20151,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9102: Allarme bassa temperatura acqua"
+                                            "label": "R9102: Allarme bassa temperatura acqua",
                                         },
                                         {
                                             "id": 846,
@@ -20188,36 +20172,36 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9103: Allarme alta temperatura acqua"
-                                        }
+                                            "label": "R9103: Allarme alta temperatura acqua",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079"
-                                }
+                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079",
+                                },
                             ],
                             "inputGroupGetCodeList": [
                                 "FB-HP-SUPP@D3085@T9079",
                                 "FB-HW-SUMM@D3085@T9077",
-                                "FB-HW-DT@D3085@T9077"
+                                "FB-HW-DT@D3085@T9077",
                             ],
-                            "label": "FBW-HW-DT: Febos Hot Water Detail"
+                            "label": "FBW-HW-DT: Febos Hot Water Detail",
                         }
                     ],
                     "inputGroupGetCodeMap": {
                         "3085": [
                             "FB-HP-SUPP@D3085@T9079",
                             "FB-HW-SUMM@D3085@T9077",
-                            "FB-HW-DT@D3085@T9077"
+                            "FB-HW-DT@D3085@T9077",
                         ]
                     },
-                    "label": "TAB-HW: Febos HW"
+                    "label": "TAB-HW: Febos HW",
                 }
             ],
             "inputGroupGetCodeList": [
                 "FB-HP-SUPP@D3085@T9079",
                 "FB-HW-DT@D3085@T9077",
-                "FB-HW-SUMM@D3085@T9077"
+                "FB-HW-SUMM@D3085@T9077",
             ],
-            "label": "FBHW_D3085_T9077: Febos Hot Water"
+            "label": "FBHW_D3085_T9077: Febos Hot Water",
         },
         "FBREVIEW_D3085": {
             "id": 240622,
@@ -20270,7 +20254,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8678: Temperatura Sensore FC"
+                                            "label": "R8678: Temperatura Sensore FC",
                                         },
                                         {
                                             "id": 897,
@@ -20292,7 +20276,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8670: Offset Temperatura Sensore FC"
+                                            "label": "R8670: Offset Temperatura Sensore FC",
                                         },
                                         {
                                             "id": 898,
@@ -20314,7 +20298,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8679: Umidita Sensore FC"
+                                            "label": "R8679: Umidita Sensore FC",
                                         },
                                         {
                                             "id": 899,
@@ -20336,7 +20320,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8671: Offset Umidita Sensore FC"
+                                            "label": "R8671: Offset Umidita Sensore FC",
                                         },
                                         {
                                             "id": 836,
@@ -20356,7 +20340,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8600: Data produzione (parte alta)"
+                                            "label": "R8600: Data produzione (parte alta)",
                                         },
                                         {
                                             "id": 931,
@@ -20378,7 +20362,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8702: Set Temperatura FC Visualizzato"
+                                            "label": "R8702: Set Temperatura FC Visualizzato",
                                         },
                                         {
                                             "id": 932,
@@ -20400,7 +20384,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8703: Temperatura Sensore FC Visualizzata"
+                                            "label": "R8703: Temperatura Sensore FC Visualizzata",
                                         },
                                         {
                                             "id": 933,
@@ -20422,7 +20406,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8704: Umidita Sensore FC Visualizzata"
+                                            "label": "R8704: Umidita Sensore FC Visualizzata",
                                         },
                                         {
                                             "id": 900,
@@ -20443,7 +20427,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8681: Chiamata Temperatura"
+                                            "label": "R8681: Chiamata Temperatura",
                                         },
                                         {
                                             "id": 901,
@@ -20464,7 +20448,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8682: Chiamata Umidita "
+                                            "label": "R8682: Chiamata Umidita ",
                                         },
                                         {
                                             "id": 902,
@@ -20485,7 +20469,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 904,
@@ -20507,7 +20491,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8672: Stato contatto finestra"
+                                            "label": "R8672: Stato contatto finestra",
                                         },
                                         {
                                             "id": 905,
@@ -20529,7 +20513,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8673: Stato contatto presenza AUTOMATICO"
+                                            "label": "R8673: Stato contatto presenza AUTOMATICO",
                                         },
                                         {
                                             "id": 906,
@@ -20551,7 +20535,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8676: Stato contatto presenza MANUALE"
+                                            "label": "R8676: Stato contatto presenza MANUALE",
                                         },
                                         {
                                             "id": 907,
@@ -20573,7 +20557,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8680: DWP"
+                                            "label": "R8680: DWP",
                                         },
                                         {
                                             "id": 908,
@@ -20595,10 +20579,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9076,
                                             "deviceId": 3085,
-                                            "label": "R8986: Temperatura Esterna PdC"
-                                        }
+                                            "label": "R8986: Temperatura Esterna PdC",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-AMB-SUMM@D3085@T9076"
+                                    "inputGroupGetCode": "FB-AMB-SUMM@D3085@T9076",
                                 },
                                 {
                                     "inputGroupCode": "FB-SMART",
@@ -20628,33 +20612,30 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16534: Prezzo energia elettrica"
+                                            "label": "R16534: Prezzo energia elettrica",
                                         }
                                     ],
-                                    "inputGroupGetCode": "FB-SMART@D3085@T9079"
-                                }
+                                    "inputGroupGetCode": "FB-SMART@D3085@T9079",
+                                },
                             ],
                             "inputGroupGetCodeList": [
                                 "FB-AMB-SUMM@D3085@T9076",
-                                "FB-SMART@D3085@T9079"
+                                "FB-SMART@D3085@T9079",
                             ],
-                            "label": "FBW-REVIEW: Febos energy review"
+                            "label": "FBW-REVIEW: Febos energy review",
                         }
                     ],
                     "inputGroupGetCodeMap": {
-                        "3085": [
-                            "FB-AMB-SUMM@D3085@T9076",
-                            "FB-SMART@D3085@T9079"
-                        ]
+                        "3085": ["FB-AMB-SUMM@D3085@T9076", "FB-SMART@D3085@T9079"]
                     },
-                    "label": "TAB-REVIEW: Febos nrg review"
+                    "label": "TAB-REVIEW: Febos nrg review",
                 }
             ],
             "inputGroupGetCodeList": [
                 "FB-AMB-SUMM@D3085@T9076",
-                "FB-SMART@D3085@T9079"
+                "FB-SMART@D3085@T9079",
             ],
-            "label": "FBREVIEW_D3085: Febos energy review"
+            "label": "FBREVIEW_D3085: Febos energy review",
         },
         "FBWARNING_D3085": {
             "id": 240621,
@@ -20707,7 +20688,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9120: Portata acqua PdC"
+                                            "label": "R9120: Portata acqua PdC",
                                         },
                                         {
                                             "id": 920,
@@ -20729,7 +20710,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9126: Potenza assorbita ACS"
+                                            "label": "R9126: Potenza assorbita ACS",
                                         },
                                         {
                                             "id": 927,
@@ -20752,7 +20733,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16384: PcD On/ Off"
+                                            "label": "R16384: PcD On/ Off",
                                         },
                                         {
                                             "id": 944,
@@ -20773,7 +20754,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9008: Step frequenza PdC"
+                                            "label": "R9008: Step frequenza PdC",
                                         },
                                         {
                                             "id": 980,
@@ -20795,7 +20776,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16515: Set di Rugiada/Umidita"
+                                            "label": "R16515: Set di Rugiada/Umidita",
                                         },
                                         {
                                             "id": 910,
@@ -20817,7 +20798,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -20839,7 +20820,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -20861,7 +20842,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
                                         },
                                         {
                                             "id": 918,
@@ -20883,7 +20864,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8698: Massima Potenza Installata"
+                                            "label": "R8698: Massima Potenza Installata",
                                         },
                                         {
                                             "id": 908,
@@ -20905,7 +20886,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8986: Temperatura Esterna PdC"
+                                            "label": "R8986: Temperatura Esterna PdC",
                                         },
                                         {
                                             "id": 925,
@@ -20927,7 +20908,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9128: Potenza Casa"
+                                            "label": "R9128: Potenza Casa",
                                         },
                                         {
                                             "id": 914,
@@ -20949,7 +20930,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8987: Temperatura uscita acqua PdC"
+                                            "label": "R8987: Temperatura uscita acqua PdC",
                                         },
                                         {
                                             "id": 837,
@@ -20972,7 +20953,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16385: PcD Stagione"
+                                            "label": "R16385: PcD Stagione",
                                         },
                                         {
                                             "id": 902,
@@ -20993,7 +20974,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 913,
@@ -21015,7 +20996,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8988: Temperatura Ingresso acqua PdC"
+                                            "label": "R8988: Temperatura Ingresso acqua PdC",
                                         },
                                         {
                                             "id": 926,
@@ -21037,7 +21018,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9129: Potenza "
+                                            "label": "R9129: Potenza ",
                                         },
                                         {
                                             "id": 838,
@@ -21058,7 +21039,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9096: Allarme temperatura ingresso acqua"
+                                            "label": "R9096: Allarme temperatura ingresso acqua",
                                         },
                                         {
                                             "id": 924,
@@ -21080,7 +21061,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9127: "
+                                            "label": "R9127: ",
                                         },
                                         {
                                             "id": 839,
@@ -21101,7 +21082,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9097: Allarme temperatura uscita acqua"
+                                            "label": "R9097: Allarme temperatura uscita acqua",
                                         },
                                         {
                                             "id": 840,
@@ -21122,7 +21103,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9095: Allarme temperatura esterna"
+                                            "label": "R9095: Allarme temperatura esterna",
                                         },
                                         {
                                             "id": 841,
@@ -21143,7 +21124,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9098: Allarme temperatura sanitaria"
+                                            "label": "R9098: Allarme temperatura sanitaria",
                                         },
                                         {
                                             "id": 842,
@@ -21164,7 +21145,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9099: Allarme PdC"
+                                            "label": "R9099: Allarme PdC",
                                         },
                                         {
                                             "id": 848,
@@ -21185,7 +21166,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9090: Allarme accumolo inerziale"
+                                            "label": "R9090: Allarme accumolo inerziale",
                                         },
                                         {
                                             "id": 843,
@@ -21206,7 +21187,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9089: Allarme temperatura ritorno impianto radiante"
+                                            "label": "R9089: Allarme temperatura ritorno impianto radiante",
                                         },
                                         {
                                             "id": 844,
@@ -21227,7 +21208,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9104: Allarme basso flusso"
+                                            "label": "R9104: Allarme basso flusso",
                                         },
                                         {
                                             "id": 845,
@@ -21248,7 +21229,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9102: Allarme bassa temperatura acqua"
+                                            "label": "R9102: Allarme bassa temperatura acqua",
                                         },
                                         {
                                             "id": 846,
@@ -21269,10 +21250,10 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9103: Allarme alta temperatura acqua"
-                                        }
+                                            "label": "R9103: Allarme alta temperatura acqua",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079"
+                                    "inputGroupGetCode": "FB-HP-SUPP@D3085@T9079",
                                 },
                                 {
                                     "inputGroupCode": "FB-HP-SUMM",
@@ -21301,7 +21282,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 433,
@@ -21323,7 +21304,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)"
+                                            "label": "R8100: Tensione TAE1 (la tensione è unica per i due canali)",
                                         },
                                         {
                                             "id": 438,
@@ -21345,7 +21326,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8105: Potenza attiva TAE1"
+                                            "label": "R8105: Potenza attiva TAE1",
                                         },
                                         {
                                             "id": 443,
@@ -21367,7 +21348,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8110: Potenza attiva TAE2"
+                                            "label": "R8110: Potenza attiva TAE2",
                                         },
                                         {
                                             "id": 815,
@@ -21389,7 +21370,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8002: Potenza Media DIE1"
+                                            "label": "R8002: Potenza Media DIE1",
                                         },
                                         {
                                             "id": 818,
@@ -21411,7 +21392,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8005: Potenza Media DIE2"
+                                            "label": "R8005: Potenza Media DIE2",
                                         },
                                         {
                                             "id": 837,
@@ -21434,7 +21415,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "enabled": True,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R16385: PcD Stagione"
+                                            "label": "R16385: PcD Stagione",
                                         },
                                         {
                                             "id": 821,
@@ -21456,7 +21437,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8008: Potenza Media DIE3"
+                                            "label": "R8008: Potenza Media DIE3",
                                         },
                                         {
                                             "id": 823,
@@ -21478,7 +21459,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8011: Potenza Media DIE4"
+                                            "label": "R8011: Potenza Media DIE4",
                                         },
                                         {
                                             "id": 838,
@@ -21499,7 +21480,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9096: Allarme temperatura ingresso acqua"
+                                            "label": "R9096: Allarme temperatura ingresso acqua",
                                         },
                                         {
                                             "id": 839,
@@ -21520,7 +21501,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9097: Allarme temperatura uscita acqua"
+                                            "label": "R9097: Allarme temperatura uscita acqua",
                                         },
                                         {
                                             "id": 840,
@@ -21541,7 +21522,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9095: Allarme temperatura esterna"
+                                            "label": "R9095: Allarme temperatura esterna",
                                         },
                                         {
                                             "id": 841,
@@ -21562,7 +21543,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9098: Allarme temperatura sanitaria"
+                                            "label": "R9098: Allarme temperatura sanitaria",
                                         },
                                         {
                                             "id": 842,
@@ -21583,7 +21564,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9099: Allarme PdC"
+                                            "label": "R9099: Allarme PdC",
                                         },
                                         {
                                             "id": 843,
@@ -21604,7 +21585,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9089: Allarme temperatura ritorno impianto radiante"
+                                            "label": "R9089: Allarme temperatura ritorno impianto radiante",
                                         },
                                         {
                                             "id": 848,
@@ -21625,7 +21606,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9090: Allarme accumolo inerziale"
+                                            "label": "R9090: Allarme accumolo inerziale",
                                         },
                                         {
                                             "id": 844,
@@ -21646,7 +21627,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9104: Allarme basso flusso"
+                                            "label": "R9104: Allarme basso flusso",
                                         },
                                         {
                                             "id": 845,
@@ -21667,7 +21648,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9102: Allarme bassa temperatura acqua"
+                                            "label": "R9102: Allarme bassa temperatura acqua",
                                         },
                                         {
                                             "id": 846,
@@ -21688,7 +21669,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9103: Allarme alta temperatura acqua"
+                                            "label": "R9103: Allarme alta temperatura acqua",
                                         },
                                         {
                                             "id": 935,
@@ -21709,7 +21690,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8638: Configurazione potenze 1"
+                                            "label": "R8638: Configurazione potenze 1",
                                         },
                                         {
                                             "id": 936,
@@ -21730,7 +21711,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8639: Configurazione potenze 2"
+                                            "label": "R8639: Configurazione potenze 2",
                                         },
                                         {
                                             "id": 902,
@@ -21751,7 +21732,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8683: Stagione"
+                                            "label": "R8683: Stagione",
                                         },
                                         {
                                             "id": 937,
@@ -21772,7 +21753,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8640: Configurazione potenze 3"
+                                            "label": "R8640: Configurazione potenze 3",
                                         },
                                         {
                                             "id": 938,
@@ -21793,7 +21774,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8641: Configurazione potenze 4"
+                                            "label": "R8641: Configurazione potenze 4",
                                         },
                                         {
                                             "id": 939,
@@ -21814,7 +21795,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8642: Configurazione potenze 5"
+                                            "label": "R8642: Configurazione potenze 5",
                                         },
                                         {
                                             "id": 940,
@@ -21835,7 +21816,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8648: Stagione"
+                                            "label": "R8648: Stagione",
                                         },
                                         {
                                             "id": 941,
@@ -21856,7 +21837,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8664: Nome Febos Crono"
+                                            "label": "R8664: Nome Febos Crono",
                                         },
                                         {
                                             "id": 942,
@@ -21877,7 +21858,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R8665: Massima potenza fornita"
+                                            "label": "R8665: Massima potenza fornita",
                                         },
                                         {
                                             "id": 909,
@@ -21899,7 +21880,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9120: Portata acqua PdC"
+                                            "label": "R9120: Portata acqua PdC",
                                         },
                                         {
                                             "id": 910,
@@ -21921,7 +21902,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9121: Potenza assorbita PdC"
+                                            "label": "R9121: Potenza assorbita PdC",
                                         },
                                         {
                                             "id": 911,
@@ -21943,7 +21924,7 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)"
+                                            "label": "R9122: Potenza Resa PdC (In Riscaldamento)",
                                         },
                                         {
                                             "id": 912,
@@ -21965,35 +21946,32 @@ PAGE_CONFIG_RESPONSE = {
                                             "deviceModelId": 6,
                                             "thingId": 9079,
                                             "deviceId": 3085,
-                                            "label": "R9123: Potenza Resa PdC (In raffredamento)"
-                                        }
+                                            "label": "R9123: Potenza Resa PdC (In raffredamento)",
+                                        },
                                     ],
-                                    "inputGroupGetCode": "FB-HP-SUMM@D3085@T9079"
-                                }
+                                    "inputGroupGetCode": "FB-HP-SUMM@D3085@T9079",
+                                },
                             ],
                             "inputGroupGetCodeList": [
                                 "FB-HP-SUMM@D3085@T9079",
-                                "FB-HP-SUPP@D3085@T9079"
+                                "FB-HP-SUPP@D3085@T9079",
                             ],
-                            "label": "FBW-WARNING: Febos Warning list"
+                            "label": "FBW-WARNING: Febos Warning list",
                         }
                     ],
                     "inputGroupGetCodeMap": {
-                        "3085": [
-                            "FB-HP-SUMM@D3085@T9079",
-                            "FB-HP-SUPP@D3085@T9079"
-                        ]
+                        "3085": ["FB-HP-SUMM@D3085@T9079", "FB-HP-SUPP@D3085@T9079"]
                     },
-                    "label": "TAB-WARNING: Febos Warning"
+                    "label": "TAB-WARNING: Febos Warning",
                 }
             ],
             "inputGroupGetCodeList": [
                 "FB-HP-SUMM@D3085@T9079",
-                "FB-HP-SUPP@D3085@T9079"
+                "FB-HP-SUPP@D3085@T9079",
             ],
-            "label": "FBWARNING_D3085: Febos Warning"
-        }
-    }
+            "label": "FBWARNING_D3085: Febos Warning",
+        },
+    },
 }
 GET_FEBOS_SLAVE_RESPONSE = [
     {
@@ -22007,7 +21985,7 @@ GET_FEBOS_SLAVE_RESPONSE = [
         "setTemp": 130,
         "temp": 176,
         "humid": 69,
-        "confort": 1
+        "confort": 1,
     },
     {
         "indirizzoSlave": "12",
@@ -22020,8 +21998,8 @@ GET_FEBOS_SLAVE_RESPONSE = [
         "setTemp": 130,
         "temp": 159,
         "humid": 89,
-        "confort": 1
-    }
+        "confort": 1,
+    },
 ]
 REALTIME_DATA_RESPONSE = [
     {
@@ -22030,43 +22008,19 @@ REALTIME_DATA_RESPONSE = [
         "groupCode": "FB-AMB-DT@D3085@T9076",
         "ts": "2007-01-01T00:01:33",
         "data": {
-            "R8660": {
-                "i": 50
-            },
-            "R8661": {
-                "i": 90
-            },
-            "R8683": {
-                "i": 1
-            },
-            "R8684": {
-                "i": 1800
-            },
-            "R8685": {
-                "i": 360
-            },
-            "R8686": {
-                "i": 500
-            },
-            "R8687": {
-                "i": 1200
-            },
-            "R8688": {
-                "i": 1600
-            },
-            "R8689": {
-                "i": 480
-            },
-            "R8690": {
-                "i": 300
-            },
-            "R8691": {
-                "i": 1380
-            },
-            "R8692": {
-                "i": 0
-            }
-        }
+            "R8660": {"i": 50},
+            "R8661": {"i": 90},
+            "R8683": {"i": 1},
+            "R8684": {"i": 1800},
+            "R8685": {"i": 360},
+            "R8686": {"i": 500},
+            "R8687": {"i": 1200},
+            "R8688": {"i": 1600},
+            "R8689": {"i": 480},
+            "R8690": {"i": 300},
+            "R8691": {"i": 1380},
+            "R8692": {"i": 0},
+        },
     },
     {
         "deviceId": 3085,
@@ -22074,52 +22028,22 @@ REALTIME_DATA_RESPONSE = [
         "groupCode": "FB-AMB-SUMM@D3085@T9076",
         "ts": "2025-01-06T13:17:57",
         "data": {
-            "R8600": {
-                "i": 0
-            },
-            "R8670": {
-                "i": 0
-            },
-            "R8671": {
-                "i": -17
-            },
-            "R8672": {
-                "i": 0
-            },
-            "R8673": {
-                "i": 0
-            },
-            "R8676": {
-                "i": 0
-            },
-            "R8678": {
-                "i": 265
-            },
-            "R8679": {
-                "i": 37
-            },
-            "R8680": {
-                "i": 74
-            },
-            "R8681": {
-                "i": 0
-            },
-            "R8682": {
-                "i": 0
-            },
-            "R8683": {
-                "i": 1
-            },
-            "R8702": {
-                "i": 160
-            },
-            "R8703": {
-                "i": 160
-            },
-            "R8704": {
-                "i": 57
-            }
-        }
+            "R8600": {"i": 0},
+            "R8670": {"i": 0},
+            "R8671": {"i": -17},
+            "R8672": {"i": 0},
+            "R8673": {"i": 0},
+            "R8676": {"i": 0},
+            "R8678": {"i": 265},
+            "R8679": {"i": 37},
+            "R8680": {"i": 74},
+            "R8681": {"i": 0},
+            "R8682": {"i": 0},
+            "R8683": {"i": 1},
+            "R8702": {"i": 160},
+            "R8703": {"i": 160},
+            "R8704": {"i": 57},
+        },
     },
     {
         "deviceId": 3085,
@@ -22127,71 +22051,29 @@ REALTIME_DATA_RESPONSE = [
         "groupCode": "FB-HP-SUPP@D3085@T9079",
         "ts": "2025-01-06T13:19:29",
         "data": {
-            "R16384": {
-                "i": 0
-            },
-            "R16385": {
-                "i": 1
-            },
-            "R16515": {
-                "i": 180
-            },
-            "R8698": {
-                "i": 60
-            },
-            "R8986": {
-                "i": 158
-            },
-            "R8987": {
-                "i": 447
-            },
-            "R8988": {
-                "i": 412
-            },
-            "R9008": {
-                "i": 3
-            },
-            "R9089": {
-                "i": 0
-            },
-            "R9090": {
-                "i": 0
-            },
-            "R9095": {
-                "i": 0
-            },
-            "R9096": {
-                "i": 0
-            },
-            "R9097": {
-                "i": 0
-            },
-            "R9098": {
-                "i": 0
-            },
-            "R9099": {
-                "i": 0
-            },
-            "R9102": {
-                "i": 0
-            },
-            "R9103": {
-                "i": 0
-            },
-            "R9104": {
-                "i": 0
-            },
-            "R9120": {
-                "i": 1990
-            },
-            "R9122": {
-                "i": 0
-            },
-            "R9123": {
-                "i": 0
-            }
-        }
-    }
+            "R16384": {"i": 0},
+            "R16385": {"i": 1},
+            "R16515": {"i": 180},
+            "R8698": {"i": 60},
+            "R8986": {"i": 158},
+            "R8987": {"i": 447},
+            "R8988": {"i": 412},
+            "R9008": {"i": 3},
+            "R9089": {"i": 0},
+            "R9090": {"i": 0},
+            "R9095": {"i": 0},
+            "R9096": {"i": 0},
+            "R9097": {"i": 0},
+            "R9098": {"i": 0},
+            "R9099": {"i": 0},
+            "R9102": {"i": 0},
+            "R9103": {"i": 0},
+            "R9104": {"i": 0},
+            "R9120": {"i": 1990},
+            "R9122": {"i": 0},
+            "R9123": {"i": 0},
+        },
+    },
 ]
 
 
@@ -22207,115 +22089,145 @@ class MockResponse(Response):
 
 
 def mock_login_response(*args, **kwargs):
-    if kwargs.get('url') != f"{FebosApi.API_URL}/v1/auth/login":
+    if kwargs.get("url") != f"{FebosApi.API_URL}/v1/auth/login":
         return MockResponse(404, None)
-    headers = kwargs.get('headers', {})
-    if headers.get('Referer') != f"{FebosApi.APP_URL}/auth/login":
+    headers = kwargs.get("headers", {})
+    if headers.get("Referer") != f"{FebosApi.APP_URL}/auth/login":
         return MockResponse(500, None)
-    accepted = {a.strip().lower() for a in headers.get('Accept').split(',')}
+    accepted = {a.strip().lower() for a in headers.get("Accept").split(",")}
     if accepted < {"application/json", "text/plain", "*/*"}:
         return MockResponse(500, None)
-    if headers.get('Content-Type').lower() != "application/json":
+    if headers.get("Content-Type").lower() != "application/json":
         return MockResponse(500, None)
-    body = kwargs.get('json', {})
-    if any(a not in body for a in ['username', 'password']):
+    body = kwargs.get("json", {})
+    if any(a not in body for a in ["username", "password"]):
         return MockResponse(500, None)
     return MockResponse(200, LOGIN_RESPONSE)
 
 
 def mock_installation_response(*args, **kwargs):
-    if not kwargs.get('url').startswith(f"{FebosApi.API_URL}/v1/installation"):
+    if not kwargs.get("url").startswith(f"{FebosApi.API_URL}/v1/installation"):
         return MockResponse(404, None)
-    headers = kwargs.get('headers', {})
-    if headers.get('Referer') != f"{FebosApi.APP_URL}/auth/installation-list":
+    headers = kwargs.get("headers", {})
+    if headers.get("Referer") != f"{FebosApi.APP_URL}/auth/installation-list":
         return MockResponse(500, None)
-    accepted = {a.strip().lower() for a in headers.get('Accept').split(',')}
+    accepted = {a.strip().lower() for a in headers.get("Accept").split(",")}
     if accepted < {"application/json", "text/plain", "*/*"}:
         return MockResponse(500, None)
     return MockResponse(200, INSTALLATION_RESPONSE)
 
 
 def mock_page_config_response(*args, **kwargs):
-    if kwargs.get('url') != f"{FebosApi.API_URL}/v1/installation/2218/page-config?web=false":
+    if (
+        kwargs.get("url")
+        != f"{FebosApi.API_URL}/v1/installation/2218/page-config?web=false"
+    ):
         return MockResponse(404, None)
-    headers = kwargs.get('headers', {})
-    if headers.get('Referer') != f"{FebosApi.APP_URL}/page/FBDEVLIST":
+    headers = kwargs.get("headers", {})
+    if headers.get("Referer") != f"{FebosApi.APP_URL}/page/FBDEVLIST":
         return MockResponse(500, None)
-    accepted = {a.strip().lower() for a in headers.get('Accept').split(',')}
+    accepted = {a.strip().lower() for a in headers.get("Accept").split(",")}
     if accepted < {"application/json", "text/plain", "*/*"}:
         return MockResponse(500, None)
     return MockResponse(200, PAGE_CONFIG_RESPONSE)
 
 
 def mock_get_febos_slave_response(*args, **kwargs):
-    if kwargs.get('url') != f"{FebosApi.API_URL}/v2/emmeti/2218/3085/febos-data/get-febos-slave":
+    if (
+        kwargs.get("url")
+        != f"{FebosApi.API_URL}/v2/emmeti/2218/3085/febos-data/get-febos-slave"
+    ):
         return MockResponse(404, None)
-    headers = kwargs.get('headers', {})
-    if headers.get('Referer') != f"{FebosApi.APP_URL}/page/FBDEVLIST":
+    headers = kwargs.get("headers", {})
+    if headers.get("Referer") != f"{FebosApi.APP_URL}/page/FBDEVLIST":
         return MockResponse(500, None)
-    accepted = {a.strip().lower() for a in headers.get('Accept').split(',')}
+    accepted = {a.strip().lower() for a in headers.get("Accept").split(",")}
     if accepted < {"application/json", "text/plain", "*/*"}:
         return MockResponse(500, None)
     return MockResponse(200, GET_FEBOS_SLAVE_RESPONSE)
 
 
 def mock_realtime_data_response(*args, **kwargs):
-    if not kwargs.get('url').startswith(f"{FebosApi.API_URL}/v2/emmeti/2218/realtime-data?input_group_list="):
+    if not kwargs.get("url").startswith(
+        f"{FebosApi.API_URL}/v2/emmeti/2218/realtime-data?input_group_list="
+    ):
         return MockResponse(404, None)
-    headers = kwargs.get('headers', {})
-    if headers.get('Referer') != f"{FebosApi.APP_URL}/page/FBDEVLIST":
+    headers = kwargs.get("headers", {})
+    if headers.get("Referer") != f"{FebosApi.APP_URL}/page/FBDEVLIST":
         return MockResponse(500, None)
-    accepted = {a.strip().lower() for a in headers.get('Accept').split(',')}
+    accepted = {a.strip().lower() for a in headers.get("Accept").split(",")}
     if accepted < {"application/json", "text/plain", "*/*"}:
         return MockResponse(500, None)
     return MockResponse(200, REALTIME_DATA_RESPONSE)
 
 
 def mock_response(*args, **kwargs):
-    if kwargs.get('url') == f"{FebosApi.API_URL}/v1/auth/login":
+    if kwargs.get("url") == f"{FebosApi.API_URL}/v1/auth/login":
         return mock_login_response(*args, **kwargs)
-    if kwargs.get('url').startswith(f"{FebosApi.API_URL}/v1/installation"):
+    if kwargs.get("url").startswith(f"{FebosApi.API_URL}/v1/installation"):
         mock_installation_response(*args, **kwargs)
-    if kwargs.get('url') == f"{FebosApi.API_URL}/v1/installation/2218/page-config?web=false":
+    if (
+        kwargs.get("url")
+        == f"{FebosApi.API_URL}/v1/installation/2218/page-config?web=false"
+    ):
         return mock_page_config_response(*args, **kwargs)
-    if kwargs.get('url') == f"{FebosApi.API_URL}/v2/emmeti/2218/3085/febos-data/get-febos-slave":
+    if (
+        kwargs.get("url")
+        == f"{FebosApi.API_URL}/v2/emmeti/2218/3085/febos-data/get-febos-slave"
+    ):
         return mock_get_febos_slave_response(*args, **kwargs)
-    if kwargs.get('url').startswith(f"{FebosApi.API_URL}/v2/emmeti/2218/realtime-data?input_group_list="):
+    if kwargs.get("url").startswith(
+        f"{FebosApi.API_URL}/v2/emmeti/2218/realtime-data?input_group_list="
+    ):
         return mock_realtime_data_response(*args, **kwargs)
 
 
 class TestFebosApi(TestCase):
 
-    def __init__(self, methodName = "runTest"):
+    def __init__(self, methodName="runTest"):
         super().__init__(methodName)
         self.api = FebosApi("username", "password")
 
-    @mock.patch(f'{FebosApi.__module__}.Session.post', side_effect=mock_login_response)
+    @mock.patch(f"{FebosApi.__module__}.Session.post", side_effect=mock_login_response)
     def test_login(self, mock_session):
         res = self.api.login()
         self.assertIsNotNone(res)
-        self.assertEqual(res.model_dump(mode='json'), LOGIN_RESPONSE)
+        self.assertEqual(res.model_dump(mode="json"), LOGIN_RESPONSE)
 
-    @mock.patch(f'{FebosApi.__module__}.Session.get', side_effect=mock_installation_response)
+    @mock.patch(
+        f"{FebosApi.__module__}.Session.get", side_effect=mock_installation_response
+    )
     def test_installation(self, mock_session):
         res = self.api.installation()
         self.assertIsNotNone(res)
-        self.assertEqual(list([r.model_dump(mode='json') for r in res]), INSTALLATION_RESPONSE)
+        self.assertEqual(
+            list([r.model_dump(mode="json") for r in res]), INSTALLATION_RESPONSE
+        )
 
-    @mock.patch(f'{FebosApi.__module__}.Session.get', side_effect=mock_page_config_response)
+    @mock.patch(
+        f"{FebosApi.__module__}.Session.get", side_effect=mock_page_config_response
+    )
     def test_page_config(self, mock_session):
         res = self.api.page_config(2218)
         self.assertIsNotNone(res)
-        self.assertEqual(res.model_dump(mode='json'), PAGE_CONFIG_RESPONSE)
+        self.assertEqual(res.model_dump(mode="json"), PAGE_CONFIG_RESPONSE)
 
-    @mock.patch(f'{FebosApi.__module__}.Session.get', side_effect=mock_get_febos_slave_response)
+    @mock.patch(
+        f"{FebosApi.__module__}.Session.get", side_effect=mock_get_febos_slave_response
+    )
     def test_get_febos_slave(self, mock_session):
         res = self.api.get_febos_slave(2218, 3085)
         self.assertIsNotNone(res)
-        self.assertEqual(list([r.model_dump(mode='json') for r in res]), GET_FEBOS_SLAVE_RESPONSE)
+        self.assertEqual(
+            list([r.model_dump(mode="json") for r in res]), GET_FEBOS_SLAVE_RESPONSE
+        )
 
-    @mock.patch(f'{FebosApi.__module__}.Session.get', side_effect=mock_realtime_data_response)
+    @mock.patch(
+        f"{FebosApi.__module__}.Session.get", side_effect=mock_realtime_data_response
+    )
     def test_realtime_data(self, mock_session):
         res = self.api.realtime_data(2218, ["whatever"])
         self.assertIsNotNone(res)
-        self.assertEqual(list([r.model_dump(mode='json') for r in res]), REALTIME_DATA_RESPONSE)
+        self.assertEqual(
+            list([r.model_dump(mode="json") for r in res]), REALTIME_DATA_RESPONSE
+        )

@@ -2,16 +2,17 @@ from __future__ import annotations
 
 from typing import Any
 
+from pydantic import BaseModel, model_serializer
 from requests import Session
 from requests.auth import AuthBase
+from requests.models import Response
 
 from .errors import ApiError, AuthenticationError
-from pydantic import BaseModel, model_serializer
-from requests.models import Response
 
 
 class LoginResponse(BaseModel):
     """Login response."""
+
     authList: list[str]
     creationDate: str
     email: str
@@ -32,6 +33,7 @@ class LoginResponse(BaseModel):
 
 class InstallationData(BaseModel):
     """Installation Data."""
+
     adminUserId: int
     adminUserName: str
     code: str
@@ -59,6 +61,7 @@ class InstallationResponse:
 
 class Installation(BaseModel):
     """Installation Data."""
+
     code: str
     codeName: str
     id: int
@@ -71,6 +74,7 @@ class Installation(BaseModel):
 
 class Device(BaseModel):
     """Device Data."""
+
     code: str
     codeName: str
     controllerCode: str
@@ -97,6 +101,7 @@ class Device(BaseModel):
 
 class Thing(BaseModel):
     """Thing Data."""
+
     address: str
     code: str
     codeName: str
@@ -116,6 +121,7 @@ class Thing(BaseModel):
 
 class Input(BaseModel):
     """Input Data."""
+
     category: str
     clientName: str
     code: str
@@ -151,6 +157,7 @@ class Input(BaseModel):
 
 class InputGroup(BaseModel):
     """InputGroup Data."""
+
     deviceId: int
     inputGroupCode: str
     inputGroupGetCode: str
@@ -162,6 +169,7 @@ class InputGroup(BaseModel):
 
 class Widget(BaseModel):
     """Widget Data."""
+
     code: str
     defaultDeviceId: int
     defaultThingId: int
@@ -176,6 +184,7 @@ class Widget(BaseModel):
 
 class Tab(BaseModel):
     """Tab Data."""
+
     code: str
     id: int
     inputGroupGetCodeMap: dict[str, list[str]]
@@ -188,6 +197,7 @@ class Tab(BaseModel):
 
 class Page(BaseModel):
     """Page Data."""
+
     code: str
     codeName: str
     id: int
@@ -201,11 +211,12 @@ class Page(BaseModel):
 
 class PageConfigResponse(BaseModel):
     """Page Config response."""
+
     deviceMap: dict[str, Device]
     installation: Installation
     pageMap: dict[str, Page]
     thingMap: dict[str, Thing]
-    
+
     @staticmethod
     def from_json(json_data: dict[str, Any]) -> PageConfigResponse:
         return PageConfigResponse.model_validate(json_data)
@@ -213,6 +224,7 @@ class PageConfigResponse(BaseModel):
 
 class Slave(BaseModel):
     """Slave Data."""
+
     callHumid: int
     callTemp: int
     centrallizato: int
@@ -228,7 +240,7 @@ class Slave(BaseModel):
 
 class GetFebosSlaveResponse:
     """Get Febos Slave response."""
-    
+
     @staticmethod
     def from_json(json_data: dict[str, Any]) -> list[Slave]:
         return list([Slave.model_validate(slave) for slave in json_data])
@@ -236,11 +248,13 @@ class GetFebosSlaveResponse:
 
 class Value(BaseModel):
     """Value data."""
+
     i: Any
 
 
 class RealtimeData(BaseModel):
     """Realtime data."""
+
     data: dict[str, Value]
     deviceId: int
     groupCode: str
@@ -250,7 +264,7 @@ class RealtimeData(BaseModel):
 
 class RealtimeDataResponse:
     """Realtime Data response."""
-    
+
     @staticmethod
     def from_json(json_data: dict[str, Any]) -> list[RealtimeData]:
         return list([RealtimeData.model_validate(data) for data in json_data])
@@ -297,10 +311,12 @@ class FebosApi(Session):
             raise self._handle_error(response)
         self.auth = BearerAuth(response.headers.get("authorization"))
         res = LoginResponse.from_json(response.json())
-        assert(res.model_dump(mode='json') == response.json())
+        assert res.model_dump(mode="json") == response.json()
         return res
 
-    def installation(self, pageStart: int = 1, pageItems: int = 500000) -> list[InstallationData]:
+    def installation(
+        self, pageStart: int = 1, pageItems: int = 500000
+    ) -> list[InstallationData]:
         response = self.get(
             url=f"{self.API_URL}/v1/installation?pageStart={pageStart}&pageItems={pageItems}",
             headers={
@@ -311,7 +327,7 @@ class FebosApi(Session):
         if not response or response.status_code != 200:
             raise self._handle_error(response)
         res = InstallationResponse.from_json(response.json())
-        assert(list([r.model_dump(mode='json') for r in res]) == response.json())
+        assert list([r.model_dump(mode="json") for r in res]) == response.json()
         return res
 
     def page_config(self, installation_id: int) -> PageConfigResponse:
@@ -325,7 +341,7 @@ class FebosApi(Session):
         if not response or response.status_code != 200:
             raise self._handle_error(response)
         res = PageConfigResponse.from_json(response.json())
-        assert(res.model_dump(mode='json') == response.json())
+        assert res.model_dump(mode="json") == response.json()
         return res
 
     def get_febos_slave(self, installation_id: int, device_id: int) -> list[Slave]:
@@ -339,10 +355,12 @@ class FebosApi(Session):
         if not response or response.status_code != 200:
             raise self._handle_error(response)
         res = GetFebosSlaveResponse.from_json(response.json())
-        assert(list([r.model_dump(mode='json') for r in res]) == response.json())
+        assert list([r.model_dump(mode="json") for r in res]) == response.json()
         return res
 
-    def realtime_data(self, installation_id: int, input_group_list: list[str]) -> list[RealtimeData]:
+    def realtime_data(
+        self, installation_id: int, input_group_list: list[str]
+    ) -> list[RealtimeData]:
         if input_group_list is None or len(input_group_list) == 0:
             return ValueError(input_group_list)
         response = self.get(
@@ -355,5 +373,5 @@ class FebosApi(Session):
         if not response or response.status_code != 200:
             raise self._handle_error(response)
         res = RealtimeDataResponse.from_json(response.json())
-        assert(list([r.model_dump(mode='json') for r in res]) == response.json())
+        assert list([r.model_dump(mode="json") for r in res]) == response.json()
         return res
