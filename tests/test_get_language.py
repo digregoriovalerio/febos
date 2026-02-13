@@ -11,7 +11,9 @@ GET_LANGUAGE_URL = f"{FebosEndpoint.API_URL}{GetLanguage.URL}"
 @respx.mock
 def test_get_language_get_success(client, mock_get_language_response):
     url = GET_LANGUAGE_URL.format(installation_id=100, device_id=789)
-    route = respx.get(url).mock(return_value=Response(200, json=mock_get_language_response))
+    route = respx.get(url).mock(
+        return_value=Response(200, json=mock_get_language_response)
+    )
     endpoint = GetLanguage(installation_id=100, device_id=789)
     response = endpoint.get(client=client)
     assert route.called

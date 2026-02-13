@@ -6,7 +6,7 @@ authors = [
     {name = "Valerio Di Gregorio"},
 ]
 dependencies = [
-    "httpx==0.28.1",
+    "httpx==0.27.2",
     "pydantic==2.12.5",
     "pytest==9.0.2",
     "respx==0.22.0",
@@ -14,12 +14,11 @@ dependencies = [
 ]
 requires-python = ">=3.10"
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
 license-files = ["LICENSE"]
 keywords = ["febos", "emmeti", "iot", "http", "api", "client"]
 classifiers = [
     "Development Status :: 4 - Beta",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",

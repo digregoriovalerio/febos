@@ -26,9 +26,6 @@ def test_realtime_data_get_success(client, mock_realtime_data_response):
 def test_realtime_data_get_auth_error(client):
     url = REALTIME_DATA_URL.format(installation_id=100)
     respx.get(url).mock(return_value=Response(401))
-    endpoint = RealtimeData(
-        installation_id=100,
-        input_group_list=["GR1", "GR2"]
-    )
+    endpoint = RealtimeData(installation_id=100, input_group_list=["GR1", "GR2"])
     with pytest.raises(HTTPStatusError):
         endpoint.get(client=client)
