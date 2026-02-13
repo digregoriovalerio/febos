@@ -1,5 +1,8 @@
+"""Endpoint model for listing installations available to the user."""
+
 from typing import ClassVar
 
+from febos.client import FebosClient
 from febos.data_model import InstallationGetResponse
 from febos.endpoint import FebosEndpoint
 
@@ -16,21 +19,21 @@ class Installation(FebosEndpoint):
         pageStart: Starting page number (default: 1).
         pageItems: Number of items per page (default: 500000).
     """
-    
+
     URL: ClassVar[str] = "/v1/installation"
     REFERER: ClassVar[str] = "/auth/installation-list"
 
     pageStart: int = 1
     pageItems: int = 500000
 
-    def get(self) -> InstallationGetResponse:
+    def get(self, client: FebosClient) -> InstallationGetResponse:
         """Get list of installations.
-        
+
         Returns:
             InstallationGetResponse containing list of installations.
-            
+
         Raises:
             HTTPStatusError: If HTTP request fails.
         """
-        response = super().get(params=self.model_dump())
+        response = super().get(client=client, params=self.model_dump())
         return InstallationGetResponse.model_validate(response.json())

@@ -24,6 +24,7 @@ Usage:
 
 from typing import ClassVar
 
+from febos.client import FebosClient
 from febos.data_model import HistoricalDataGetResponse
 from febos.endpoint import FebosEndpoint
 
@@ -56,7 +57,7 @@ class GetHistoricalData(FebosEndpoint):
     time_from: str
     time_to: str
 
-    def get(self) -> HistoricalDataGetResponse:
+    def get(self, client: FebosClient) -> HistoricalDataGetResponse:
         """Get historical data for the configured time range.
 
         Returns:
@@ -67,5 +68,5 @@ class GetHistoricalData(FebosEndpoint):
             "time_from": self.time_from,
             "time_to": self.time_to,
         }
-        response = super().get(params=params)
+        response = super().get(client=client, params=params)
         return HistoricalDataGetResponse.model_validate(response.json())

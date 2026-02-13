@@ -1,5 +1,11 @@
+"""Endpoint model for accessing and submitting real-time device data.
+
+Provides small convenience methods to `get()` and `post()` current values.
+"""
+
 from typing import ClassVar, List
 
+from febos.client import FebosClient
 from febos.data_model import RealtimeData as RealtimeDataModel
 from febos.data_model import RealtimeDataGetResponse, RealtimeDataPostResponse
 from febos.endpoint import FebosEndpoint
@@ -28,34 +34,37 @@ class RealtimeData(FebosEndpoint):
     installation_id: int
     input_group_list: List[str]
 
-    def get(self) -> RealtimeDataGetResponse:
+    def get(self, client: FebosClient) -> RealtimeDataGetResponse:
         """Get real-time data for input groups.
-        
+
         Returns:
             RealtimeDataGetResponse containing sensor values and timestamps.
-            
+
         Raises:
             HTTPStatusError: If HTTP request fails.
         """
         response = super().get(
-            params={"input_group_list": ",".join(self.input_group_list)}
+            client=client, params={"input_group_list": ",".join(self.input_group_list)}
         )
         return RealtimeDataGetResponse.model_validate(response.json())
 
-    def post(self, data: RealtimeDataModel) -> RealtimeDataPostResponse:
+    def post(
+        self, client: FebosClient, data: RealtimeDataModel
+    ) -> RealtimeDataPostResponse:
         """Post real-time data for input groups.
-        
+
         Args:
             data: Real-time data to post.
-            
+
         Returns:
             RealtimeDataPostResponse indicating success or failure.
-            
+
         Raises:
             HTTPStatusError: If HTTP request fails.
         """
         response = super().post(
+            client=client,
             params={"input_group_list": ",".join(self.input_group_list)},
-            json=data.model_dump()
+            json=data.model_dump(),
         )
         return RealtimeDataPostResponse.model_validate(response.json())

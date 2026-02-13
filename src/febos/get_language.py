@@ -1,5 +1,8 @@
+"""Endpoint model for retrieving device language settings."""
+
 from typing import ClassVar
 
+from febos.client import FebosClient
 from febos.data_model import GetLanguageGetResponse
 from febos.endpoint import FebosEndpoint
 
@@ -24,11 +27,11 @@ class GetLanguage(FebosEndpoint):
     installation_id: int
     device_id: int
 
-    def get(self) -> GetLanguageGetResponse:
+    def get(self, client: FebosClient) -> GetLanguageGetResponse:
         """Get language information for the device.
 
         Returns:
             GetLanguageGetResponse with `ts` and `ID_language` fields.
         """
-        response = super().get()
+        response = super().get(client=client)
         return GetLanguageGetResponse.model_validate(response.json())

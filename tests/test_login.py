@@ -17,27 +17,27 @@ def test_login_post_success(client, mock_login_response):
             200, json=mock_login_response, headers={"Authorization": auth_token}
         )
     )
-    endpoint = Login(client=client, username="testuser", password="password123")
-    response = endpoint.post()
+    endpoint = Login(username="testuser", password="password123")
+    response = endpoint.post(client=client)
     assert route.called
     assert isinstance(response, LoginPostResponse)
-    assert endpoint._client.auth.token == auth_token
+    assert client.get_token() == auth_token
     assert response.username == "testuser"
 
 
 @respx.mock
 def test_login_post_missing_token(client, mock_login_response):
     respx.post(LOGIN_URL).mock(return_value=Response(200, json=mock_login_response))
-    endpoint = Login(client=client, username="user", password="pass")
+    endpoint = Login(username="user", password="pass")
     with pytest.raises(
         AuthenticationError, match="Missing authorization token in response"
     ):
-        endpoint.post()
+        endpoint.post(client=client)
 
 
 @respx.mock
 def test_login_post_http_error(client):
     respx.post(LOGIN_URL).mock(return_value=Response(401))
-    endpoint = Login(client=client, username="wrong", password="wrong")
+    endpoint = Login(username="wrong", password="wrong")
     with pytest.raises(HTTPStatusError):
-        endpoint.post()
+        endpoint.post(client=client)

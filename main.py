@@ -33,17 +33,14 @@ class FebosSession:
 
     def __init__(self):
         """Initialize session with no client (unauthenticated)."""
-        self.client = None
+        self.client = FebosClient()
         self.authenticated = False
 
-    def is_authenticated(self):
-        """Check if the session has an authenticated client."""
-        return self.authenticated and self.client is not None
-
-    def require_auth(self):
-        """Raise error if not authenticated."""
-        if not self.is_authenticated():
-            raise FebosError("Not authenticated. Use 'login <username> <password>' first.")
+    def get_authenticated_client(self) -> FebosClient:
+        """Retrieve the authenticated client or raise an error if not authenticated."""
+        if self.authenticated:
+            return self.client
+        raise FebosError("Not authenticated. Use 'login <username> <password>' first.")
 
     def cmd_help(self, *args):
         """Display available commands."""
@@ -100,9 +97,8 @@ Historical Data:
 
         username, password = args[0], args[1]
         try:
-            self.client = FebosClient()
-            login_endpoint = Login(client=self.client, username=username, password=password)
-            response = login_endpoint.post()
+            login_endpoint = Login(username=username, password=password)
+            response = login_endpoint.post(client=self.client)
             self.authenticated = True
             print(f"✓ Logged in as: {response.username}")
             print(f"  Installations: {response.installationIdList}")
@@ -113,14 +109,13 @@ Historical Data:
 
     def cmd_installation(self, *args):
         """List installations."""
-        self.require_auth()
         try:
             page_start = int(args[0]) if len(args) > 0 else 1
             page_items = int(args[1]) if len(args) > 1 else 500000
             endpoint = Installation(
-                client=self.client, pageStart=page_start, pageItems=page_items
+                pageStart=page_start, pageItems=page_items
             )
-            response = endpoint.get()
+            response = endpoint.get(client=self.get_authenticated_client())
             if not response.root:
                 print("No installations found.")
                 return
@@ -131,14 +126,13 @@ Historical Data:
 
     def cmd_pageconfig(self, *args):
         """Get page configuration for an installation."""
-        self.require_auth()
         if len(args) < 1:
             print("Usage: pageconfig <installation_id>")
             return
         try:
             installation_id = int(args[0])
-            endpoint = PageConfig(client=self.client, installation_id=installation_id)
-            response = endpoint.get()
+            endpoint = PageConfig(installation_id=installation_id)
+            response = endpoint.get(client=self.get_authenticated_client())
             print(f"Installation: {response.installation.name} (ID: {response.installation.id})")
             print(f"  Devices: {len(response.deviceMap)}")
             print(f"  Pages: {len(response.pageMap)}")
@@ -152,7 +146,6 @@ Historical Data:
 
     def cmd_realtimeget(self, *args):
         """Get real-time data for input groups."""
-        self.require_auth()
         if len(args) < 2:
             print("Usage: realtimeget <installation_id> <input_group_list>")
             print("  input_group_list: comma-separated group codes (e.g., 'group1,group2')")
@@ -161,11 +154,10 @@ Historical Data:
             installation_id = int(args[0])
             input_group_list = args[1].split(",")
             endpoint = RealtimeData(
-                client=self.client,
                 installation_id=installation_id,
                 input_group_list=input_group_list,
             )
-            response = endpoint.get()
+            response = endpoint.get(client=self.get_authenticated_client())
             print(f"Real-time data ({len(response.root)} entries):")
             for entry in response.root:
                 print(f"  Device {entry.deviceId}, Group {entry.groupCode}:")
@@ -178,7 +170,6 @@ Historical Data:
 
     def cmd_realtimepost(self, *args):
         """Post real-time data for input groups."""
-        self.require_auth()
         if len(args) < 3:
             print("Usage: realtimepost <installation_id> <input_group_list> <json_data>")
             print("  Example: realtimepost 101 group1,group2 '{\"data\":{\"temp\":{\"i\":22.5}},\"deviceId\":789,\"groupCode\":\"F_GENERAL\",\"thingId\":10}'")
@@ -187,7 +178,6 @@ Historical Data:
 
     def cmd_slave(self, *args):
         """Get slave device data."""
-        self.require_auth()
         if len(args) < 2:
             print("Usage: slave <installation_id> <device_id>")
             return
@@ -195,9 +185,9 @@ Historical Data:
             installation_id = int(args[0])
             device_id = int(args[1])
             endpoint = GetFebosSlave(
-                client=self.client, installation_id=installation_id, device_id=device_id
+                installation_id=installation_id, device_id=device_id
             )
-            response = endpoint.get()
+            response = endpoint.get(client=self.get_authenticated_client())
             print(f"Slave device data ({len(response.root)} entries):")
             for slave in response.root:
                 print(f"  Slave: {slave.nomeSlave} (Addr: {slave.indirizzoSlave})")
@@ -212,7 +202,6 @@ Historical Data:
 
     def cmd_language(self, *args):
         """Get device language setting."""
-        self.require_auth()
         if len(args) < 2:
             print("Usage: language <installation_id> <device_id>")
             return
@@ -220,9 +209,9 @@ Historical Data:
             installation_id = int(args[0])
             device_id = int(args[1])
             endpoint = GetLanguage(
-                client=self.client, installation_id=installation_id, device_id=device_id
+                installation_id=installation_id, device_id=device_id
             )
-            response = endpoint.get()
+            response = endpoint.get(client=self.get_authenticated_client())
             print(f"Device language:")
             print(f"  ID: {response.ID_language}")
             print(f"  Retrieved at: {response.ts}")
@@ -233,7 +222,6 @@ Historical Data:
 
     def cmd_dataanalysis(self, *args):
         """Get data analysis rows for a device."""
-        self.require_auth()
         if len(args) < 2:
             print("Usage: dataanalysis <installation_id> <device_id> [from_ts] [to_ts]")
             print("  from_ts/to_ts format: YYYY-MM-DD HH:MM:SS (defaults to today 00:00:00 to 23:59:00)")
@@ -250,13 +238,12 @@ Historical Data:
                 to_ts = f"{today} 23:59:00"
 
             endpoint = GetDataAnalysis(
-                client=self.client,
                 installation_id=installation_id,
                 device_id=device_id,
                 from_ts=from_ts,
                 to_ts=to_ts,
             )
-            response = endpoint.get()
+            response = endpoint.get(client=self.get_authenticated_client())
             print(f"Data analysis rows ({len(response.root)} entries):")
             for entry in response.root:
                 row_data = entry.model_dump()
@@ -271,7 +258,6 @@ Historical Data:
 
     def cmd_historicaldata(self, *args):
         """Get historical time-series data for input groups."""
-        self.require_auth()
         if len(args) < 4:
             print("Usage: historicaldata <installation_id> <input_group_list> <time_from> <time_to>")
             print("  input_group_list: comma-separated codes (e.g., 'FB-GRAPH-DATA@D9551@T31115')")
@@ -284,13 +270,12 @@ Historical Data:
             time_to = args[3]
 
             endpoint = GetHistoricalData(
-                client=self.client,
                 installation_id=installation_id,
                 input_group_list=input_group_list,
                 time_from=time_from,
                 time_to=time_to,
             )
-            response = endpoint.get()
+            response = endpoint.get(client=self.get_authenticated_client())
             print(f"Historical data ({len(response.root)} entries):")
             for entry in response.root:
                 print(f"  Device {entry.deviceId}, Thing {entry.thingId}, Group: {entry.groupCode}")

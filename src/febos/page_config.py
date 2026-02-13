@@ -1,5 +1,8 @@
+"""Endpoint model for fetching page and device configuration."""
+
 from typing import ClassVar
 
+from febos.client import FebosClient
 from febos.data_model import PageConfigGetResponse
 from febos.endpoint import FebosEndpoint
 
@@ -19,22 +22,20 @@ class PageConfig(FebosEndpoint):
                     query parameters.
                 - This endpoint sets `web=false` by default when requesting data.
     """
-    
+
     URL: ClassVar[str] = "/v1/installation/{installation_id}/page-config"
     REFERER: ClassVar[str] = "/page/FBDEVLIST"
 
     installation_id: int
 
-    def get(self) -> PageConfigGetResponse:
+    def get(self, client: FebosClient) -> PageConfigGetResponse:
         """Get page configuration for installation.
-        
+
         Returns:
             PageConfigGetResponse containing pages, devices, and input groups.
-            
+
         Raises:
             HTTPStatusError: If HTTP request fails.
         """
-        response = super().get(
-            params={"web": "false"}
-        )
+        response = super().get(client=client, params={"web": "false"})
         return PageConfigGetResponse.model_validate(response.json())

@@ -1,5 +1,8 @@
+"""Endpoint model for retrieving data analysis rows for a device."""
+
 from typing import ClassVar, Optional
 
+from febos.client import FebosClient
 from febos.data_model import GetDataAnalysisGetResponse
 from febos.endpoint import FebosEndpoint
 
@@ -28,7 +31,7 @@ class GetDataAnalysis(FebosEndpoint):
     from_ts: Optional[str] = None
     to_ts: Optional[str] = None
 
-    def get(self) -> GetDataAnalysisGetResponse:
+    def get(self, client: FebosClient) -> GetDataAnalysisGetResponse:
         """Get data analysis rows for the configured time range.
 
         Returns:
@@ -40,5 +43,5 @@ class GetDataAnalysis(FebosEndpoint):
         if self.to_ts is not None:
             params["to"] = self.to_ts
 
-        response = super().get(params=params)
+        response = super().get(client=client, params=params)
         return GetDataAnalysisGetResponse.model_validate(response.json())

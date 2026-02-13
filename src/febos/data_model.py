@@ -1,3 +1,10 @@
+"""Pydantic models for Febos API requests and responses.
+
+This module contains typed models used to parse responses returned by the
+Febos frontend API. Models are intentionally simple mappings of the JSON
+structures returned by the server.
+"""
+
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
@@ -194,7 +201,12 @@ class RealtimeData(BaseModel):
     deviceId: int
     groupCode: str
     thingId: int
-    ts: str = Field(default_factory=lambda: datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + 'Z')
+    ts: str = Field(
+        default_factory=lambda: datetime.now(timezone.utc).strftime(
+            "%Y-%m-%dT%H:%M:%S.%f"
+        )[:-3]
+        + "Z"
+    )
 
 
 class RealtimeDataGetResponse(RootModel):

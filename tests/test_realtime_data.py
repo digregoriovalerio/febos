@@ -14,8 +14,8 @@ def test_realtime_data_get_success(client, mock_realtime_data_response):
     route = respx.get(url).mock(
         return_value=Response(200, json=mock_realtime_data_response)
     )
-    endpoint = RealtimeData(client=client, installation_id=100, input_group_list=["GR1", "GR2"])
-    response = endpoint.get()
+    endpoint = RealtimeData(installation_id=100, input_group_list=["GR1", "GR2"])
+    response = endpoint.get(client=client)
     assert route.called
     assert len(response.root) > 0
     assert "temp" in response.root[0].data
@@ -27,7 +27,8 @@ def test_realtime_data_get_auth_error(client):
     url = REALTIME_DATA_URL.format(installation_id=100)
     respx.get(url).mock(return_value=Response(401))
     endpoint = RealtimeData(
-        client=client, installation_id=100, input_group_list=["GR1", "GR2"]
+        installation_id=100,
+        input_group_list=["GR1", "GR2"]
     )
     with pytest.raises(HTTPStatusError):
-        endpoint.get()
+        endpoint.get(client=client)

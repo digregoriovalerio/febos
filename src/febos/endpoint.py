@@ -1,8 +1,15 @@
+"""Endpoint base classes and helpers for Febos API.
+
+This module defines `FebosEndpoint`, a small BaseModel/ABC hybrid used
+to model API endpoints and perform HTTP requests against the Febos
+frontend API.
+"""
+
 from abc import ABC
 from typing import Any, ClassVar, Dict, Optional
 
 from httpx import Response
-from pydantic import BaseModel, PrivateAttr
+from pydantic import BaseModel
 
 from febos.client import FebosClient
 
@@ -32,70 +39,60 @@ class FebosEndpoint(ABC, BaseModel):
         - To send a JSON body call `super().post(json=...)`.
         - To include query parameters pass `params={...}` to `get()`/`post()`.
     """
-    
+
     APP_URL: ClassVar[str] = "/aq-iot-app-emmeti"
     API_URL: ClassVar[str] = "/aq-iot-server-frontend-ha/api"
     URL: ClassVar[str]  # Must be overridden in subclasses
     REFERER: ClassVar[str]  # Must be overridden in subclasses
 
-    _client: FebosClient = PrivateAttr()
-
-    def __init__(self, client: FebosClient, **kwargs: Any) -> None:
-        """Initialize endpoint with HTTP client.
-        
-        Args:
-            client: FebosClient instance for making HTTP requests.
-            **kwargs: Additional model fields.
-        """
-        super().__init__(**kwargs)
-        self._client = client
-
     def _call(
         self,
+        client: FebosClient,
         headers: Optional[Dict[str, Any]] = None,
         **kwargs,
     ) -> Response:
         """Make HTTP request to the endpoint.
-        
+
         Args:
-            method: HTTP method (GET, POST, etc.).
-            headers: Optional additional headers.
-            params: Optional query parameters.
-            **kwargs: URL format parameters.
-            
+            client: FebosClient instance used to perform the request.
+            headers: Optional additional headers to merge into the request.
+            **kwargs: Additional keyword arguments forwarded to
+                `httpx.Client.request` (for example: `method`, `params`, `json`).
+
         Returns:
-            HTTP response object.
-            
+            httpx.Response object.
+
         Raises:
             HTTPStatusError: If response status indicates an error.
         """
         if headers is None:
             headers = {}
 
-        response = self._client.request(
+        response = client.request(
             url=f"{FebosEndpoint.API_URL}{self.URL}".format(**self.model_dump()),
-            headers={"Referer": str(self._client.base_url) + self.APP_URL + self.REFERER} | headers,
-            **kwargs
+            headers={"Referer": str(client.base_url) + self.APP_URL + self.REFERER}
+            | headers,
+            **kwargs,
         )
 
         response.raise_for_status()
         return response
 
-    def get(self, *args, **kwargs) -> Response:
+    def get(self, *args, **kwargs) -> Any:
         """Make GET request to endpoint.
-        
+
         Returns:
             HTTP response object.
         """
         return self._call(method="GET", *args, **kwargs)
 
-    def post(self, *args, headers: Optional[Dict[str, Any]] = None, **kwargs) -> Response:
+    def post(self, *args, headers: Optional[Dict[str, Any]] = None, **kwargs) -> Any:
         """Make POST request to endpoint.
-        
+
         Args:
             headers: Optional additional headers.
             **kwargs: URL format and body parameters.
-            
+
         Returns:
             HTTP response object.
         """

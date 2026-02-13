@@ -12,8 +12,8 @@ GET_FEBOS_SLAVE_URL = f"{FebosEndpoint.API_URL}{GetFebosSlave.URL}"
 def test_get_febos_slave_get_success(client, mock_slave_response):
     url = GET_FEBOS_SLAVE_URL.format(installation_id=100, device_id=200)
     route = respx.get(url).mock(return_value=Response(200, json=mock_slave_response))
-    endpoint = GetFebosSlave(client=client, installation_id=100, device_id=200)
-    response = endpoint.get()
+    endpoint = GetFebosSlave(installation_id=100, device_id=200)
+    response = endpoint.get(client=client)
     assert route.called
     assert response.root[0].nomeSlave == "Living"
 
@@ -22,6 +22,6 @@ def test_get_febos_slave_get_success(client, mock_slave_response):
 def test_get_febos_slave_get_http_error(client):
     url = GET_FEBOS_SLAVE_URL.format(installation_id=100, device_id=200)
     respx.get(url).mock(return_value=Response(401))
-    endpoint = GetFebosSlave(client=client, installation_id=100, device_id=200)
+    endpoint = GetFebosSlave(installation_id=100, device_id=200)
     with pytest.raises(HTTPStatusError):
-        endpoint.get()
+        endpoint.get(client=client)

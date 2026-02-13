@@ -1,5 +1,8 @@
+"""Endpoint model for retrieving Febos slave device data."""
+
 from typing import ClassVar
 
+from febos.client import FebosClient
 from febos.data_model import GetFebosSlaveGetResponse
 from febos.endpoint import FebosEndpoint
 
@@ -21,7 +24,7 @@ class GetFebosSlave(FebosEndpoint):
                     Call `super().get()` directly; include query parameters with
                     `params={...}` and request bodies with `json=...`.
     """
-    
+
     URL: ClassVar[str] = (
         "/v2/emmeti/{installation_id}/{device_id}/febos-data/get-febos-slave"
     )
@@ -30,14 +33,14 @@ class GetFebosSlave(FebosEndpoint):
     installation_id: int
     device_id: int
 
-    def get(self) -> GetFebosSlaveGetResponse:
+    def get(self, client: FebosClient) -> GetFebosSlaveGetResponse:
         """Get Febos slave device data.
-        
+
         Returns:
             GetFebosSlaveGetResponse containing slave device information.
-            
+
         Raises:
             HTTPStatusError: If HTTP request fails.
         """
-        response = super().get()
+        response = super().get(client=client)
         return GetFebosSlaveGetResponse.model_validate(response.json())

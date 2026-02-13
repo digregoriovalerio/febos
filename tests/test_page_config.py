@@ -14,8 +14,8 @@ def test_page_config_get_success(client, mock_page_config_response):
     route = respx.get(url).mock(
         return_value=Response(200, json=mock_page_config_response)
     )
-    endpoint = PageConfig(client=client, installation_id=100)
-    response = endpoint.get()
+    endpoint = PageConfig(installation_id=100)
+    response = endpoint.get(client=client)
     assert route.called
     assert response.installation.id == 100
     assert "789" in response.deviceMap
@@ -26,6 +26,6 @@ def test_page_config_get_success(client, mock_page_config_response):
 def test_page_config_get_auth_error(client):
     url = PAGE_CONFIG_URL.format(installation_id=100)
     respx.get(url).mock(return_value=Response(401))
-    endpoint = PageConfig(client=client, installation_id=100)
+    endpoint = PageConfig(installation_id=100)
     with pytest.raises(HTTPStatusError):
-        endpoint.get()
+        endpoint.get(client=client)
