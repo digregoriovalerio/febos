@@ -7,7 +7,7 @@ from febos.data_model import InstallationGetResponse
 from febos.endpoint import FebosEndpoint
 
 
-class Installation(FebosEndpoint):
+class InstallationEndpoint(FebosEndpoint):
     """Endpoint for retrieving the installation list.
 
     Fetches available installations for the authenticated user. The

@@ -4,18 +4,17 @@ Get Historical Data Endpoint
 Retrieves timestamped historical data points for specified input groups within a date range.
 
 Usage:
-    from febos import FebosClient, GetHistoricalData
+    from febos import FebosClient, GetHistoricalDataEndpoint
 
     client = FebosClient(token='your_token')
-    endpoint = GetHistoricalData(
-        client=client,
+    endpoint = GetHistoricalDataEndpoint(
         installation_id=7593,
         input_group_list='FB-GRAPH-DATA@D9551@T31115',
         time_from='2026-02-11 00:00:00',
         time_to='2026-02-11 23:59:59'
     )
 
-    response = endpoint.get()
+    response = endpoint.get(client=client)
     for entry in response.root:
         print(f"Device: {entry.deviceId}, Thing: {entry.thingId}")
         for point in entry.data:
@@ -29,7 +28,7 @@ from febos.data_model import HistoricalDataGetResponse
 from febos.endpoint import FebosEndpoint
 
 
-class GetHistoricalData(FebosEndpoint):
+class GetHistoricalDataEndpoint(FebosEndpoint):
     """Endpoint for retrieving historical time-series data.
 
     Retrieves timestamped historical data points for specified input groups

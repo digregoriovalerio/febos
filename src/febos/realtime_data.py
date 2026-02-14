@@ -11,7 +11,7 @@ from febos.data_model import RealtimeDataGetResponse, RealtimeDataPostResponse
 from febos.endpoint import FebosEndpoint
 
 
-class RealtimeData(FebosEndpoint):
+class RealtimeDataEndpoint(FebosEndpoint):
     """Endpoint for accessing and submitting real-time device data.
 
     Provides `get()` to fetch current sensor values for a set of input

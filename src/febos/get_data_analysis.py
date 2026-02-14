@@ -7,7 +7,7 @@ from febos.data_model import GetDataAnalysisGetResponse
 from febos.endpoint import FebosEndpoint
 
 
-class GetDataAnalysis(FebosEndpoint):
+class GetDataAnalysisEndpoint(FebosEndpoint):
     """Endpoint for retrieving data analysis rows for a device.
 
     Performs a GET against the Febos API returning a list of timestamped

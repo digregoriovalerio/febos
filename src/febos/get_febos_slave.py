@@ -7,7 +7,7 @@ from febos.data_model import GetFebosSlaveGetResponse
 from febos.endpoint import FebosEndpoint
 
 
-class GetFebosSlave(FebosEndpoint):
+class GetFebosSlaveEndpoint(FebosEndpoint):
     """Endpoint for retrieving Febos slave device data.
 
     Fetches slave device information such as temperature, humidity and

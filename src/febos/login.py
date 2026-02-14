@@ -1,6 +1,6 @@
 """Authentication endpoint model.
 
-Defines `Login`, an endpoint model used to authenticate a user and
+Defines `LoginEndpoint`, an endpoint model used to authenticate a user and
 store the returned bearer token on the provided `FebosClient`.
 """
 
@@ -12,7 +12,7 @@ from febos.endpoint import FebosEndpoint
 from febos.error import AuthenticationError
 
 
-class Login(FebosEndpoint):
+class LoginEndpoint(FebosEndpoint):
     """Endpoint for user authentication.
 
     Authenticates a user using `username` and `password` and stores the

@@ -4,9 +4,9 @@ from httpx import HTTPStatusError, Response
 from pydantic import ValidationError
 
 from febos.endpoint import FebosEndpoint
-from febos.installation import Installation, InstallationGetResponse
+from febos.installation import InstallationEndpoint, InstallationGetResponse
 
-INSTALLATION_URL = f"{FebosEndpoint.API_URL}{Installation.URL}"
+INSTALLATION_URL = f"{FebosEndpoint.API_URL}{InstallationEndpoint.URL}"
 
 
 @respx.mock
@@ -14,7 +14,7 @@ def test_installation_get_success(client, mock_installation_response):
     route = respx.get(INSTALLATION_URL).mock(
         return_value=Response(200, json=mock_installation_response)
     )
-    endpoint = Installation(pageStart=1, pageItems=10)
+    endpoint = InstallationEndpoint(pageStart=1, pageItems=10)
     response = endpoint.get(client=client)
     request = route.calls.last.request
     assert route.called
@@ -34,7 +34,7 @@ def test_installation_get_invalid_json(client):
     respx.get(INSTALLATION_URL).mock(
         return_value=Response(200, json=[{"error": "invalid data"}])
     )
-    endpoint = Installation(pageStart=1, pageItems=10)
+    endpoint = InstallationEndpoint(pageStart=1, pageItems=10)
     with pytest.raises(ValidationError):
         endpoint.get(client=client)
 
@@ -42,6 +42,6 @@ def test_installation_get_invalid_json(client):
 @respx.mock
 def test_installation_get_http_error(client):
     respx.get(INSTALLATION_URL).mock(return_value=Response(500))
-    endpoint = Installation(pageStart=1, pageItems=10)
+    endpoint = InstallationEndpoint(pageStart=1, pageItems=10)
     with pytest.raises(HTTPStatusError):
         endpoint.get(client=client)

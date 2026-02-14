@@ -7,7 +7,7 @@ from febos.data_model import GetLanguageGetResponse
 from febos.endpoint import FebosEndpoint
 
 
-class GetLanguage(FebosEndpoint):
+class GetLanguageEndpoint(FebosEndpoint):
     """Endpoint for retrieving device language.
 
     Performs a GET against the Febos API to retrieve the current language

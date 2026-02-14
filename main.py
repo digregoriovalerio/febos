@@ -11,14 +11,14 @@ import coloredlogs
 
 from febos.client import FebosClient
 from febos.error import AuthenticationError, FebosError
-from febos.get_data_analysis import GetDataAnalysis
-from febos.get_febos_slave import GetFebosSlave
-from febos.get_historical_data import GetHistoricalData
-from febos.get_language import GetLanguage
-from febos.installation import Installation
-from febos.login import Login
-from febos.page_config import PageConfig
-from febos.realtime_data import RealtimeData
+from febos.get_data_analysis import GetDataAnalysisEndpoint
+from febos.get_febos_slave import GetFebosSlaveEndpoint
+from febos.get_historical_data import GetHistoricalDataEndpoint
+from febos.get_language import GetLanguageEndpoint
+from febos.installation import InstallationEndpoint
+from febos.login import LoginEndpoint
+from febos.page_config import PageConfigEndpoint
+from febos.realtime_data import RealtimeDataEndpoint
 
 coloredlogs.install(
     level=logging.WARNING,
@@ -97,7 +97,7 @@ Historical Data:
 
         username, password = args[0], args[1]
         try:
-            login_endpoint = Login(username=username, password=password)
+            login_endpoint = LoginEndpoint(username=username, password=password)
             response = login_endpoint.post(client=self.client)
             self.authenticated = True
             print(f"✓ Logged in as: {response.username}")
@@ -112,7 +112,7 @@ Historical Data:
         try:
             page_start = int(args[0]) if len(args) > 0 else 1
             page_items = int(args[1]) if len(args) > 1 else 500000
-            endpoint = Installation(
+            endpoint = InstallationEndpoint(
                 pageStart=page_start, pageItems=page_items
             )
             response = endpoint.get(client=self.get_authenticated_client())
@@ -131,7 +131,7 @@ Historical Data:
             return
         try:
             installation_id = int(args[0])
-            endpoint = PageConfig(installation_id=installation_id)
+            endpoint = PageConfigEndpoint(installation_id=installation_id)
             response = endpoint.get(client=self.get_authenticated_client())
             print(f"Installation: {response.installation.name} (ID: {response.installation.id})")
             print(f"  Devices: {len(response.deviceMap)}")
@@ -153,7 +153,7 @@ Historical Data:
         try:
             installation_id = int(args[0])
             input_group_list = args[1].split(",")
-            endpoint = RealtimeData(
+            endpoint = RealtimeDataEndpoint(
                 installation_id=installation_id,
                 input_group_list=input_group_list,
             )
@@ -184,7 +184,7 @@ Historical Data:
         try:
             installation_id = int(args[0])
             device_id = int(args[1])
-            endpoint = GetFebosSlave(
+            endpoint = GetFebosSlaveEndpoint(
                 installation_id=installation_id, device_id=device_id
             )
             response = endpoint.get(client=self.get_authenticated_client())
@@ -208,7 +208,7 @@ Historical Data:
         try:
             installation_id = int(args[0])
             device_id = int(args[1])
-            endpoint = GetLanguage(
+            endpoint = GetLanguageEndpoint(
                 installation_id=installation_id, device_id=device_id
             )
             response = endpoint.get(client=self.get_authenticated_client())
@@ -237,7 +237,7 @@ Historical Data:
                 from_ts = f"{today} 00:00:00"
                 to_ts = f"{today} 23:59:00"
 
-            endpoint = GetDataAnalysis(
+            endpoint = GetDataAnalysisEndpoint(
                 installation_id=installation_id,
                 device_id=device_id,
                 from_ts=from_ts,
@@ -269,7 +269,7 @@ Historical Data:
             time_from = args[2]
             time_to = args[3]
 
-            endpoint = GetHistoricalData(
+            endpoint = GetHistoricalDataEndpoint(
                 installation_id=installation_id,
                 input_group_list=input_group_list,
                 time_from=time_from,

@@ -7,7 +7,7 @@ from febos.data_model import PageConfigGetResponse
 from febos.endpoint import FebosEndpoint
 
 
-class PageConfig(FebosEndpoint):
+class PageConfigEndpoint(FebosEndpoint):
     """Endpoint for retrieving page and device configuration.
 
     Fetches pages, devices and input groups for a particular installation.

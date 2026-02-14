@@ -3,9 +3,9 @@ import respx
 from httpx import Response
 
 from febos.endpoint import FebosEndpoint
-from febos.get_historical_data import GetHistoricalData
+from febos.get_historical_data import GetHistoricalDataEndpoint
 
-GET_HISTORICAL_DATA_URL = f"{FebosEndpoint.API_URL}{GetHistoricalData.URL}"
+GET_HISTORICAL_DATA_URL = f"{FebosEndpoint.API_URL}{GetHistoricalDataEndpoint.URL}"
 
 
 @respx.mock
@@ -14,7 +14,7 @@ def test_get_historical_data_success(client, mock_get_historical_data_response):
     route = respx.get(url).mock(
         return_value=Response(200, json=mock_get_historical_data_response)
     )
-    endpoint = GetHistoricalData(
+    endpoint = GetHistoricalDataEndpoint(
         installation_id=7593,
         input_group_list="FB-GRAPH-DATA@D9551@T31115",
         time_from="2026-02-11 00:00:00",
@@ -34,7 +34,7 @@ def test_get_historical_data_success(client, mock_get_historical_data_response):
 def test_get_historical_data_http_error(client):
     url = GET_HISTORICAL_DATA_URL.format(installation_id=7593)
     respx.get(url).mock(return_value=Response(401))
-    endpoint = GetHistoricalData(
+    endpoint = GetHistoricalDataEndpoint(
         installation_id=7593,
         input_group_list="FB-GRAPH-DATA@D9551@T31115",
         time_from="2026-02-11 00:00:00",
