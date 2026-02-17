@@ -1,20 +1,57 @@
 [project]
 name = "febos"
-version = "0.0.2"
+version = "1.0.0"
 description = "Python API for EmmeTI Febos webapp"
 authors = [
     {name = "Valerio Di Gregorio"},
 ]
 dependencies = [
-    "requests>=2.32.3",
-    "pydantic>=2.11.3",
+    "httpx>=0.27.2",
+    "pydantic>=2.12.2"
 ]
 requires-python = ">=3.10"
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["febos", "emmeti", "iot", "http", "api", "client"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.0",
+    "isort>=5.12.0",
+    "pylint>=2.17.0",
+    "pytest>=9.0.2",
+    "pytest-cov>=4.0.0",
+    "respx>=0.22.0"
+]
 
 [project.urls]
-Homepage = "https://github.com/digregoriovalerio/febos"
+"Homepage" = "https://github.com/digregoriovalerio/febos"
+"Repository" = "https://github.com/digregoriovalerio/febos"
+"Bug Tracker" = "https://github.com/digregoriovalerio/febos/issues"
+
+[[project.maintainers]]
+name = "Valerio Di Gregorio"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests*"]
+
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
